@@ -1,0 +1,150 @@
+# https://github.com/argvchs/hexo-theme-particlex
+# Developer: argvchs
+
+# Avatar image url
+avatar: //头像
+
+# Home page head info block
+head_block_enable: true
+
+# Home page head background style
+home_background: https://www.todaybing.com/download/res?aid=wR1jrAPz&type=hd&id=F5QDWk8L
+
+# ParticleX theme icon is adopts the font awesome 6
+# Link: https://fontawesome.com/search/
+
+# Main menu navigation
+menu:
+    首页:
+        name: house
+        theme: solid
+        src: /
+    关于我:
+        name: id-card
+        theme: solid
+        src: /about
+    存档:
+        name: box-archive
+        theme: solid
+        src: /archives
+    分类:
+        name: bookmark
+        theme: solid
+        src: /categories
+    标签:
+        name: tags
+        theme: solid
+        src: /tags
+    # Example:
+    # <name>:
+    #     name: <icon-name>
+    #     theme: <icon-theme>
+    #     src: <link-url>
+
+# Side info card
+card:
+    enable: true
+    description: ["简介"]
+    icon_links: 
+        Github:
+            name: github
+            theme: brands
+            link: 链接
+        Bilibili:
+            name: bilibili
+            theme: brands
+            link: 链接
+        Twitter:
+            name: twitter
+            theme: brands
+            link: 链接
+        Wechat:
+            name: weixin
+            theme: brands
+            link: 链接
+        QQ:
+            name: qq
+            theme: brands
+            link: 链接
+    friend_links: 
+        名称: 链接
+        名称: 链接
+        名称: 链接
+
+# Footer info
+footer:
+    since: 2021
+    # Customize the server domain name ICP
+    ICP:
+        enable: false
+        code: 
+        link: 
+
+search:
+    enable: false
+    path: # Default: search.json
+
+# Gitalk
+# https://github.com/gitalk/gitalk
+gitalk:
+    enable: false
+    clientID: # Default ClientID
+    clientSecret: # Default ClientSecret
+    repo: # The name of repository of store comments
+    owner: # GitHub repo owner
+    admin: # GitHub repo owner and collaborators, only these guys can initialize github issues
+    language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru, de, pl and ko are currently available.
+    proxy: # CORS proxy
+    sites: # Sites
+        []
+        # Example:
+        # <www.example.com>:
+        #    clientID: <client-id>
+        #    clientSecret: <client-secret>
+
+# Giscus
+# https://github.com/giscus/giscus
+giscus:
+    enable: false
+    src: https://giscus.app/client.js
+    repo:
+    repoID:
+    category:
+    categoryID:
+    mapping: pathname
+    strict: 0
+    reactionsEnabled: 1
+    emitMetadata: 0
+    inputPosition: bottom
+    theme: preferred_color_scheme
+    lang: zh-CN
+    crossorigin: anonymous
+
+# Waline
+# https://github.com/walinejs/waline
+waline:
+    enable: false
+    serverURL: # Waline server address url, you should set this to your own link
+    locale: # Locale: https://waline.js.org/guide/client/i18n.html#locale-option
+        {}
+        # Example:
+        # placeholder: Leave a comment
+    commentCount: true # If false, comment count will only be displayed in post page, not in home page
+    pageview: false # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
+    emoji: # Custom emoji
+        - https://unpkg.com/@waline/emojis@1.0.1/weibo
+        - https://unpkg.com/@waline/emojis@1.0.1/alus
+        - https://unpkg.com/@waline/emojis@1.0.1/bilibili
+        - https://unpkg.com/@waline/emojis@1.0.1/qq
+        - https://unpkg.com/@waline/emojis@1.0.1/tieba
+        - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
+    meta: # Comment information, valid meta are nick, mail and link
+        - nick
+        - mail
+        - link
+    requiredMeta: # Set required meta field, e.g.: [nick] | [nick, mail]
+        - nick
+    lang: zh-CN # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
+    wordLimit: 0 # Word limit, no limit when setting to 0
+    login: enable # Whether enable login, can choose from 'enable', 'disable' and 'force'
+    pageSize: 10 # Comment per page
