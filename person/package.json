@@ -27,7 +27,6 @@
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^2.0.0",
     "hexo-theme-landscape": "^0.0.3",
-    "hexo-uglify": "^2.0.0",
-    "lxgw-wenkai-lite-webfont": "^1.6.0"
+    "hexo-uglify": "^2.0.0"
   }
 }
