@@ -2,4 +2,4 @@
 
 ### 本博客采用 MIT 开源协议
 
-### 半自动部署脚本需要把文件夹放在 C:\Users\LynxCatTheThird 下
+### 半自动部署脚本需要把文件夹放在 C:\Users\LynxCatTheThird 下，使用前请更改路径
