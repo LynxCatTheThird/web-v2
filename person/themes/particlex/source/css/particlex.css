@@ -1,4 +1,5 @@
-@import 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css';
+/*最后跟随更新日期：2022年12月9日07点22分的189259d*/
+@import 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css'; /*自改*/
 @-moz-keyframes into {
     0% {
         opacity: 0;
@@ -203,8 +204,8 @@ body {
     width: 100%;
     background: #f6f8fa;
     color: #000000d9;
-    font-family: "LXGW WenKai Lite", sans-serif;
-    font-size: 17px;
+    font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
+    font-size: 17px; /*自改*/
     font-weight: 500;
     overflow-x: hidden;
 }
@@ -234,37 +235,37 @@ ol li {
 h1 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
     color: #1e3e3f;
-    font-size: 38px;
+    font-size: 38px; /*自改*/
 }
 h2 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
     color: #1e3e3f;
-    font-size: 33px;
+    font-size: 33px; /*自改*/
 }
 h3 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
     color: #1e3e3f;
-    font-size: 39px;
+    font-size: 29px; /*自改*/
 }
 h4 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
     color: #1e3e3f;
-    font-size: 25px;
+    font-size: 25px; /*自改*/
 }
 h5 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
     color: #1e3e3f;
-    font-size: 21px;
+    font-size: 21px; /*自改*/
 }
 p {
     margin: 15px 0;
@@ -501,7 +502,7 @@ iframe {
 }
 #home-posts .post .post-tags a {
     color: #ffbbf4;
-    font-size: 14px;
+    font-size: 15px; /*自改*/
 }
 #home-posts .post .post-tags .tag {
     display: inline-block;
@@ -632,7 +633,7 @@ iframe {
 }
 #home-card .card-style .name {
     margin: 20px auto;
-    font-size: 18px;
+    font-size: 18px; /*自改*/
     font-weight: bold;
     color: #1e3e3f;
     text-transform: uppercase;
@@ -650,7 +651,7 @@ iframe {
 }
 #home-card .card-style .icon-links a {
     color: #5c6b72;
-    font-size: 21px;
+    font-size: 21px; /*自改*/
     padding: 3px 5px;
     border-radius: 5px;
 }
@@ -673,7 +674,7 @@ iframe {
     width: 140px;
     line-height: 3;
     color: #5c6b72;
-    font-size: 18px;
+    font-size: 18px; /*自改*/
     border-radius: 15px;
     background-blend-mode: darken;
 }
@@ -702,7 +703,7 @@ iframe {
     display: inline-block;
     margin-left: 30px;
     margin-right: 20px;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai Lite", sans-serif;/*自改*/
     text-transform: uppercase;
     color: #555;
 }
@@ -774,11 +775,11 @@ iframe {
     color: #fff !important;
 }
 .content code {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace; /*自改*/
     background: #bddcf76b;
     padding: 4px 8px;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 18px; /*自改*/
     color: #4b616b;
 }
 .content pre {
@@ -859,7 +860,7 @@ iframe {
     display: none;
 }
 .content .language {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace; /*自改*/
     position: absolute;
     top: 0;
     left: 30px;
@@ -871,7 +872,7 @@ iframe {
     box-shadow: 1px 1px 0.75rem #ed6ea14d;
     color: #fff;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 18px; /*自改*/
     border-radius: 0 0 10px 10px;
 }
 .content .copycode {
@@ -903,7 +904,7 @@ iframe {
     transform: scale(1.25);
 }
 .content .hljs {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace; /*自改*/
     background: none;
     line-height: 2;
     font-size: 15px;
@@ -961,7 +962,7 @@ iframe {
 }
 footer {
     position: relative;
-    font-size: 17px;
+    font-size: 17px; /*自改*/
     width: 100%;
     text-align: center;
     top: 150px;
@@ -984,7 +985,7 @@ footer .footer-icon {
     display: inline-block;
     margin: 0 10px;
     color: #66afef;
-    font-size: 18px;
+    font-size: 18px; /*自改*/
 }
 #archives {
     position: relative;
@@ -1053,7 +1054,7 @@ footer .footer-icon {
     position: relative;
     top: 100px;
     color: #1e3e3f;
-    font-size: 18px;
+    font-size: 18px; /*自改*/
 }
 .article h1 {
     font-weight: bold;
@@ -1136,21 +1137,26 @@ footer .footer-icon {
     height: 50px;
     text-indent: 20px;
     color: #000;
-    background: #f6f6f6;
-    border: 1px solid #00000017;
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
     border-radius: 50px;
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace; /*自改*/
     font-size: 15px;
     -webkit-transition: all 0.25s;
     -moz-transition: all 0.25s;
     -o-transition: all 0.25s;
     transition: all 0.25s;
 }
-.search-bar:hover,
+.search-bar:hover {
+    background: #fff;
+}
 .search-bar:focus {
     outline: none;
     background: #fbfbfb;
     box-shadow: 0 2px 8px #00000017;
+    background: #fff;
+    border-color: #0969da;
+    box-shadow: 0 0 0 3px #0969da4d;
 }
 .search-mask {
     position: relative;
@@ -1168,7 +1174,7 @@ footer .footer-icon {
     font-family: unset !important;
 }
 .gt-header-textarea {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace; /*自改*/
 }
 .gt-container .gt-comment-content {
     border: 1px solid #0000001a;
@@ -1202,14 +1208,14 @@ footer .footer-icon {
     color: unset !important;
 }
 .gt-container .markdown-body code {
-    font-family: "LXGW WenKai Mono Lite" !important;
+    font-family: "LXGW WenKai Mono Lite" !important; /*自改*/
     background: #bddcf76b;
     border-radius: 4px;
     font-size: 14px;
     color: #4b616b;
 }
 .gt-container .markdown-body pre {
-    font-family: "LXGW WenKai Mono Lite" !important;
+    font-family: "LXGW WenKai Mono Lite" !important; /*自改*/
     font-weight: 500;
     border: 1px solid #ebeef5;
     padding: 20px;
@@ -1301,16 +1307,16 @@ body::-webkit-scrollbar-track {
         padding: 25px;
     }
     #home-head .home-info .info .wrap h1 {
-        font-size: 60px;
+        font-size: 60px; /*自改,这个有效*/
         font-weight: bold;
         margin-bottom: 10px;
     }
     #home-head .home-info .info .wrap h3 {
-        font-size: 26px;
+        font-size: 26px; /*自改,这个有效*/
         margin: 10px 0;
     }
     #home-head .home-info .info .wrap h5 {
-        font-size: 18px;
+        font-size: 18px; /*自改,这个有效*/
         margin: 20px 0;
     }
     ul {
@@ -1397,17 +1403,17 @@ body::-webkit-scrollbar-track {
         padding: 50px;
     }
     #home-head .home-info .info .wrap h1 {
-        font-size: 46px;
+        font-size: 46px;/*自改,这里的这个无效*/
         font-weight: bold;
-        font-family: "LXGW WenKai Lite", sans-serif;
+        font-family: "LXGW WenKai Lite", sans-serif; /*自改*/
         margin-bottom: 10px;
     }
     #home-head .home-info .info .wrap h3 {
-        font-size: 20px;
+        font-size: 20px;/*自改,这里的这个无效*/
         margin: 10px 0;
     }
     #home-head .home-info .info .wrap h5 {
-        font-size: 14px;
+        font-size: 14px;/*自改,这里的这个无效*/
         margin: 20px 0;
     }
     ul {
