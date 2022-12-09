@@ -1,9 +1,9 @@
-\person/source/_posts/*.md
+person/source/_posts/*.md
 */node_modules
 */.deploy_git
 */public
 person/themes/particlex/_config.yml
+person-netlify_自用.bat
 person/_config.yml
 study
 person_netlify_config.yml
-!person/source/_posts/Example.md
