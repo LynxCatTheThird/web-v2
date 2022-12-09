@@ -6,4 +6,4 @@ person/themes/particlex/_config.yml
 person/_config.yml
 study
 person_netlify_config.yml
-\! person/source/_posts/Example.md
+! person/source/_posts/Example.md
