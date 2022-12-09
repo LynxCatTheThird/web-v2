@@ -19,7 +19,7 @@ tags: 站务
 
 ###### 六级标题
 
-$F=G=mg=1kg·9.8N/kg=9.8N$
+由题意得： $F=G=mg=1kg·9.8N/kg=9.8N$
 
 > 引用
 >
@@ -46,11 +46,11 @@ $F=G=mg=1kg·9.8N/kg=9.8N$
 
 ~~~cpp
 #include<iostream>
+#include<string>
 using namespace std;
 int main{
-    int n;
-    cin>>n;
-    cout<<n;
+    string s="代码框示例";
+    cout<<s;
     return 0;
 }
 ~~~
