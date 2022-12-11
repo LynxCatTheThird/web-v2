@@ -2,7 +2,4 @@ person/source/_posts/*.md
 */node_modules
 */.deploy_git
 */public
-person/themes/particlex/_config.yml
-person/_config.yml
 study
-person_netlify_config.yml

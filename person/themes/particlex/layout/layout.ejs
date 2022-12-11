@@ -34,6 +34,7 @@
         <link rel="icon" href="<%- theme.avatar %>">
         <script src="https://cdn.staticfile.org/instant.page/5.1.1/instantpage.min.js" type="module"></script>
         <script src="https://cdn.staticfile.org/font-awesome/6.2.1/js/all.min.js"></script>
+        <link rel="stylesheet" href="<%- url_for("/css/fonts.min.css") %>">
         <link rel="stylesheet" href="<%- url_for("/css/particlex.css") %>">
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
         <link rel="stylesheet" href="<%- url_for("https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.6.0/style.css") %>">
@@ -56,13 +57,10 @@
                     </div>
                 </div>
             </transition>
-            <div id="img_show">
-                <img id="img_content" alt="img_show">
+            <div id="showimg">
+                <img id="showimg-content" alt="showimg">
             </div>
         </div>
-        <script src="https://cdn.staticfile.org/highlight.js/11.5.1/highlight.min.js"></script>
-        <script src="<%- url_for("/js/particlex.js")%>"></script>
-        <script src="<%- url_for("/js/showimg.js")%>"></script>
         <%- include("script") %>
     </body>
 </html>

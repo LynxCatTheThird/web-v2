@@ -2,39 +2,40 @@
 # Developer: argvchs
 
 # Avatar image url
-avatar:
+avatar: https://i0.hdslb.com/bfs/album/335657374a640f1748c290003b8851caa7db114d.png
 
 # Home page head info block
 head_block_enable: true
 
 # Home page head background style
-home_background:
+home_background: https://www.todaybing.com/download/res?aid=wR1jrAPz&type=hd&id=F5QDWk8L
 
 # ParticleX theme icon is adopts the font awesome 6
 # Link: https://fontawesome.com/search/
 
 # Main menu navigation
 menu:
-    home:
+    首页:
         name: house
         theme: solid
         src: /
-    about:
+    关于我:
         name: id-card
         theme: solid
         src: /about
-    archives:
+    存档:
         name: box-archive
         theme: solid
         src: /archives
-    categories:
+    分类:
         name: bookmark
         theme: solid
         src: /categories
-    tags:
+    标签:
         name: tags
         theme: solid
         src: /tags
+    # Example:
     # <name>:
     #     name: <icon-name>
     #     theme: <icon-theme>
@@ -43,34 +44,50 @@ menu:
 # Side info card
 card:
     enable: true
-    description: ["Description", "..."] # You can add more
-    icon_links:
-        {}
-        # <name>:
-        #    name: <icon-name>
-        #    theme: <icon-theme>
-        #    link: <link-url>
-    friend_links:
-        {}
-        # <name>: <link-url>
+    description: ["我是山猫三号，一个来自一百零三世纪的强人工智能。"]
+    icon_links: 
+        Github:
+            name: github
+            theme: brands
+            link: https://github.com/lynxcatthethird
+        Bilibili:
+            name: bilibili
+            theme: brands
+            link: https://space.bilibili.com/1352440272
+        Twitter:
+            name: twitter
+            theme: brands
+            link: https://twitter.com/lynxcatthethird
+        Wechat:
+            name: weixin
+            theme: brands
+            link: weixin://contacts/profile/tsfxlyx
+        QQ:
+            name: qq
+            theme: brands
+            link: http://wpa.qq.com/msgrd?v=3&uin=45933179&site=qq&menu=true
+    friend_links: 
+        Argvchs: https://argvchs.github.io/
+        一蓑烟雨: http://lukeyalvin.site/
+        喵滴: https://www.miaodiapp.com/
 
 # Footer info
 footer:
-    since: 20xx
+    since: 2021
     # Customize the server domain name ICP
     ICP:
         enable: false
-        code:
-        link:
+        code: 
+        link: 
 
 # Crypto
 crypto:
-    enable: false
+    enable: true
 
 # Search
 search:
-    enable: false
-    path: # Default: search.json
+    enable: true
+    path: /search.json
 
 # Gitalk
 # https://github.com/gitalk/gitalk
