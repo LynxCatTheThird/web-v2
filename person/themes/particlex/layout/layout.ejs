@@ -1,4 +1,4 @@
-<% 
+<%
     var layout = "post";
     if (is_home())
         layout = "index";
@@ -36,6 +36,11 @@
         <script src="https://cdn.staticfile.org/font-awesome/6.2.1/js/all.min.js"></script>
         <link rel="stylesheet" href="<%- url_for("/css/particlex.css") %>">
         <script src="https://cdn.staticfile.org/vue/3.2.45/vue.global.prod.min.js"></script>
+        <% if (theme.math.enable) { %>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css">
+        <script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+        <script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+        <% } %>
         <link rel="stylesheet" href="<%- url_for("https://jsdelivr.pai233.top/npm/lxgw-wenkai-lite-webfont@1.6.0/style.css") %>">
         <meta name="referrer" content="no-referrer">
     </head>
