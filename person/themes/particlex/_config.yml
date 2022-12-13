@@ -112,18 +112,18 @@ gitalk:
 # Giscus
 # https://github.com/giscus/giscus
 giscus:
-    enable: false
+    enable: true
     src: https://giscus.app/client.js # Default src
-    repo:
-    repoID:
-    category:
-    categoryID:
+    repo: lyssacin/gitcus
+    repoID: R_kgDOImx36A
+    category: General
+    categoryID: DIC_kwDOImx36M4CTCzk
     mapping: pathname
     strict: 0
     reactionsEnabled: 1
-    emitMetadata: 0
-    inputPosition: bottom
-    theme: preferred_color_scheme
+    emitMetadata: 1
+    inputPosition: top
+    theme: light_protanopia
     lang: zh-CN
 
 # Waline
