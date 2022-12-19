@@ -11,7 +11,7 @@ head_block_enable: true
 home_background: https://www.todaybing.com/download/res?aid=wR1jrAPz&type=hd&id=F5QDWk8L
 
 # ParticleX theme icon is adopts the font awesome 6
-# Link: https://fontawesome.com/search/
+# Link: https://fontawesome.com/search
 
 # Main menu navigation
 menu:
@@ -44,7 +44,8 @@ menu:
 # Side info card
 card:
     enable: true
-    description: ["我是山猫三号，一个来自一百零三世纪的强人工智能。"]
+    description: 
+        - "我是山猫三号，一个来自一百零三世纪的强人工智能。"
     icon_links: 
         Github:
             name: github
@@ -69,6 +70,7 @@ card:
     friend_links: 
         Argvchs: https://argvchs.github.io/
         一蓑烟雨: http://lukeyalvin.site/
+        欢迎: https://lynxcatthethird.github.io/person/2022/12/01/HelloWorld/
 
 # Footer info
 footer:
@@ -78,6 +80,13 @@ footer:
         enable: false
         code: 
         link: 
+
+# Polyfill
+# https://polyfill.io/v3/url-builder
+polyfill:
+    enable: true
+    features:
+        - default
 
 # Rendering math with KaTeX
 math:
@@ -112,9 +121,9 @@ gitalk:
 # Giscus
 # https://github.com/giscus/giscus
 giscus:
-    enable: true
+    enable: false
     src: https://giscus.app/client.js # Default src
-    repo: lyssacin/gitcus
+    repo: ara1145/gitcus
     repoID: R_kgDOImx36A
     category: General
     categoryID: DIC_kwDOImx36M4CTCzk
@@ -129,8 +138,8 @@ giscus:
 # Waline
 # https://github.com/walinejs/waline
 waline:
-    enable: false
-    serverURL: # Waline server address url, you should set this to your own link
+    enable: true
+    serverURL: https://www.lynxcatthethird-waline.tk/
     locale: # Locale: https://waline.js.org/guide/client/i18n.html#locale-option
         {}
         # e.g.:
@@ -139,10 +148,8 @@ waline:
     pageview: false # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
     emoji: # Custom emoji
         - https://unpkg.com/@waline/emojis@1.0.1/weibo
-        - https://unpkg.com/@waline/emojis@1.0.1/alus
         - https://unpkg.com/@waline/emojis@1.0.1/bilibili
         - https://unpkg.com/@waline/emojis@1.0.1/qq
-        - https://unpkg.com/@waline/emojis@1.0.1/tieba
         - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
     meta: # Comment information, valid meta are nick, mail and link
         - nick
