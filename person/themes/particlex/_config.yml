@@ -51,26 +51,27 @@ card:
             name: github
             theme: brands
             link: https://github.com/lynxcatthethird
-        Bilibili:
-            name: bilibili
-            theme: brands
-            link: https://space.bilibili.com/1352440272
         Twitter:
             name: twitter
             theme: brands
             link: https://twitter.com/lynxcatthethird
-        Wechat:
-            name: weixin
-            theme: brands
-            link: weixin://contacts/profile/tsfxlyx
-        QQ:
-            name: qq
-            theme: brands
-            link: http://wpa.qq.com/msgrd?v=3&uin=45933179&site=qq&menu=true
+        # Bilibili:
+        #     name: bilibili
+        #     theme: brands
+        #     link: https://space.bilibili.com/xxxxxxxxxx
+        # Wechat:
+        #     name: weixin
+        #     theme: brands
+        #     link: weixin://contacts/profile/xxxxxxx
+        # QQ:
+        #     name: qq
+        #     theme: brands
+        #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
     friend_links: 
+        欢迎: https://lynxcatthethird.github.io/person/2022/12/01/HelloWorld/
         Argvchs: https://argvchs.github.io/
         一蓑烟雨: http://lukeyalvin.site/
-        欢迎: https://lynxcatthethird.github.io/person/2022/12/01/HelloWorld/
+
 
 # Footer info
 footer:
