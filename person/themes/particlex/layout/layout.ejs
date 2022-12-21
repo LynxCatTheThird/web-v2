@@ -38,6 +38,12 @@
         <% if (theme.polyfill.enable) { %>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=<% theme.polyfill.features.join(",") %>"></script>
         <% } %>
+        <link rel="stylesheet" href="<%- url_for("/css/lxgwwenkailite-regular.css") %>">
+        <link rel="stylesheet" href="<%- url_for("/css/lxgwwenkailite-bold.css") %>">
+        <link rel="stylesheet" href="<%- url_for("/css/lxgwwenkailite-light.css") %>">
+        <link rel="stylesheet" href="<%- url_for("/css/lxgwwenkaimonolite-regular.css") %>">
+        <link rel="stylesheet" href="<%- url_for("/css/lxgwwenkaimonolite-bold.css") %>">
+        <link rel="stylesheet" href="<%- url_for("/css/lxgwwenkaimonolite-light.css") %>">
         <link rel="stylesheet" href="<%- url_for("/css/particlex.css") %>">
         <% if (theme.math.enable) { %>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css">
@@ -45,7 +51,6 @@
         <script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css">
         <% } %>
-        <link rel="stylesheet" href="<%- url_for("https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.6.0/style.css") %>">
         <meta name="referrer" content="no-referrer">
     </head>
     <body>

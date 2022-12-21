@@ -2,7 +2,7 @@
 # Developer: argvchs
 
 # Avatar image url
-avatar: https://i0.hdslb.com/bfs/album/335657374a640f1748c290003b8851caa7db114d.png
+avatar: https://i0.hdslb.com/bfs/album/26ebdc733112ed398c76a0d9d485ee542e18adfc.jpg
 
 # Home page head info block
 head_block_enable: true
@@ -68,7 +68,7 @@ card:
         #     theme: brands
         #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
     friend_links: 
-        欢迎: https://lynxcatthethird.github.io/person/2022/12/01/HelloWorld/
+        欢迎: https://lynxcatthethird.github.io/person/2022/12/01/Welcome/
         Argvchs: https://argvchs.github.io/
         一蓑烟雨: http://lukeyalvin.site/
 
