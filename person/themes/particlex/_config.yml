@@ -68,7 +68,7 @@ card:
         #     theme: brands
         #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
     friend_links: 
-        欢迎: https://lynxcatthethird.github.io/person/2022/12/01/Welcome/
+        欢迎: ./posts/292c5761.html
         Argvchs: https://argvchs.github.io/
         一蓑烟雨: http://lukeyalvin.site/
 
@@ -78,9 +78,9 @@ footer:
     since: 2021
     # Customize the server domain name ICP
     ICP:
-        enable: false
-        code: 
-        link: 
+        enable: true 
+        code: 萌ICP备20221840号
+        link: https://icp.gov.moe/?keyword=20221840
 
 # Polyfill
 # https://polyfill.io/v3/url-builder
