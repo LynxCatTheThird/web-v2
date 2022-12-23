@@ -2,4 +2,3 @@ person/source/_posts/*.md
 */node_modules
 */.deploy_git
 */public
-study

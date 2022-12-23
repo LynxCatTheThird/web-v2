@@ -19,8 +19,8 @@ const cryptor = {
     },
     decrypt(enc, key, sha) {
         try {
-            let res = CryptoJS.AES.decrypt(enc, key, {
-                mode: CryptoJS.mode.CBC,
+            let res = CryptoJS.AES.decrypt(enc, this.SHA(key), {
+               mode: CryptoJS.mode.ECB,
                 padding: CryptoJS.pad.Pkcs7,
             }).toString(CryptoJS.enc.Utf8);
             return { dec: res, check: this.SHA(res) == sha };
