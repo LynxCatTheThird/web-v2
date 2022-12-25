@@ -1,7 +1,7 @@
 <div id="archives">
     <% if (theme.search.enable) { %>
     <div class="search-mask" style="z-index: <%= site.posts.length + 1 %>"></div>
-    <input class="ipt search-bar" placeholder="搜索..." style="z-index: <%= site.posts.length + 2 %>">
+    <input class="ipt search-bar" placeholder="搜点东西~~~" style="z-index: <%= site.posts.length + 2 %>">
     <% } %>
     <% site.posts.forEach((post, id) => { %>
     <div class="timeline" path="<%- url_for(post.path) %>" style="z-index: <%= site.posts.length - id %>">
@@ -47,5 +47,7 @@
     <% if (theme.search.enable) { %>
     <script src="<%- url_for("/js/searcher.js") %>"></script>
     <script>searcher.init("<%- url_for(theme.search.path) %>");</script>
+    <p align="center">支持文章标题、标签与分类的搜索</p>
+    <p align="center">搜不到的话试试换一个关键词，如果有这篇文章却仍然搜不到麻烦去踹死站长</p>
     <% } %>
 </div>
