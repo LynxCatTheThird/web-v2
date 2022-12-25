@@ -51,7 +51,7 @@
 body {
     width: 100%;
     background: #181a1dfb;
-    color: #16181a;
+    color: #eee;
     font-family: "LXGW WenKai Lite", sans-serif;
     font-size: 17px;
     font-weight: 500;
@@ -140,7 +140,7 @@ blockquote {
     margin: 15px 0;
     border-radius: 3px;
     border-left: 3px solid #64abe9;
-    background: #64abe9;
+    background: #232528;
 }
 button,
 img,
@@ -616,22 +616,22 @@ footer .footer-wrap {
 }
 .content table tr th {
     padding: 8px 20px;
-    color: #64abe9;
+    color: #3693e4;
 }
 .content table tr th:nth-child(2n) {
-    background: #a3ddfb;
+    background: #a3ddfb40;
 }
 .content table tr th:nth-child(2n-1) {
-    background: #a3ddfb;
+    background: #a3ddfb40;
 }
 .content table tr td {
     padding: 8px 20px;
 }
 .content table tr td:nth-child(2n) {
-    background: #c7e0fb4d;
+    background: #c7e0fb20;
 }
 .content table tr td:nth-child(2n-1) {
-    background: #d9e8ff4d;
+    background: #d9e8ff20;
 }
 .content table tbody tr {
     border-top: 2px solid #1b1d20;
