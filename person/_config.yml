@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://lynxcatthethird.github.io/person
+url: https://lynxcatthethird.github.io/
 permalink: :year/:month/:abbrlink.html
 permalink_defaults:
 pretty_urls:
@@ -140,10 +140,56 @@ abbrlink:
   auto_title: false #enable auto title, it can auto fill the title by path
   auto_date: false #enable auto date, it can auto fill the date by time today
   force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.
+swpp:
+  enable: true
+  sw:
+    # 是否使用自定义的 sw，为 true 时不自动生成 sw.js，但是仍然会插入注册 sw 的代码
+    # 注意：不支持自定义 sw.js 的路径及文件名，sw.js 必须放置在 source_dir 中
+    custom: false
+    # 注册 sw 发生错误时触发的 js 代码，如果包含多个指令需使用花括号（{}）包裹
+    # 注意：SW 注册代码将直接内嵌在 HTML 首部，该代码执行时其它 JS 不一定完成了加载
+    onerror: "alert('当前浏览器不支持ServiceWorker，建议更换浏览器以获取最佳体验~');"
+    # 注册 sw 成功后触发的 js 代码，如果包含多个指令需使用花括号（{}）包裹
+    # 注意：SW 注册代码将直接内嵌在 HTML 首部，该代码执行时其它 JS 不一定完成了加载
+    onsuccess: "{location.reload(),console.log('安装成功')}"
+  dom:
+    # 是否使用自定义的 DOM 端 JS，为 true 时不会自动生成 sw-dom.js，且不会插入引入 JS 的代码
+    # 当值为 true 时本分类下其余设置项均无效
+    custom: false
+    # 当更新成功后触发，包含多个指令可以不适用花括号包裹
+    onsuccess: "console.log('更新成功')"
+  # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
+  maxHtml: 15
+  # update.json 的最大字符数量
+  # 超过后会移除旧的版本号，直到满足要求，如果只有全部清空才能满足就会直接刷新所有缓存
+  charLimit: 1024
+  # 文件缓存匹配采取精确模式
+  # 关闭时更新缓存时仅匹配文件名称，如 https://kmar.top/simple/a/index.html 仅匹配 /a/index.html
+  # 开启后更新缓存时将会匹配完整名称，如 https://kmar.top/simple/a/index.html 将匹配 /simple/a/index.html
+  # 两种方式各有优劣，开启后会增加 update.json 的空间占用，但会提升精确度
+  # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
+  # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
+  precisionMode:
+    default: false
+  # 是否合并指定项目
+  # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
+  # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件
+  # 推荐将此项开启
+  merge:
+    tags: true
+    archives: true
+    categories: true
+    index: true
+  # 忽略哪些文件，正则表达式，不写两边的斜杠，不区分大小写
+  # 注：匹配的时候不附带域名，只有 pathname
+  exclude:
+    # 这里写正则表达式，格式如下：
+    - sw\.js
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: git@github.com:LynxCatTheThird/person.git
+  repository: git@github.com:LynxCatTheThird/lynxcatthethird.github.io.git
   branch: main
