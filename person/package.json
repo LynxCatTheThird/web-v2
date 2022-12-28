@@ -27,7 +27,7 @@
     "hexo-renderer-pandoc": "^0.3.1",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-swpp": "^1.2.9",
+    "hexo-swpp": "^1.4.1",
     "hexo-uglify": "^2.0.0",
     "markdown-it": "^13.0.1"
   }

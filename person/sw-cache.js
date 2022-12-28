@@ -15,7 +15,12 @@ module.exports.cacheList = {
         // 如果你无法确定是否需要声明为 false 的话写 true 即可
         clean: true,
         // 该项用于匹配缓存，传入的参数是 URL 类型的，返回一个 boolean
-        match: url => url.pathname.match(/\.(woff2|woff|ttf|cur|css|js)$/)
+        match: url => {
+            switch (url.hostname) {
+                case 'lynxcatthethird.github.io': case 'lynxcatthethird.xszcd.top': case 'lynxcatthethird-person.pages.dev': case 'lynxcatthethird-person.netlify.app': return url.pathname.match(/\.(woff2|js|css)$/)
+                default: return false
+            }
+        }
     }
 }
 
@@ -29,6 +34,7 @@ module.exports.replaceList = {
     // 匹配时按声明顺序匹配，当查询到相符合的规则后不会停止，会继续匹配
     // 每一次 URL 的匹配和替换都基于上一次替换的结果
     // 下面这个例子是把所有 jsd 的链接都重定向到甜莉的反代
+    // 我好像用不到耶
     jsd: {
         source: ['//cdn.jsdelivr.net'],
         dist: '//cdn1.tianli0.top'

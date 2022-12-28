@@ -8,7 +8,7 @@ avatar: https://i0.hdslb.com/bfs/album/26ebdc733112ed398c76a0d9d485ee542e18adfc.
 head_block_enable: true
 
 # Home page head background style
-home_background: https://img.picgo.net/2022/12/23/www.todaybing.com-hd-wR1jrAPz-20221127d0ae6f28328f1926.jpeg
+home_background: https://img.picgo.net/2022/12/27/2www.todaybing.com-hd-wR1jrAPz-20221127d0ae6f28328f19263e8d39562547995a.webp
 
 # Light/Dark theme
 dark: true
@@ -72,8 +72,8 @@ card:
         #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
     friend_links: 
         欢迎: https://lynxcatthethird-person.netlify.app/2022/12/292c5761.html
-        Argvchs: https://argvchs.github.io/
-        一蓑烟雨: http://lukeyalvin.site/
+        # Argvchs: https://argvchs.github.io/
+        # 一蓑烟雨: http://lukeyalvin.site/
 
 
 # Footer info

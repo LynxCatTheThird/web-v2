@@ -1,9 +1,9 @@
-console.log('鸣谢：Unicode、%c一言、%c萌备','color: #31DCFF;','color: #FF00FF;')
-console.log(`写字楼里写字间，写字间里程序员；
-程序人员写程序，又拿程序换酒钱。
-酒醒只在网上坐，酒醉还来网下眠；
-酒醉酒醒日复日，网上网下年复年。
-但愿老死电脑间，不愿鞠躬老板前；
-奔驰宝马贵者趣，公交自行程序员。
-别人笑我忒疯癫，我笑自己命太贱；
-不见满眼好效果，哪个归得程序员？`)
+console.info("%c Powered by ■■■■■■ %c 请求头解析成功，正在访问 LynxCatTheThird 的博客", "color:white; background-color:#4f90d9", ""),
+console.error("Failed to load resource: the server responded with a status of 500 ()"),
+console.error('■■■■■,■■■■■■,■■■■■. ■■■■■■■: ■■■■■■■■■■■'),
+console.warn("%c P23-276 %c cmr.js 加载完成，你现在处于监控中", "color:white; background-color:#e09d3e", ""),
+console.warn("%c P23-274 %c clk.js 加载完成，你现在处于监控中", "color:white; background-color:#e09d3e", ""),
+console.error("Failed to load resource: net::ERR_BLOCKED_BY_CLIENT"),
+console.warn("%c P23-275 %c kbd.js 加载完成，你现在处于监控中", "color:white; background-color:#e09d3e", ""),
+console.error("%c W06-7752 %c 检测到打开控制台", "color:white; background-color:#d9534f", "");
+console.info("%c Debug %c %c ServiceWorker测试 %c fun.js 更新时间：2022年12月27日20点09分", "color:white; background-color:#4f90d9", "", "color:white; background-color:#4f90d9", "")

@@ -158,6 +158,11 @@ swpp:
     custom: false
     # 当更新成功后触发，包含多个指令可以不适用花括号包裹
     onsuccess: "console.log('更新成功')"
+  external:
+    enable: true
+    js:
+      - head: 'getScript\('
+        tail: '\)'
   # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
   maxHtml: 15
   # update.json 的最大字符数量
@@ -170,7 +175,7 @@ swpp:
   # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
   # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
   precisionMode:
-    default: false
+    default: true
   # 是否合并指定项目
   # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
   # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件
@@ -184,7 +189,7 @@ swpp:
   # 注：匹配的时候不附带域名，只有 pathname
   exclude:
     # 这里写正则表达式，格式如下：
-    - sw\.js
+    - sw\.js$
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
