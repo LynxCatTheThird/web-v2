@@ -1,7 +1,7 @@
 <div id="archives">
     <% if (theme.search.enable) { %>
     <div class="search-mask" style="z-index: <%= site.posts.length + 1 %>"></div>
-    <input class="ipt search-bar" placeholder="搜点东西~~~" style="z-index: <%= site.posts.length + 2 %>">
+    <input class="ipt search-bar" placeholder="搜索..." style="z-index: <%= site.posts.length + 2 %>">
     <% } %>
     <% site.posts.forEach((post, id) => { %>
     <div class="timeline" path="<%- url_for(post.path) %>" style="z-index: <%= site.posts.length - id %>">
@@ -30,8 +30,8 @@
                     <% post.tags.data.forEach(data => { %>
                     <span class="tag">
                         <%
-                            var color = ["color: #ffa2c4", "color: #00bcd4", "color: #03a9f4", "color: #00a596", "color: #ff7d73"];
-                            var num = Math.floor(Math.random() * color.length);
+                            const color = ["color: #ffa2c4", "color: #00bcd4", "color: #03a9f4", "color: #00a596", "color: #ff7d73"];
+                            let num = Math.floor(Math.random() * color.length);
                         %>
                         <a href="<%- url_for(data.path) %>" style="<%- color[num] %>">
                             <%= data.name %>
@@ -47,7 +47,5 @@
     <% if (theme.search.enable) { %>
     <script src="<%- url_for("/js/searcher.js") %>"></script>
     <script>searcher.init("<%- url_for(theme.search.path) %>");</script>
-    <p align="center">支持文章标题、标签与分类的搜索</p>
-    <p align="center">搜不到的话试试换一个关键词，如果有这篇文章却仍然搜不到麻烦去踹死站长</p>
     <% } %>
 </div>

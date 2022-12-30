@@ -7,13 +7,16 @@ avatar: https://i0.hdslb.com/bfs/album/26ebdc733112ed398c76a0d9d485ee542e18adfc.
 # Home page head info block
 head_block_enable: true
 
-# Home page head background style
+# Home page head background image url
 home_background: https://img.picgo.net/2022/12/27/2www.todaybing.com-hd-wR1jrAPz-20221127d0ae6f28328f19263e8d39562547995a.webp
 
 # Light/Dark theme
 dark: true
 
-# ParticleX theme icon is adopts the font awesome 6
+# Lanterns
+dengbox: false
+
+# ParticleX theme icon is adopts the Font Awesome 6
 # Link: https://fontawesome.com/search
 
 # Main menu navigation

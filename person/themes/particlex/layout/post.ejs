@@ -27,8 +27,8 @@
             <% page.tags.data.forEach(data => { %>
             <span class="tag">
                 <%
-                    var color = ["color: #ffa2c4", "color: #00bcd4", "color: #03a9f4", "color: #00a596", "color: #ff7d73"];
-                    var num = Math.floor(Math.random() * color.length);
+                    const color = ["color: #ffa2c4", "color: #00bcd4", "color: #03a9f4", "color: #00a596", "color: #ff7d73"];
+                    let num = Math.floor(Math.random() * color.length);
                 %>
                 <a href="<%- url_for(data.path) %>" style="<%- color[num] %>">
                     <%= data.name %>
@@ -55,7 +55,7 @@
     <div class="content" v-pre></div>
     <script src="https://cdn.staticfile.org/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="<%- url_for("/js/cryptor.js") %>"></script>
-    <script>cryptor.init("<%- encrypt(page.content, SHA(page.password.toString())) %>", "<%- SHA(page.content) %>")</script>
+    <script>cryptor.init("<%- encrypt(page.content, page.password.toString()) %>", "<%- SHA(page.content) %>")</script>
     <% } else { %>
     <div class="content" v-pre>
         <%- page.content %>
