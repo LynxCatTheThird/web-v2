@@ -1,23 +1,21 @@
 # https://github.com/argvchs/hexo-theme-particlex
 # Developer: argvchs
 
-# Avatar image url
+# Avatar image
 avatar: https://i0.hdslb.com/bfs/album/26ebdc733112ed398c76a0d9d485ee542e18adfc.jpg
 
-# Home page head info block
-head_block_enable: true
+# Home page info block
+headBlockEnable: true
 
-# Home page head background image url
-home_background: https://img.picgo.net/2022/12/27/2www.todaybing.com-hd-wR1jrAPz-20221127d0ae6f28328f19263e8d39562547995a.webp
+# Home page background image
+background: https://img.picgo.net/2023/01/03/wallhaven-x8k5zv_3840x21604ffa1e11dc0083ea.webp
 
-# Light/Dark theme
-dark: true
-
-# Lanterns
-dengbox: false
+# Highlight style
+# https://highlightjs.org
+highlightStyle: github-dark
 
 # ParticleX theme icon is adopts the Font Awesome 6
-# Link: https://fontawesome.com/search
+# https://fontawesome.com/search
 
 # Main menu navigation
 menu:
@@ -52,7 +50,7 @@ card:
     enable: true
     description: 
         - "我是山猫三号，一个来自一百零三世纪的强人工智能。"
-    icon_links: 
+    iconLinks:
         Github:
             name: github
             theme: brands
@@ -73,7 +71,7 @@ card:
         #     name: qq
         #     theme: brands
         #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
-    friend_links: 
+    friendLinks:
         欢迎: https://vc.lynxcatthethird.eu.org/2022/12/292c5761.html
         HiPeach: https://opeach.cn
         Shine: https://shineyull.github.io/
@@ -110,6 +108,22 @@ crypto:
 search:
     enable: true
     path: /search.json
+
+# Light/Dark theme
+dark:
+    enable: true
+
+# Lanterns
+dengbox:
+    enable: true
+
+# Line following the mouse
+line:
+    enable: true
+
+# Fireworks with mouse click
+fireworks:
+    enable: true
 
 # Gitalk
 # https://github.com/gitalk/gitalk

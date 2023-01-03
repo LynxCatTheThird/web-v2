@@ -5,9 +5,12 @@
     <div class="info">
         <span class="date">
             <span class="icon">
-                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+                <i class="fa-solid fa-pen-nib"></i>
             </span>
-            <%= date(page.date, "YYYY/M/D") %>
+            <%= date(page.date, "YYYY/M/D") %><span class="icon" style="margin-left: 23px;">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </span>
+            <%= date(page.update, "YYYY/M/D") %>
         </span>
         <% if (page.categories && page.categories.data.length != 0) { %>
         <span class="category">
@@ -79,7 +82,6 @@
     </div>
     <% } %>
     <% if (theme.twikoo.enable) { %>
-    <script src="https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js"></script>
     <div id="comment">
         <div id="twikoo-container"></div>
     </div>
