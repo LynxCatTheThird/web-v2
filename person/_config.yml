@@ -194,6 +194,9 @@ swpp:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repository: git@github.com:LynxCatTheThird/lynxcatthethird.github.io.git
-  branch: main
+  - type: git
+    repository: git@github.com:LynxCatTheThird/lynxcatthethird.github.io.git
+    branch: main
+  - type: git
+    repository: git@github.com:ara1145/ara1145.github.io.git
+    branch: main
