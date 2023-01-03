@@ -1,6 +1,8 @@
 # 这是我的新 Hexo 框架
 
-### 敬请注意：
+## Hexo
+
+### person 文件夹为 Hexo 源文件，敬请注意：
 
 1. 半自动部署脚本可能需要修改换行符。
 
@@ -11,3 +13,7 @@
 4. 本项目基于 [ParticleX](https://github.com/argvchs/hexo-theme-particlex) 主题，较为冷门，请您做好创业未半而中道崩殂的准备。
 
 5. 本项目采用极为激进的 [AGPL](https://opensource.org/licenses/AGPL-3.0) 协议，不爽勿喷。
+
+## Slidev
+
+### 改自官方示例文档
