@@ -2,13 +2,13 @@
 # Developer: argvchs
 
 # Avatar image
-avatar: https://i0.hdslb.com/bfs/album/26ebdc733112ed398c76a0d9d485ee542e18adfc.jpg
+avatar: https://img.picgo.net/2023/01/01/avatar3b9a4a9ae82dbf8c.jpeg
 
 # Home page info block
 headBlockEnable: true
 
 # Home page background image
-background: https://img.picgo.net/2023/01/03/wallhaven-x8k5zv_3840x21604ffa1e11dc0083ea.webp
+background: https://img.picgo.net/2023/01/04/116952c2e4fd98609.webp
 
 # Highlight style
 # https://highlightjs.org
@@ -23,11 +23,7 @@ menu:
         name: house
         theme: solid
         src: /
-    关于我:
-        name: id-card
-        theme: solid
-        src: /about
-    存档:
+    时间线:
         name: box-archive
         theme: solid
         src: /archives
@@ -39,6 +35,14 @@ menu:
         name: tags
         theme: solid
         src: /tags
+    友链:
+        name: user-group
+        theme: solid
+        src: /links
+    关于:
+        name: id-card
+        theme: solid
+        src: /about
     # Example:
     # <name>:
     #     name: <icon-name>
@@ -72,7 +76,6 @@ card:
         #     theme: brands
         #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
     friendLinks:
-        欢迎: https://vc.lynxcatthethird.eu.org/2022/12/292c5761.html
         HiPeach: https://opeach.cn
         Shine: https://shineyull.github.io/
         Marcus: https://blog.marcus233.top/
@@ -86,8 +89,8 @@ footer:
     # Customize the server domain name ICP
     ICP:
         enable: true 
-        code: 萌 ICP 备 20221840 号
-        link: https://icp.gov.moe/?keyword=20221840
+        code: 萌 ICP 备 20231970 号
+        link: https://icp.gov.moe/?keyword=20231970
 
 # Polyfill
 # https://polyfill.io/v3/url-builder

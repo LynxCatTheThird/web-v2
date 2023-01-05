@@ -5,7 +5,7 @@
 /**
  * 缓存列表
  * @param clean 清理全站时是否删除其缓存
- * @param match 匹配规则
+ * @param match {function(URL)} 匹配规则
  */
 module.exports.cacheList = {
     // 这个 [simple] 就是规则的名称，该对象下可以包含多个规则，名称不影响缓存匹配
@@ -17,7 +17,11 @@ module.exports.cacheList = {
         // 该项用于匹配缓存，传入的参数是 URL 类型的，返回一个 boolean
         match: url => {
             switch (url.hostname) {
-                case 'lynxcatthethird.github.io': case 'lynxcatthethird.xszcd.top': case 'lynxcatthethird-person.pages.dev': case 'lynxcatthethird-person.netlify.app': return url.pathname.match(/\.(woff2|js|css)$/)
+                case 'lynxcatthethird.github.io': case 'ara1145.github.io':
+                case 'lynxcatthethird.xszcd.top': case 'vc.lynxcatthethird.eu.org': case 'person-vercel-hg5ql74fw-lynxcatthethird.vercel.app': case 'person-vercel.vercel.app':
+                case 'lynxcatthethird-person.pages.dev': case 'cf.lynxcatthethird.eu.org':
+                case 'lynxcatthethird-person.netlify.app': case 'nl.lynxcatthethird.eu.org':
+                    return url.pathname.match(/\.(woff2|ttf|js|css)$/)
                 default: return false
             }
         }
@@ -34,7 +38,6 @@ module.exports.replaceList = {
     // 匹配时按声明顺序匹配，当查询到相符合的规则后不会停止，会继续匹配
     // 每一次 URL 的匹配和替换都基于上一次替换的结果
     // 下面这个例子是把所有 jsd 的链接都重定向到甜莉的反代
-    // 我好像用不到耶
     jsd: {
         source: ['//cdn.jsdelivr.net'],
         dist: '//cdn1.tianli0.top'

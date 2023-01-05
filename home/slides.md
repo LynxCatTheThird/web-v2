@@ -100,7 +100,7 @@ h1 {
 
 |部署平台|自定义域名|
 |:-:|:-:|
-|Github|[https://gh.lynxcatthethird.eu.org/](https://gh.lynxcatthethird.eu.org/)|
+|Github|[https://lynxcatthethird.github.io/](https://lynxcatthethird.github.io/)|
 |Netlify|[https://ml.lynxcatthethird.eu.org/](https://ml.lynxcatthethird.eu.org/)|
 |Vercel|[https://lynxcatthethird.xszcd.top/](https://lynxcatthethird.xszcd.top/)<br><br>[https://vc.lynxcatthethird.eu.org/](https://vc.lynxcatthethird.eu.org/)|
 |Cloudflare Pages|[https://cf.lynxcatthethird.eu.org/](https://cf.lynxcatthethird.eu.org/)|

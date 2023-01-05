@@ -2,7 +2,7 @@
     var layout = "post";
     if (is_home())
         layout = "index";
-    else if (is_post())
+    else if (is_post() || page.type == "links")
         layout = "post";
     else if (is_category() || page.type == "categories")
         layout = "categories";
@@ -104,4 +104,4 @@
         </div>
         <%- include("script") %>
     </body>
-</html>
+</html> 

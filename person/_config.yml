@@ -28,7 +28,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -151,18 +151,39 @@ swpp:
     onerror: "alert('当前浏览器不支持ServiceWorker，建议更换浏览器以获取最佳体验~');"
     # 注册 sw 成功后触发的 js 代码，如果包含多个指令需使用花括号（{}）包裹
     # 注意：SW 注册代码将直接内嵌在 HTML 首部，该代码执行时其它 JS 不一定完成了加载
-    onsuccess: "{location.reload(),console.log('安装成功')}"
+    onsuccess: "location.reload()"
   dom:
     # 是否使用自定义的 DOM 端 JS，为 true 时不会自动生成 sw-dom.js，且不会插入引入 JS 的代码
     # 当值为 true 时本分类下其余设置项均无效
     custom: false
-    # 当更新成功后触发，包含多个指令可以不适用花括号包裹
+    # 当更新成功（更新完毕自动刷新页面）后触发，包含多个指令不需要用花括号包裹
     onsuccess: "console.log('更新成功')"
+  # 外部文件更新监听
+  # 开启后会捕获外部文件的更新，具体原理见：https://kmar.top/posts/73014407/
   external:
-    enable: true
+    enable: false
+    # 见 https://kmar.top/posts/73014407/
     js:
-      - head: 'getScript\('
-        tail: '\)'
+      - head: '这里写 head 内容'
+        tail: '这里写 tail 内容（必须有 tail）'
+    # 某些外链只要 URL 不变其内容就一定不会变
+    # 可以通过正则表达式排除这些外链的文件内容监控，加快构建速度
+    # 下面是几个常用的 CDN 的匹配
+    # 正则表达式不用写两边的斜杠，区分大小写
+    skip:
+      - ^(https?:\/\/|\/\/)(cdn|fastly)\.jsdelivr\.net\/npm\/.*@\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)cdn\d\.tianli0\.top\/.*@\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)cdn\.staticfile\.org\/.*\/\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)lf\d+-cdn-tos\.bytecdntp\.com\/.*\/\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)npm\.elemecdn\.com\/.*@\d+\.\d+\.\d+\/
+    # 在构建过程中替换部分链接，该替换结果不会影响文件内容
+    # 该设置项是为了应对构建服务器在国外，但是网站内部分缓存资源无法在国外访问导致拉取时 timeout 的问题
+    # 填写格式和替换规则与 sw-cache.js 中的 cacheList 相同
+    replace:
+      - source:
+          - 'rules0'
+          - 'rules1'
+        dist: 'url'
   # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
   maxHtml: 15
   # update.json 的最大字符数量
@@ -175,7 +196,7 @@ swpp:
   # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
   # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
   precisionMode:
-    default: true
+    default: false
   # 是否合并指定项目
   # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
   # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件
@@ -190,6 +211,10 @@ swpp:
   exclude:
     # 这里写正则表达式，格式如下：
     - sw\.js$
+  # 自定义拉取网络文件时的超时时间，缺省 1500
+  timeout: 1500
+  # 逃生门，见 https://kmar.top/posts/73014407/
+  escape: 28
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
