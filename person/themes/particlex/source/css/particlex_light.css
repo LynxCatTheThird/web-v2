@@ -162,11 +162,6 @@ pre .copycode {
 footer .footer-wrap {
     box-sizing: border-box;
 }
-.fa-icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.125em;
-}
 .icon {
     margin-right: 5px;
     color: #5c6b72;
@@ -683,20 +678,20 @@ footer .footer-wrap {
 .content .copycode:hover {
     opacity: 0.8;
 }
-.content .copycode svg {
+.content .copycode i {
     position: absolute;
     top: 0;
     right: 0;
     padding: 16px;
     transition: transform 0.25s;
 }
-.content .copycode.copied svg:first-child {
+.content .copycode.copied i:first-child {
     opacity: 0;
 }
-.content .copycode:not(.copied) svg:last-child {
+.content .copycode:not(.copied) i:last-child {
     opacity: 0;
 }
-.content .copycode.copied svg {
+.content .copycode.copied i {
     transform: scale(1.25);
 }
 .content .hljs {
@@ -718,7 +713,7 @@ footer {
 }
 footer .footer-wrap {
     border-top: 1px solid #aaa;
-    width: 900px;
+    width: 1110px;
     margin: auto;
     color: #5c6b72;
 }
@@ -763,7 +758,7 @@ footer .footer-icon {
 }
 #archives .categories-tags {
     text-align: center;
-    max-width: 900px;
+    max-width: 1110px;
     width: 100%;
     margin: auto;
     margin-bottom: 50px;
@@ -801,40 +796,46 @@ footer .footer-icon {
     color: #1e3e3f;
     font-size: 18px;
 }
-.article h1 {
+.article .subject{
+    border-radius: 20px;
+    box-shadow: 0 0 30px #d9d9d980;
+    padding: 35px 50px;
+    margin-bottom: 60px;
+}
+.article .subject .h1 {
     font-weight: bold;
     margin: 20px 0;
 }
-.article .info a {
+.article .subject a {
     color: #5c6b72;
     text-decoration: none;
 }
-.article .info .date {
+.article .subject .date {
     color: #5c6b72;
     display: inline-block;
     margin-right: 20px;
 }
-.article .info .date .tag {
+.article .subject .date .tag {
     margin-right: 10px;
 }
-.article .info .category {
+.article .subject .category {
     color: #5c6b72;
     display: inline-block;
     margin-right: 20px;
 }
-.article .info .category .tag {
+.article .subject .category .tag {
     margin-right: 10px;
 }
-.article .info .tags {
+.article .subject .tags {
     color: #5c6b72;
     display: inline-block;
     margin-right: 20px;
 }
-.article .info .tags .tag {
+.article .subject .tags .tag {
     margin-right: 10px;
 }
-.article .content {
-    margin: 50px 0;
+.article .subject .content {
+    margin: 40px 0;
 }
 .page-num,
 .icon-link a,
@@ -1067,7 +1068,7 @@ body::-webkit-scrollbar-track {
         padding: 30px 0;
     }
     #home-posts {
-        width: 900px;
+        width: 1110px;
         margin-left: auto;
         margin-right: 50px;
     }
@@ -1085,13 +1086,13 @@ body::-webkit-scrollbar-track {
         margin-right: auto;
     }
     .article {
-        width: 900px;
+        width: 1110px;
     }
     #archives {
-        width: 900px;
+        width: 1110px;
     }
     footer .footer-wrap {
-        width: 900px;
+        width: 1110px;
     }
 }
 @media (min-width: 900px) and (max-width: 1200px) {
@@ -1188,9 +1189,15 @@ body::-webkit-scrollbar-track {
         width: 100%;
     }
 }
+/* twikoo 发光卡片*/
+.twikoo{
+    border-radius: 20px;
+    box-shadow: 0 0 30px #d9d9d980;
+    padding: 20px 15px;
+}
 /* 自定义twikoo评论输入框高度 */
 .tk-input .el-textarea__inner {
-    height: 130px !important;
+    height: 150px !important;
 }
 /* 输入评论时自动隐藏输入框背景图片 */
 .tk-input .el-textarea__inner:focus {

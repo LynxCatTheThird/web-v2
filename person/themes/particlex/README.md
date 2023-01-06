@@ -1,8 +1,8 @@
 # Hexo-Theme-ParticleX
 
-[Hexo-Theme-ParticleX](https://github.com/argvchs/hexo-theme-particlex) 主题，诞生原因是因为原来的 [Particle](https://github.com/korilin/hexo-theme-particle) 主题不维护了，但是我觉得还是很好的
+[ParticleX](https://github.com/argvchs/hexo-theme-particlex) 主题，诞生原因是因为原来的 [Particle](https://github.com/korilin/hexo-theme-particle) 主题不维护了，但是我觉得还是很好的
 
-原来用的是 Vue 2 + Ant Design Vue 1，现更新到 Vue 3，去除 Ant Design Vue 采用自定义样式，图标更改为 Font Awesome 6，将不能用的 JSDelivr 改为 Staticfile CDN
+原来用的是 Vue 2 + Ant Design Vue 1，现更新到 Vue 3，去除 Ant Design Vue 采用自定义样式，图标更改为 Font Awesome 6，CDN 改为 Staticfile
 
 原项目 `README.md` 里说：
 
@@ -12,9 +12,9 @@
 
 ## 演示
 
--   Github Pages <https://argvchs.github.io>
--   Netlify <https://argvchs.netlify.app>
--   Vercel <https://argvchs.vercel.app>
+-   [GitHub Pages](https://argvchs.github.io)
+-   [Netlify](https://argvchs.netlify.app)
+-   [Vercel](https://argvchs.vercel.app)
 
 ## 安装
 
@@ -23,24 +23,49 @@ cd themes
 git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=1
 ```
 
-## 关闭自带 Highlight
+-   关闭自带 Highlight
 
-到博客根目录下的 `_config.yml`，找到 `highlight` 和 `prismjs` 参数，设置为如下：
+    在博客根目录下的 `_config.yml`，修改 `highlight` 和 `prismjs` 参数
 
-```yaml
-highlight:
-    enable: false
-    line_number: true
-    auto_detect: false
-    tab_replace: ""
-    wrap: true
-    hljs: false
-prismjs:
-    enable: false
-    preprocess: true
-    line_number: true
-    tab_replace: ""
-```
+    ```yaml
+    highlight:
+        enable: false
+        line_number: true
+        auto_detect: false
+        tab_replace: ""
+        wrap: true
+        hljs: false
+    prismjs:
+        enable: false
+        preprocess: true
+        line_number: true
+        tab_replace: ""
+    ```
+
+    如果使用 Pandoc 还需要设置一下
+
+    ```yaml
+    pandoc:
+        extra:
+            - "no-highlight":
+        extensions:
+            - "+hard_line_breaks"
+            - "+emoji"
+            - "-implicit_figures"
+    ```
+
+-   禁用年度/月度归档
+
+    Hexo 会自动生成年度/月度归档，可是 ParticleX 主题没有这个功能 ~~我太懒了~~
+
+    ```yaml
+    archive_generator:
+        enabled: true
+        per_page: 0
+        yearly: false
+        monthly: false
+        daily: false
+    ```
 
 修改完请 `hexo cl` 清除缓存
 
@@ -53,9 +78,9 @@ background: # Home page background image
 highlightStyle: github # Highlight style
 ```
 
--   导航栏配置
+-   导航栏
 
-    为了方便，主题使用的图标是 FontAwesome 6 图标，地址为：<https://fontawesome.com/search>
+    为了方便，主题使用的图标是 Font Awesome 6 图标
 
     ```yaml
     menu:
@@ -87,7 +112,7 @@ highlightStyle: github # Highlight style
 
 -   主页信息卡片
 
-    和导航栏配置差不多
+    和导航栏差不多
 
     `description` 支持 Markdown 格式
 
@@ -97,7 +122,7 @@ highlightStyle: github # Highlight style
     card:
         enable: true
         description:
-            - Description
+            - "Description"
             - "..."
         iconLinks:
             {}
@@ -110,21 +135,19 @@ highlightStyle: github # Highlight style
             # <name>: <link-url>
     ```
 
--   首页文档缩略配置
+-   文档缩略
 
     一般来说，缩略展示文档只需要在文档中添加 `<!-- more -->` 即可，缩略内容在显示全文中也会出现
 
-    但考虑到不想把缩略内容放在正文里，就添加了此配置
+    但考虑到不想把缩略内容放在正文里，就添加了此参数，在 Front-Matter 里设置
 
-    配置在 Markdown 文件的 Front-Matter 中填写（被 `---` 括起来的内容），支持 Markdown 格式，不想用则不用添加
-
-    例如：（注意换行和转义 `"`）
+    支持 Markdown 格式
 
     ```yaml
-    description: "text\n**bold**\n_italic_"
+    description: "Normal **Strong** _Italic_"
     ```
 
--   页脚配置
+-   页脚
 
     考虑到博客部署在服务器并使用自己域名的情况，按国家规定需要在网站下边添加备案消息
 
@@ -132,7 +155,7 @@ highlightStyle: github # Highlight style
 
     ```yaml
     footer:
-        since: 20xx
+        since: 2022
         ICP:
             enable: false
             code:
@@ -141,7 +164,9 @@ highlightStyle: github # Highlight style
 
 -   Polyfill
 
-    使用 [Polyfill.io](https://polyfill.io/v3/url-builder) 自动根据 UA 处理新的 JS API 兼容问题，可以配合 [Hexo-Renderer-BabelJS](https://github.com/argvchs/hexo-renderer-babeljs) 插件处理 JS 语法
+    使用 [Polyfill.io](https://polyfill.io/v3/url-builder) 自动根据 UA 处理新的 JS API 兼容
+
+    可以配合 [Hexo-Renderer-BabelJS](https://github.com/argvchs/hexo-renderer-babeljs) 插件处理 JS 语法
 
     ```yaml
     polyfill:
@@ -170,11 +195,11 @@ highlightStyle: github # Highlight style
 
 -   搜索
 
-    嵌入到 Archives 中的搜索，搜索数据是用 [Hexo-Generator-Search-Lite](https://github.com/argvchs/hexo-generator-search-lite) 生成，默认关闭，使用需要**安装上述插件**并**设置 `optimize: true`**
+    嵌入到 Archives 中的搜索，搜索数据是用 [Hexo-Generator-Search-Lite](https://github.com/argvchs/hexo-generator-search-lite) 生成，默认关闭，使用需要安装上述插件并**设置 `optimize: true`**
 
     目前只支持搜索文档的 Title Categories Tags（我太弱了）
 
-    要同时在主题和根目录的两个 `_config.yml` 添加设置
+    要同时在主题和根目录的两个 `_config.yml` 添加配置
 
     ```yaml
     # Theme config
@@ -192,13 +217,13 @@ highlightStyle: github # Highlight style
 
 -   Gitalk
 
-    Gitalk 是一个基于 Github Issue 和 Preact 的评论系统
+    Gitalk 是一个基于 GitHub Issue 和 Preact 的评论系统
 
     考虑到博客可能部署到多个网站同步评论，但 OAuth APP 只能有一个回调 URL，所以添加了 `sites` 参数用于其他网站的评论，请注册多个 Oauth APP
 
     **同样如果没有其他网站，请在 `sites:` 后添加一个 `{}`**
 
-    由于 Gitalk 官方 CORS 代理用的是 Cloudflare，速度过慢，添加了 `proxy` 配置，搭建 CORS 代理可以看[这篇文章](https://argvchs.github.io/2022/07/04/build-cors-anywhere)
+    由于 Gitalk 官方 CORS 代理用的是 Cloudflare，速度过慢，添加了 `proxy` 参数，搭建 CORS 代理可以看[这篇文章](https://argvchs.github.io/2022/07/04/build-cors-anywhere)
 
     ```yaml
     gitalk:
@@ -208,7 +233,7 @@ highlightStyle: github # Highlight style
         repo: # The name of repository of store comments
         owner: # GitHub repo owner
         admin: # GitHub repo owner and collaborators, only these guys can initialize github issues
-        language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru, de, pl and ko are currently available.
+        language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru, de, pl and ko are currently available
         proxy: # CORS proxy
         sites: # Sites
             {}
@@ -221,7 +246,7 @@ highlightStyle: github # Highlight style
 
     Giscus 是一个由 GitHub Discussions 支持的评论系统
 
-    在 [Giscus.app](https://giscus.app) 配置好各项后，会在下面生成一个 `<script>` 标签，在主题内填入即可
+    在 [Giscus.app](https://giscus.app) 设置好各项后，会在下面生成一个 `<script>` 标签，在主题内填入即可
 
     ```yaml
     giscus:
@@ -244,9 +269,9 @@ highlightStyle: github # Highlight style
 
     Waline 是一个简单、安全的评论系统
 
-    配置方法详见：[在 ParticleX 上使用 Waline | Yuzi's Blog](https://blog.yuzi0201.top/posts/bcb4ff00.html)
+    详见：[在 ParticleX 上使用 Waline | Yuzi's Blog](https://blog.yuzi0201.top/posts/bcb4ff00.html)
 
-    **注意如果不需要 Locale 配置，请在 `locale:` 后添加一个 `{}`**
+    **注意如果不需要 `locale` 参数，请在 `locale:` 后添加一个 `{}`**
 
     ```yaml
     waline:
