@@ -795,6 +795,7 @@ footer .footer-icon {
     top: 100px;
     color: #1e3e3f;
     font-size: 18px;
+    backdrop-filter: blur(3px);
 }
 .article .subject{
     border-radius: 20px;
@@ -1379,6 +1380,10 @@ body::-webkit-scrollbar-track {
         filter: none;
     }
 }
+/* 管理面板圆角 */
+.tk-admin-container {
+    border-radius: 20px;
+}
 /* 字体与字号修复 */
 .twikoo .el-textarea__inner {
     font-family: "LXGW WenKai Lite", sans-serif;
@@ -1388,10 +1393,11 @@ body::-webkit-scrollbar-track {
 }
 .twikoo .el-button:not(.el-button--primary):not(.el-button--text){
     font-family: "LXGW WenKai Lite", sans-serif;
+    font-size: 15px;
 }
 .el-button+.el-button {
     font-family: "LXGW WenKai Lite", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
 }
 .el-input--small .el-input__inner {
     font-family: "LXGW WenKai Lite", sans-serif;
@@ -1405,19 +1411,28 @@ body::-webkit-scrollbar-track {
 .tk-admin-warn {
     font-size: 16px;
 }
-.tk-admin-import select, .tk-admin-import input, .tk-admin-import .el-button, .tk-admin-import .el-textarea{
+.tk-admin-import select, .tk-admin-import input, .tk-admin-import .el-button, .tk-admin-import .el-textarea {
     font-family: "LXGW WenKai Lite", sans-serif;
     font-size: 15px;
 }
-.tk-admin-comment-filter-type{
+.tk-admin-comment-filter-type {
     font-family: "LXGW WenKai Lite", sans-serif;
 }
-.tk-meta-input .el-input .el-input-group__prepend{
+.tk-meta-input .el-input .el-input-group__prepend {
     font-size: 16px;
 }
-.el-input-group--prepend .el-input__inner, .el-input-group__append{
+.el-input-group--prepend .el-input__inner, .el-input-group__append {
     font-size: 16px;
 }
-.twikoo .el-input__inner, .twikoo .el-textarea__inner{
+.twikoo .el-input__inner, .twikoo .el-textarea__inner {
     font-size: 16px;
+}
+.el-button--text {
+    font-size: 14px;
+}
+.tk-admin-config-groups .tk-admin-config-group, .tk-admin-config-groups .tk-admin-config-group-title{
+    font-size: 17px;
+}
+.tk-admin-config-item {
+    font-size: 15px;
 }

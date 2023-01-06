@@ -54,16 +54,22 @@
         <% if (theme.polyfill.enable) { %>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=<% theme.polyfill.features.join(",") %>"></script>
         <% } %>
-        <% if (theme.dengbox.enable) { %>
-        <link rel="stylesheet" href="<%- url_for("/css/dengbox.css") %>">
-        <% } %>
         <% if (theme.math.enable) { %>
         <script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
         <script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css">
         <% } %>
+        <% if (theme.dengbox.enable) { %>
+        <link rel="stylesheet" href="<%- url_for("/css/dengbox.css") %>">
+        <% } %>
+        <% if (theme.cursor.enable) { %>
+        <link rel="stylesheet" href="<%- url_for("/css/cursor.css") %>">
+        <% } %>
     </head>
     <body>
+        <% if (theme.cursor.enable) { %>
+        <script defer src="<%- url_for("/js/cursor.js") %>"></script>
+        <% } %>
         <% if (theme.line.enable) { %>
         <canvas
             id="background"
@@ -74,7 +80,7 @@
         <% if (theme.fireworks.enable) { %>
         <canvas
             id="fireworks"
-            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:32767"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:1000"
         ></canvas>
         <script src="<%- url_for("/js/firework.js") %>"></script>
         <% } %>
@@ -88,7 +94,7 @@
                     <div id="main">
                         <%- include(layout) %>
                         <%- include("footer") %>
-                        <% if (theme.dengbox) { %>
+                        <% if (theme.dengbox.enable) { %>
                         <%- include("dengbox") %>
                         <% } %>
                     </div>

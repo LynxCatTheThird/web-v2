@@ -56,7 +56,7 @@ console.warn("%c P23-275 %c kbd.js 加载完成，你现在处于监控中", "co
 // 声明
 console.info("%c Debug %c %c ServiceWorker测试 %c fun.js 更新时间：2023年1月5日09点48分", "color:white; background-color:#4f90d9", "", "color:white; background-color:#4f90d9", "");
 console.error("%c W06-7752 %c 检测到打开控制台", "color:white; background-color:#d9534f", "");
-console.warn("%c W06-7752 %c \n本站永远不会限制 F12，如有需要请自取\n主题地址：https://github.com/LynxCatTheThird/hexo-person-new/tree/main/person/themes/particlex\n请遵守 AGPLv3 开源协议，谢谢", "color:white; background-color:#e09d3e", "");
+console.warn("%c W06-7752 %c \n本站永远不会限制 F12，如有需要请自取\n主题地址：https://github.com/LynxCatTheThird/web-new/tree/main/person/themes/particlex\n请遵守 AGPLv3 开源协议，谢谢", "color:white; background-color:#e09d3e", "");
 
 // 切走页面的标题
 var OriginTitle = document.title;
