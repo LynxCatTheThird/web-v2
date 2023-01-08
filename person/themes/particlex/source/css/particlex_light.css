@@ -462,7 +462,7 @@ footer .footer-wrap {
     background: #66afef;
 }
 #menu {
-    z-index: 10005;
+    z-index: 97;
     position: fixed;
     width: 100%;
     line-height: 50px;
@@ -576,6 +576,7 @@ footer .footer-wrap {
     background: #bddcf76b;
     padding: 4px 8px;
     border-radius: 4px;
+    line-height: 2.5;
     font-size: 14px;
     color: #4b616b;
 }
