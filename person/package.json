@@ -24,11 +24,11 @@
     "hexo-helper-crypto": "^1.0.4",
     "hexo-html-minifier": "^1.0.0",
     "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-pandoc": "^0.3.1",
+    "hexo-renderer-markdown-it": "^6.1.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-swpp": "^1.6.1",
     "hexo-uglify": "^2.0.0",
-    "markdown-it": "^13.0.1"
+    "markdown-it-container": "^3.0.0"
   }
 }

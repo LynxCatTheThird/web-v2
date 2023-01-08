@@ -1,6 +1,6 @@
 <script src="<%- url_for("/js/functions.js") %>"></script>
 <script src="<%- url_for("/js/particlex.js") %>"></script>
-<% if (is_post()) { %>
+<% if (is_post() || page.type == "links") { %>
     <% if (theme.gitalk.enable) { %>
     <script src="https://cdn.staticfile.org/gitalk/1.7.2/gitalk.min.js"></script>
     <script>
