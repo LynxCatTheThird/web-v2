@@ -76,11 +76,7 @@ card:
         #     theme: brands
         #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
     friendLinks:
-        HiPeach: https://opeach.cn
-        Shine: https://shineyull.github.io/
-        Marcus: https://blog.marcus233.top/
-        # Argvchs: https://argvchs.github.io/
-        # 一蓑烟雨: http://lukeyalvin.site/
+        {}
 
 # Footer info
 footer:

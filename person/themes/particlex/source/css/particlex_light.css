@@ -186,6 +186,7 @@ footer .footer-wrap {
     height: 100vh;
     position: relative;
     display: flex;
+    background: linear-gradient(#ffffff00 95%, #ffffffff);
 }
 #home-head .home-info {
     position: relative;
@@ -205,6 +206,7 @@ footer .footer-wrap {
 }
 #home-head .home-info .loop:nth-child(1) {
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
+    box-shadow: 0 0 20px #d9d9d980;
     background: #fff;
     opacity: 0.3;
     transform: rotate(30deg);
@@ -212,6 +214,7 @@ footer .footer-wrap {
 }
 #home-head .home-info .loop:nth-child(2) {
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
+    box-shadow: 0 0 20px #d9d9d980;
     background: #fff;
     opacity: 0.45;
     transform: rotate(60deg);
@@ -219,6 +222,7 @@ footer .footer-wrap {
 }
 #home-head .home-info .loop:nth-child(3) {
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
+    box-shadow: 0 0 20px #d9d9d980;
     opacity: 0.3;
     background: #fff;
     transform: rotate(90deg);
@@ -226,6 +230,7 @@ footer .footer-wrap {
 }
 #home-head .home-info .loop:nth-child(4) {
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
+    box-shadow: 0 0 20px #d9d9d980;
     opacity: 0.45;
     background: #fff;
     transform: rotate(120deg);
@@ -387,7 +392,8 @@ footer .footer-wrap {
 }
 #home-card .card-style {
     padding: 25px 0;
-    background: #fff;
+    background: #ffffff77;
+    backdrop-filter: blur(3px);
     border-radius: 10px;
     text-align: center;
     border: none;
@@ -470,7 +476,8 @@ footer .footer-wrap {
     transition: all 0.25s ease-out;
     box-shadow: 0 -1px 10px 0 #9e9e9e4d;
     top: 0;
-    background: #92cafa;
+    background: #92cafabb;
+    backdrop-filter: blur(3px);
 }
 #menu .desktop-menu {
     height: 50px;
@@ -1077,6 +1084,8 @@ body::-webkit-scrollbar-track {
     #home-posts .post {
         padding: 50px 50px;
         margin: 0 0 25px;
+        background: #ffffff77;
+        backdrop-filter: blur(3px);
     }
     #home-posts .post .excerpt {
         padding: 20px 0;

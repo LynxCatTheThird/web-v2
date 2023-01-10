@@ -195,7 +195,7 @@ swpp:
     # 注意：SW 注册代码将直接内嵌在 HTML 首部，该代码执行时其它 JS 不一定完成了加载
     onsuccess: "location.reload()"
     # 缓存库名称，缺省为 kmarBlogCache
-    cacheName: 'kmarBlogCache'
+    cacheName: 'LCTTBlogCache'
     # 逃生门，见 https://kmar.top/posts/73014407/
   escape: 28
   dom:

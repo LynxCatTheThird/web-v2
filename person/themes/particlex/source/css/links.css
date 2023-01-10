@@ -10,12 +10,16 @@
 
 .card {
     width: 45%;
-    font-size: 1rem;
+    font-size: 22px;
     padding: 10px 20px;
     border-radius: 4px;
     transition-duration: 0.15s;
     margin-bottom: 1rem;
     display: flex;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #d9d9d980;
+    padding: 20px 15px;
+    backdrop-filter: blur(2px);
 }
 
 .card:nth-child(odd) {
@@ -29,6 +33,10 @@
 .card:hover {
     transform: scale(1.1);
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+    border-radius: 25px;
+    box-shadow: 0 0 20px #d9d9d980;
+    padding: 20px 15px;
+    backdrop-filter: blur(4px);
 }
 
 .card a {
@@ -36,8 +44,8 @@
 }
 
 .card .ava {
-    width: 3rem !important;
-    height: 3rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
     margin: 0 !important;
     margin-right: 1em !important;
     border-radius: 4px;
@@ -64,7 +72,7 @@
 .card .card-header .info {
     font-style: normal;
     color: #a3a3a3;
-    font-size: 14px;
+    font-size: 17px;
     min-width: 0;
     overflow: hidden;
     white-space: nowrap;
