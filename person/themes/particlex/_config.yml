@@ -39,6 +39,10 @@ menu:
         name: user-group
         theme: solid
         src: /links
+    宠物:
+        name: mask
+        theme: solid
+        src: /mascot
     关于:
         name: id-card
         theme: solid
