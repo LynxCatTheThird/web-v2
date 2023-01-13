@@ -233,7 +233,7 @@ swpp:
           - 'rules1'
         dist: 'url'
   # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
-  maxHtml: 30
+  maxHtml: 15
   # update.json 的最大字符数量
   # 超过后会移除旧的版本号，直到满足要求，如果只有全部清空才能满足就会直接刷新所有缓存
   charLimit: 1024
@@ -244,7 +244,7 @@ swpp:
   # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
   # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
   precisionMode:
-    default: true
+    default: false
   # 是否合并指定项目
   # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
   # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件

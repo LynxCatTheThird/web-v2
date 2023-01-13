@@ -1,5 +1,5 @@
 // 这个文件中所有“module.exports.cacheList”都会被替换为“const cacheList”
-// 同理，“module.exports.replaceList”会被替换为“const replaceList”
+// 同理，“module.exports.modifyRequest”会被替换为“const modifyRequest”
 // 请勿在非声明的位置使用这两个字符串，否则会被替换掉
 
 /**
@@ -29,17 +29,17 @@ module.exports.cacheList = {
 }
 
 /**
- * 链接替换列表
- * @param source 源链接
- * @param dist 目标链接
+ * 修改 Request。
+ * 该函数允许在发起网络请求前对请求头进行修改，修改时直接在传入参数上修改。
+ * @param request {Request} 原始 Request
+ * @return {boolean} 是否对 Request 进行了修改，返回 false 时即使修改了 Request 内容也不会生效
  */
-module.exports.replaceList = {
-    // 这里 [jsd] 同样是规则名，该对象下可以包含多个规则，规则名不会影响匹配
-    // 匹配时按声明顺序匹配，当查询到相符合的规则后不会停止，会继续匹配
-    // 每一次 URL 的匹配和替换都基于上一次替换的结果
-    // 下面这个例子是把所有 jsd 的链接都重定向到甜莉的反代
-    jsd: {
-        source: ['//cdn.jsdelivr.net'],
-        dist: '//cdn1.tianli0.top'
+module.exports.modifyRequest = request => {
+    // 下面是一个示例
+    const url = request.url
+    const source = '/gh/EmptyDreams/resources/icon'
+    if (url.includes(source)) {
+        request.url = url.replace(source, '/gh/EmptyDreams/twikoo-emoji')
+        return true
     }
 }
