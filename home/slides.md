@@ -124,7 +124,7 @@ class: text-center
 
 # 更多
 
-[Blog's About](https://vc.lynxcatthethird.eu.org/2022/12/292c5761.html) · [GitHub](https://github.com/LynxCatTHeThird/) · [Twitter](https://twitter.com/lynxcatthethird/)
+[Blog's About](https://vc.lynxcatthethird.eu.org/about) · [GitHub](https://github.com/LynxCatTHeThird/) · [Twitter](https://twitter.com/lynxcatthethird/)
 
 <style>
 h1 {
