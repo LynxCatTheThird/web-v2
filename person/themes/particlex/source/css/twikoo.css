@@ -229,24 +229,24 @@
 
 /* 字体与字号修复 */
 .twikoo .el-textarea__inner {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
 .twikoo .el-input__inner:hover, .twikoo .el-textarea__inner:hover{
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
 .twikoo .el-button:not(.el-button--primary):not(.el-button--text){
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     font-size: 15px;
 }
 .el-button+.el-button {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     font-size: 15px;
 }
 .el-input--small .el-input__inner {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
 .el-button--text {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
 .tk-admin-comment-meta {
     font-size: 16px;
@@ -255,11 +255,11 @@
     font-size: 16px;
 }
 .tk-admin-import select, .tk-admin-import input, .tk-admin-import .el-button, .tk-admin-import .el-textarea {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     font-size: 15px;
 }
 .tk-admin-comment-filter-type {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
 .tk-meta-input .el-input .el-input-group__prepend {
     font-size: 16px;
@@ -277,9 +277,9 @@
     font-size: 17px;
 }
 .el-button--small, .el-button--small.is-round {
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
 .el-input-group--append .el-input__inner, .el-input-group__prepend {
-    font-family: "LXGW WenKai Lite",sans-serif;
+    font-family: "LXGW WenKai",sans-serif;
     font-size: 15px;
 }

@@ -52,7 +52,7 @@ body {
     width: 100%;
     background: #f6f8fa;
     color: #000000d9;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     font-size: 17px;
     font-weight: 500;
     overflow-x: hidden;
@@ -83,35 +83,35 @@ ol li {
 h1 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     color: #1e3e3f;
     font-size: 42px;
 }
 h2 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     color: #1e3e3f;
     font-size: 33px;
 }
 h3 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     color: #1e3e3f;
     font-size: 29px;
 }
 h4 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     color: #1e3e3f;
     font-size: 25px;
 }
 h5 {
     margin: 15px 0;
     font-weight: bold;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     color: #1e3e3f;
     font-size: 21px;
 }
@@ -486,7 +486,7 @@ footer .footer-wrap {
     display: inline-block;
     margin-left: 30px;
     margin-right: 20px;
-    font-family: "LXGW WenKai Lite", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
     text-transform: uppercase;
     color: #555;
 }
@@ -579,7 +579,7 @@ footer .footer-wrap {
     transition: all 0.5s;
 }
 .content code {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
     background: #bddcf76b;
     padding: 4px 8px;
     border-radius: 4px;
@@ -665,7 +665,7 @@ footer .footer-wrap {
     display: none;
 }
 .content .language {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
     position: absolute;
     top: 0;
     left: 30px;
@@ -703,7 +703,7 @@ footer .footer-wrap {
     transform: scale(1.25);
 }
 .content .hljs {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
     background: none;
     line-height: 2;
     font-size: 16px;
@@ -886,7 +886,7 @@ input.ipt {
     box-sizing: border-box;
     border: 1px solid #d0d7de;
     border-radius: 50px;
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
     font-size: 15px;
     transition: all 0.25s;
 }
@@ -929,7 +929,7 @@ input.search-bar {
     font-family: unset !important;
 }
 .gt-header-textarea {
-    font-family: "LXGW WenKai Mono Lite", "LXGW WenKai Lite", monospace;
+    font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
 }
 .gt-container .gt-comment-content {
     border: 1px solid #0000001a;
@@ -963,14 +963,14 @@ input.search-bar {
     color: unset !important;
 }
 .gt-container .markdown-body code {
-    font-family: "LXGW WenKai Mono Lite" !important;
+    font-family: "LXGW WenKai Mono" !important;
     background: #bddcf76b;
     border-radius: 4px;
     font-size: 14px;
     color: #4b616b;
 }
 .gt-container .markdown-body pre {
-    font-family: "LXGW WenKai Mono Lite" !important;
+    font-family: "LXGW WenKai Mono" !important;
     font-weight: 500;
     border: 1px solid #ebeef5;
     padding: 20px;
@@ -1153,7 +1153,7 @@ body::-webkit-scrollbar-track {
     #home-head .home-info .info .wrap h1 {
         font-size: 46px;
         font-weight: bold;
-        font-family: "LXGW WenKai Lite", sans-serif;
+        font-family: "LXGW WenKai", sans-serif;
         margin-bottom: 10px;
     }
     #home-head .home-info .info .wrap h3 {
