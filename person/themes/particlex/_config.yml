@@ -56,8 +56,8 @@ menu:
 # Side info card
 card:
     enable: true
-    description: 
-        - "我是山猫三号，一个来自一百零三世纪的强人工智能。"
+    description: |
+        我是山猫三号，一个来自一百零三世纪的强人工智能。
     iconLinks:
         Github:
             name: github
@@ -109,7 +109,6 @@ crypto:
 # Search
 search:
     enable: true
-    path: /search.json
 
 # Light/Dark theme
 dark:

@@ -1,34 +1,38 @@
 <%
-    var layout = "post";
+    let type = "post";
     if (is_home())
-        layout = "index";
-    else if (is_post() || page.type == "links")
-        layout = "post";
+        type = "index";
+    else if (is_post())
+        type = "post";
     else if (is_category() || page.type == "categories")
-        layout = "categories";
+        type = "categories";
     else if (is_tag() || page.type == "tags")
-        layout = "tags";
+        type = "tags";
     else if (is_archive() || is_year() || is_month())
-        layout = "archives";
-    var pageTitle = "";
+        type = "archives";
+    let title = "";
     if (page.title)
-        pageTitle = page.title + " | ";
+        title = page.title + " | ";
     else if (is_category())
-        pageTitle = "Categories: " + page.category + " | ";
+        title = "Categories: " + page.category + " | ";
     else if (is_tag())
-        pageTitle = "Tags: " + page.tag + " | ";
+        title = "Tags: " + page.tag + " | ";
     else if (is_archive() || is_year() || is_month())
-        pageTitle = "Archives | ";
-    pageTitle += config.title;
-    site.posts.data.sort((a, b) => b.date - a.date);
+        title = "Archives | ";
+    title += config.title;
+    site.posts.data.sort((a, b) => {
+        if (typeof a.top === "undefined") a.top = 0;
+        if (typeof b.top === "undefined") b.top = 0;
+        return a.top == b.top ? b.date - a.date : b.top - a.top;
+    });
 %>
 <!DOCTYPE html>
 <html lang="<%- config.language %>">
     <head>
-        <title><%= titlecase(pageTitle) %></title>
         <meta charset="UTF-8">
         <meta name="referrer" content="no-referrer">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+        <title><%= titlecase(title) %></title>
         <meta name="author" content="<%- config.author %>">
         <meta name="description" content="<%- config.description %>">
         <meta name="keywords" content="<%- config.keywords %>">
@@ -44,7 +48,6 @@
         <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/<%- theme.highlightStyle %>.min.css">
         <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-webfont/1.6.0/style.css">
-        <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/style.css">
         <link rel="stylesheet" href="<%- url_for("/css/links.css") %>">
         <link rel="stylesheet" href="<%- url_for("/css/fonts.css") %>">
         <link rel="stylesheet" href="<%- url_for("/css/twikoo.css") %>">
@@ -61,6 +64,9 @@
         <script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
         <script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
         <link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css">
+        <% } %>
+        <% if (theme.crypto.enable && typeof page.password !== "undefined") { %>
+        <script src="https://cdn.staticfile.org/crypto-js/4.1.1/crypto-js.min.js"></script>
         <% } %>
         <% if (theme.dengbox.enable) { %>
         <link rel="stylesheet" href="<%- url_for("/css/dengbox.css") %>">
@@ -87,26 +93,26 @@
         ></canvas>
         <script src="<%- url_for("/js/firework.js") %>"></script>
         <% } %>
-        <%- include("loading") %>
+        <%- partial("loading") %>
         <div id="layout">
             <transition name="into">
-                <div v-show="showpage" style="display: -not-none">
-                    <div id="menushow">
-                        <%- include("menu") %>
-                    </div>
-                    <div id="main">
-                        <%- include(layout) %>
-                        <%- include("footer") %>
-                        <% if (theme.dengbox.enable) { %>
-                        <%- include("dengbox") %>
-                        <% } %>
-                    </div>
+            <div v-show="showpage" style="display: -not-none">
+                <div id="menushow">
+                    <%- partial("menu") %>
                 </div>
+                <div id="main">
+                    <%- partial(type) %>
+                    <%- partial("footer") %>
+                    <% if (theme.dengbox.enable) { %>
+                    <%- partial("dengbox") %>
+                    <% } %>
+                </div>
+            </div>
             </transition>
             <div id="showimg">
                 <img id="showimg-content" alt="showimg">
             </div>
         </div>
-        <%- include("script") %>
+        <%- partial("script", { type }) %>
     </body>
 </html> 

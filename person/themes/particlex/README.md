@@ -121,9 +121,9 @@ highlightStyle: github # Highlight style
     ```yaml
     card:
         enable: true
-        description:
-            - "Description"
-            - "..."
+        description: |
+            Description
+            ...
         iconLinks:
             {}
             # <name>:
@@ -139,12 +139,13 @@ highlightStyle: github # Highlight style
 
     一般来说，缩略展示文档只需要在文档中添加 `<!-- more -->` 即可，缩略内容在显示全文中也会出现
 
-    但考虑到不想把缩略内容放在正文里，就添加了此参数，在 Front-Matter 里设置
+    但考虑到不想把缩略内容放在正文里，就添加了此参数，在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置
 
     支持 Markdown 格式
 
     ```yaml
-    description: "Normal **Strong** _Italic_"
+    description: |
+        Normal _Italic_ **Strong**
     ```
 
 -   页脚
@@ -177,16 +178,20 @@ highlightStyle: github # Highlight style
 
 -   渲染数学公式
 
-    使用 $\mathrm{K\kern{-0.2em}\raise{0.21em}{\scriptstyle{A}}\kern{-0.17em}T\kern{-0.14em}\lower{0.5ex}{E}\kern{-0.115em}X}$ 渲染数学公式，默认关闭
+    使用 KaTeX 渲染数学公式，默认关闭
 
     ```yaml
     math:
         enable: false
     ```
 
+-   文章置顶
+
+    在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `top` 作为置顶参数，越大越靠前，默认为 0
+
 -   文章加密
 
-    使用 AES 加密算法，在 Front-Matter 里设置 `password` 作为密码，**使用请安装插件 [Hexo-Helper-Crypto](https://github.com/argvchs/hexo-helper-crypto)**
+    使用 AES 加密算法，在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `password` 作为密码，**使用请安装插件 [Hexo-Helper-Crypto](https://github.com/argvchs/hexo-helper-crypto)**
 
     ```yaml
     crypto:
@@ -195,24 +200,13 @@ highlightStyle: github # Highlight style
 
 -   搜索
 
-    嵌入到 Archives 中的搜索，搜索数据是用 [Hexo-Generator-Search-Lite](https://github.com/argvchs/hexo-generator-search-lite) 生成，默认关闭，使用需要安装上述插件并**设置 `optimize: true`**
+    嵌入到 Archives 中的搜索，默认关闭
 
-    目前只支持搜索文档的 Title Categories Tags（我太弱了）
-
-    要同时在主题和根目录的两个 `_config.yml` 添加配置
+    目前只支持搜索文档标题（我太弱了）
 
     ```yaml
-    # Theme config
     search:
         enable: false
-        path: /search.json
-    ```
-
-    ```yaml
-    # Site config
-    search:
-        path: /search.json
-        optimize: true
     ```
 
 -   Gitalk
