@@ -8,7 +8,32 @@ type: links
 #### <br>大佬们<br><br>
 :::
 
-##### 临时没有呢 QAQ
+##### 帮了我好多好多呢
+
+<div id="links">
+    <div class="links-content">
+        <div class="link-navigation">
+            <div class="card">
+                <img class="ava" src="https://static-argvchs.netlify.app/images/avatar.jpg" />
+                <div class="card-header">
+                    <div>
+                        <a href="https://argvchs.netlify.app">Argvchs</a>
+                    </div>
+                    <div class="info">Here's an argvchs...</div>
+                </div>
+            </div>
+            <div class="card">
+                <img class="ava" src="https://fastly.jsdelivr.net/npm/@kmar/fonts/avatar/own.png" />
+                <div class="card-header">
+                    <div>
+                        <a href="https://kmar.top/">山岳库博</a>
+                    </div>
+                    <div class="info">开发学习启发性二刺螈</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <br>
 
@@ -57,7 +82,6 @@ type: links
 </div>
 
 <!--
-   # Argvchs: https://argvchs.github.io/
    # 一蓑烟雨: http://lukeyalvin.site/
 -->
 
@@ -74,8 +98,8 @@ type: links
 
 </details>
 
-如有可能，请将您的信息格式化为如下格式（尽可能保留空格）：
-``` html
+如有可能，请将您的信息格式化为如下格式（尽可能保留各行前的 12 个空格）：
+``` HTML
          <div class="card">
             <img class="ava" src="头像" />
             <div class="card-header">
@@ -88,7 +112,7 @@ type: links
 ```
 
 同时奉上本站信息：
-``` yaml
+``` YML
 - name: LynxCatTheThird
   link: https://lynxcatthethird-person.netlify.app/
   avatar: https://img.picgo.net/2023/01/01/avatar3b9a4a9ae82dbf8c.jpeg

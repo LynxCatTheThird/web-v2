@@ -792,26 +792,26 @@ footer .footer-icon {
     font-weight: bold;
     margin: 20px 0;
 }
-.article .subject {
+.article .subject .info{
     line-height: 1.7;
 }
-.article .subject a {
+.article .subject .info a {
     text-decoration: none;
 }
-.article .subject .date {
+.article .subject .info .date {
     color: #5c6b72;
     display: inline-block;
     margin-right: 10px;
 }
-.article .subject .category {
+.article .subject .info .category {
     display: inline-block;
     margin-right: 10px;
 }
-.article .subject .tags {
+.article .subject .info .tags {
     display: inline-block;
     margin-right: 10px;
 }
-.article .subject .tags .tag {
+.article .subject .info .tags .tag {
     display: inline-block;
     margin-right: 10px;
 }
