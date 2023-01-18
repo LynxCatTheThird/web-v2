@@ -1,50 +1,50 @@
 @keyframes into {
-    0% {
+    from {
         opacity: 0;
         transform: scale(1.1);
     }
-    100% {
+    to {
         opacity: 1;
         transform: scale(1);
     }
 }
 @keyframes loading {
-    0% {
+    from {
         opacity: 0;
     }
-    100% {
+    to {
         opacity: 1;
     }
 }
 @keyframes loop1 {
-    0% {
+    from {
         transform: rotate(30deg);
     }
-    100% {
+    to {
         transform: rotate(390deg);
     }
 }
 @keyframes loop2 {
-    0% {
+    from {
         transform: rotate(60deg);
     }
-    100% {
+    to {
         transform: rotate(420deg);
     }
 }
 @keyframes loop3 {
-    0% {
+    from {
         transform: rotate(90deg);
     }
-    100% {
+    to {
         transform: rotate(450deg);
     }
 }
 @keyframes loop4 {
-    0% {
+    from {
         transform: rotate(120deg);
     }
-    100% {
+    to {
         transform: rotate(480deg);
     }
 }
@@ -365,7 +365,7 @@ footer .footer-wrap {
     margin: 0 7px;
 }
 #home-posts .page-current .page-num:hover {
-    background: #92cafa;
+    background: #66afef;
     color: #fff;
 }
 #home-posts .page-current .page-omit {
@@ -401,7 +401,6 @@ footer .footer-wrap {
     height: 140px;
     border-radius: 50%;
     border: #f1f1f1 solid 3px;
-    transition: all 0.25s;
 }
 #home-card .card-style .avatar:hover img {
     transform: rotate(360deg);
@@ -447,7 +446,7 @@ footer .footer-wrap {
     border-top: #cdcdcd solid 1px;
 }
 #home-card .card-style .friend-links .friend-link a {
-    display: inline-block;
+    display: block;
     width: 100%;
     margin-bottom: 5px;
     line-height: 30px;
@@ -545,7 +544,7 @@ footer .footer-wrap {
     color: #fff !important;
 }
 .content {
-    transition: all 0.5s;
+    transition: opacity 0.25s;
 }
 .content code {
     font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
@@ -564,6 +563,7 @@ footer .footer-wrap {
     position: relative;
 }
 .content .code-content {
+    background: none;
     overflow: auto;
     padding: 50px 30px 20px;
 }
@@ -757,7 +757,7 @@ footer .footer-icon {
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
-    transition: all 0.25s;
+    transition: background 0.25s, border 0.25s, color 0.25s;
     border: #ffffff80 1px solid;
 }
 #archives .categories-tags span a:hover {
