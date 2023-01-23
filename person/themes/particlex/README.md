@@ -48,15 +48,11 @@ git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=
     pandoc:
         extra:
             - "no-highlight":
-        extensions:
-            - "+hard_line_breaks"
-            - "+emoji"
-            - "-implicit_figures"
     ```
 
--   禁用年度/月度归档
+-   禁用年度月度归档
 
-    Hexo 会自动生成年度/月度归档，可是 ParticleX 主题没有这个功能 ~~我太懒了~~
+    Hexo 会自动生成年度月度归档，可是 ParticleX 主题没有这个功能 ~~我太懒了~~
 
     ```yaml
     archive_generator:
@@ -150,7 +146,7 @@ highlightStyle: github # Highlight style
 
 -   页脚
 
-    考虑到博客部署在服务器并使用自己域名的情况，按国家规定需要在网站下边添加备案消息
+    考虑到博客部署在服务器并使用自己域名的情况，按规定需要在网站下边添加备案消息
 
     如没有需要显示备案消息的可以关闭
 
@@ -263,7 +259,7 @@ highlightStyle: github # Highlight style
 
     Waline 是一个简单、安全的评论系统
 
-    详见：[在 ParticleX 上使用 Waline | Yuzi's Blog](https://blog.yuzi0201.top/posts/bcb4ff00.html)
+    详见：[在 ParticleX 上使用 Waline | Yuzi's Blog](https://blog.yuzi.dev/posts/bcb4ff00.html)
 
     **注意如果不需要 `locale` 参数，请在 `locale:` 后添加一个 `{}`**
 
@@ -278,12 +274,12 @@ highlightStyle: github # Highlight style
         commentCount: true # If false, comment count will only be displayed in post page, not in home page
         pageview: false # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
         emoji: # Custom emoji
-            - https://unpkg.com/@waline/emojis@1.0.1/weibo
-            - https://unpkg.com/@waline/emojis@1.0.1/alus
-            - https://unpkg.com/@waline/emojis@1.0.1/bilibili
-            - https://unpkg.com/@waline/emojis@1.0.1/qq
-            - https://unpkg.com/@waline/emojis@1.0.1/tieba
-            - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji
+            - https://unpkg.com/@waline/emojis@1.2.0/weibo
+            - https://unpkg.com/@waline/emojis@1.2.0/alus
+            - https://unpkg.com/@waline/emojis@1.2.0/bilibili
+            - https://unpkg.com/@waline/emojis@1.2.0/qq
+            - https://unpkg.com/@waline/emojis@1.2.0/tieba
+            - https://unpkg.com/@waline/emojis@1.2.0/tw-emoji
         meta: # Comment information, valid meta are nick, mail and link
             - nick
             - mail

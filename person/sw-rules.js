@@ -27,19 +27,3 @@ module.exports.cacheList = {
         }
     }
 }
-
-/**
- * 修改 Request。
- * 该函数允许在发起网络请求前对请求头进行修改，修改时直接在传入参数上修改。
- * @param request {Request} 原始 Request
- * @return {boolean} 是否对 Request 进行了修改，返回 false 时即使修改了 Request 内容也不会生效
- */
-module.exports.modifyRequest = request => {
-    // 下面是一个示例
-    const url = request.url
-    const source = '/gh/EmptyDreams/resources/icon'
-    if (url.includes(source)) {
-        request.url = url.replace(source, '/gh/EmptyDreams/twikoo-emoji')
-        return true
-    }
-}
