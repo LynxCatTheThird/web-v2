@@ -466,7 +466,7 @@ footer .footer-wrap {
     transition: background 0.25s ease-out, top 0.25s ease-out;
     box-shadow: 0 -1px 10px 0 #9e9e9e4d;
     top: 0;
-    background: #92cafacc;
+    background: #92cafadd;
     backdrop-filter: blur(5px);
 }
 #menu .desktop-menu {
@@ -477,13 +477,13 @@ footer .footer-wrap {
     margin-left: 30px;
     font-family: "LXGW WenKai", sans-serif;
     text-transform: uppercase;
-    color: #555;
+    color: #2b2d3f;
 }
 #menu .desktop-menu a {
     display: inline-block;
     margin-left: 30px;
     text-decoration: none;
-    color: #555;
+    color: #2b2d3f;
 }
 #menu .desktop-menu a span {
     display: inline-block;
@@ -507,7 +507,7 @@ footer .footer-wrap {
     cursor: pointer;
     position: relative;
     text-transform: uppercase;
-    color: #555;
+    color: #2b2d3f;
 }
 #menu .phone-menu .items {
     padding: 10px 0 20px;
@@ -515,7 +515,7 @@ footer .footer-wrap {
     z-index: 10003;
 }
 #menu .phone-menu .items a {
-    color: #555;
+    color: #2b2d3f;
 }
 #menu .phone-menu .items .item {
     min-width: 200px;
@@ -985,11 +985,11 @@ body::-webkit-scrollbar-track {
         font-family: "LXGW WenKai", sans-serif;
         margin-bottom: 10px;
     }
-    #home-head .home-info .info .wrap h3 {
+    #home-head .home-info .info .wrap h2 {
         font-size: 26px;
         margin: 10px 0;
     }
-    #home-head .home-info .info .wrap h5 {
+    #home-head .home-info .info .wrap h3 {
         font-size: 18px;
         margin: 20px 0;
     }
@@ -1082,11 +1082,11 @@ body::-webkit-scrollbar-track {
         font-weight: bold;
         margin-bottom: 10px;
     }
-    #home-head .home-info .info .wrap h3 {
+    #home-head .home-info .info .wrap h2 {
         font-size: 26px;
         margin: 10px 0;
     }
-    #home-head .home-info .info .wrap h5 {
+    #home-head .home-info .info .wrap h3 {
         font-size: 18px;
         margin: 20px 0;
     }

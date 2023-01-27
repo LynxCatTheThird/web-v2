@@ -984,11 +984,11 @@ body::-webkit-scrollbar-track {
         font-family: "LXGW WenKai", sans-serif;
         margin-bottom: 10px;
     }
-    #home-head .home-info .info .wrap h3 {
+    #home-head .home-info .info .wrap h2 {
         font-size: 26px;
         margin: 10px 0;
     }
-    #home-head .home-info .info .wrap h5 {
+    #home-head .home-info .info .wrap h3 {
         font-size: 18px;
         margin: 20px 0;
     }
@@ -1080,11 +1080,11 @@ body::-webkit-scrollbar-track {
         font-weight: bold;
         margin-bottom: 10px;
     }
-    #home-head .home-info .info .wrap h3 {
+    #home-head .home-info .info .wrap h2 {
         font-size: 26px;
         margin: 10px 0;
     }
-    #home-head .home-info .info .wrap h5 {
+    #home-head .home-info .info .wrap h3 {
         font-size: 18px;
         margin: 20px 0;
     }
