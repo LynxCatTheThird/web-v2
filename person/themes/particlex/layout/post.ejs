@@ -1,3 +1,13 @@
+<% if (theme.math.enable) { %>
+<script src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/KaTeX/0.16.4/katex.min.css">
+<% } %>
+<% if (theme.crypto.enable && typeof page.password !== "undefined") { %>
+<script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<% } %>
+<link rel="stylesheet" href="<%- url_for("/css/twikoo.css") %>">
+<link rel="stylesheet" href="<%- url_for("/css/markdown-it-container.css") %>">
 <div class="article">
     <div class="subject">
         <div>

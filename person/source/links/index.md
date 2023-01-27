@@ -10,6 +10,9 @@ type: links
 
 ##### 帮了我好多好多呢
 
+<link rel="stylesheet" href="/css/links.css">
+<!-- 此处注意路径 -->
+
 <div id="links">
     <div class="links-content">
         <div class="link-navigation">

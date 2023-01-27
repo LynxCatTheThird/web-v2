@@ -231,6 +231,7 @@ swpp:
       - ^(https?:\/\/|\/\/)cdn\.staticfile\.org\/.*\/\d+\.\d+\.\d+\/
       - ^(https?:\/\/|\/\/)lf\d+-cdn-tos\.bytecdntp\.com\/.*\/\d+\.\d+\.\d+\/
       - ^(https?:\/\/|\/\/)npm\.elemecdn\.com\/.*@\d+\.\d+\.\d+\/
+      - ^(https?:\/\/|\/\/)cdn\.bootcdn\.net\/ajax\/libs\/.*\/\d+\.\d+\.\d+\/
     # 在构建过程中替换部分链接，该替换结果不会影响文件内容
     # 该设置项是为了应对构建服务器在国外，但是网站内部分缓存资源无法在国外访问导致拉取时 timeout 的问题
     # 填写格式和替换规则见 https://kmar.top/posts/73014407/
