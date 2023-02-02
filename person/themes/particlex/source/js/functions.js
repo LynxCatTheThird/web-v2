@@ -25,8 +25,9 @@ function showimg() {
     let wrap = document.getElementById("showimg"),
         content = document.getElementById("showimg-content"),
         images = document.querySelectorAll(".article .content img");
-    function show(src) {
-        content.setAttribute("src", src);
+    function show(image) {
+        content.alt = image.alt;
+        content.src = image.src;
         wrap.style.opacity = 1;
         wrap.style.visibility = "visible";
     }
@@ -36,7 +37,7 @@ function showimg() {
     }
     for (let i of images)
         i.addEventListener("click", function () {
-            show(this.getAttribute("src"));
+            show(this);
         });
     wrap.addEventListener("click", hide);
     window.addEventListener("resize", hide);
@@ -53,15 +54,12 @@ function rendermath() {
         });
 }
 function sha(str) {
-    return CryptoJS.SHA256(str).toString(CryptoJS.enc.Base64);
+    return CryptoJS.SHA256(str).toString();
 }
-function decrypt(encrypt, key, check) {
+function decrypt(str, key, shasum) {
     try {
-        let res = CryptoJS.AES.decrypt(encrypt, sha(key), {
-            mode: CryptoJS.mode.ECB,
-            padding: CryptoJS.pad.Pkcs7,
-        }).toString(CryptoJS.enc.Utf8);
-        return { decrypt: res, check: sha(res) == check };
+        let res = CryptoJS.AES.decrypt(str, key).toString(CryptoJS.enc.Utf8);
+        return { decrypt: res, check: sha(res) === shasum };
     } catch {
         return { check: false };
     }

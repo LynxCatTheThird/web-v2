@@ -45,48 +45,43 @@ const app = Vue.createApp({
             });
         }
         window.addEventListener("scroll", this.handlescroll, true);
-        highlight();
-        showimg();
-        rendermath();
+        this.render();
     },
     methods: {
         homeclick() {
             window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
         },
+        render() {
+            highlight();
+            showimg();
+            rendermath();
+        },
         handlescroll() {
             let newlocal = document.documentElement.scrollTop;
             let menu = document.getElementById("menu");
             let wrap = document.getElementById("home-posts-wrap");
-            let footer = document.getElementById("footer");
             if (this.barlocal < newlocal) {
                 menu.className = "hidden-menu";
                 this.menushow = false;
             } else menu.className = "show-menu";
             if (wrap) {
                 if (newlocal <= window.innerHeight - 100) menu.className += " menu-color";
-                if (newlocal <= 400) {
-                    wrap.style.top = -newlocal / 5 + "px";
-                    footer.style.top = 150 - newlocal / 5 + "px";
-                } else if (wrap.style.top != "-80px" || footer.style.top != "70px") {
-                    wrap.style.top = "-80px";
-                    footer.style.top = "70px";
-                }
+                if (newlocal <= 400) wrap.style.marginTop = newlocal / -5 + "px";
+                else wrap.style.marginTop = "-80px";
             }
             this.barlocal = newlocal;
         },
         handlecrypto() {
             let input = document.getElementById("crypto"),
                 content = document.getElementsByClassName("content")[0];
-            let res = decrypt(input.dataset.encrypt, input.value, input.dataset.check);
+            let res = decrypt(input.dataset.encrypt, input.value, input.dataset.shasum);
             if (res.check) {
                 input.disabled = true;
                 input.classList.remove("fail");
                 input.classList.add("success");
                 content.innerHTML = res.decrypt;
                 content.style.opacity = 1;
-                highlight();
-                showimg();
-                rendermath();
+                this.render();
             } else input.classList.add("fail");
         },
         handlesearch() {

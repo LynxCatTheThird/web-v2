@@ -23,9 +23,15 @@ cd themes
 git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=1
 ```
 
+然后在根目录 `_config.yml` 设置主题为 ParticleX 即可
+
+```yaml
+theme: particlex
+```
+
 -   关闭自带 Highlight
 
-    在博客根目录下的 `_config.yml`，修改 `highlight` 和 `prismjs` 参数
+    Hexo 有自带的 Highlight，但是和 ParticleX 的 Highlight 不兼容
 
     ```yaml
     highlight:
@@ -80,23 +86,23 @@ highlightStyle: github # Highlight style
 
     ```yaml
     menu:
-        home:
+        Home:
             name: house
             theme: solid
             src: /
-        about:
+        About:
             name: id-card
             theme: solid
             src: /about
-        archives:
+        Archives:
             name: box-archive
             theme: solid
             src: /archives
-        categories:
+        Categories:
             name: bookmark
             theme: solid
             src: /categories
-        tags:
+        Tags:
             name: tags
             theme: solid
             src: /tags
@@ -163,7 +169,7 @@ highlightStyle: github # Highlight style
 
     使用 [Polyfill.io](https://polyfill.io/v3/url-builder) 自动根据 UA 处理新的 JS API 兼容
 
-    可以配合 [Hexo-Renderer-BabelJS](https://github.com/argvchs/hexo-renderer-babeljs) 插件处理 JS 语法
+    可以配合 [Hexo-Babel](https://github.com/argvchs/hexo-babel) 插件处理 JS 语法兼容
 
     ```yaml
     polyfill:
@@ -299,7 +305,7 @@ highlightStyle: github # Highlight style
     ```yaml
     twikoo:
         enable: false
-        envId:
+        envID:
         region:
         path: location.pathname
         lang: zh-CN

@@ -1,9 +1,9 @@
 <script src="<%- url_for("/js/functions.js") %>"></script>
 <script src="<%- url_for("/js/particlex.js") %>"></script>
-<% if (type == "post") { %>
+<% if (type == "post" && page.comments) { %>
 <% if (theme.gitalk.enable) { %>
-<script src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.css">
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css">
 <script>
     let clientID = "<%- theme.gitalk.clientID %>",
         clientSecret = "<%- theme.gitalk.clientSecret %>";
@@ -48,18 +48,18 @@
 ></script>
 <% } %>
 <% if (theme.waline.enable) { %>
-<script src="https://cdn.bootcdn.net/ajax/libs/waline/2.14.7/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/waline/2.14.7/waline.min.css">
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/waline/2.14.7/waline-meta.min.css">
+<script src="https://cdn.staticfile.org/waline/2.14.7/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.7/waline.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/waline/2.14.7/waline-meta.min.css">
 <script>
     Waline.init({
         el: "#waline-container",
         serverURL: "<%- theme.waline.serverURL %>",
         commentCount: <%- theme.waline.commentCount %>,
         pageview: <%- theme.waline.pageview %>,
-        emoji: "<%- theme.waline.emoji %>".split(","),
-        meta: "<%- theme.waline.meta %>".split(","),
-        requiredMeta: "<%- theme.waline.requiredMeta %>".split(","),
+        emoji: <%- JSON.stringify(theme.waline.emoji) %>,
+        meta: <%- JSON.stringify(theme.waline.meta) %>,
+        requiredMeta: <%- JSON.stringify(theme.waline.requiredMeta) %>,
         lang: "<%- theme.waline.lang %>",
         wordLimit: <%- theme.waline.wordLimit %>,
         pageSize: "<%- theme.waline.pageSize %>",
@@ -73,7 +73,7 @@
 <script>
     twikoo.init({
         el: "#twikoo-container",
-        envId: "<%- theme.twikoo.envId %>",
+        envId: "<%- theme.twikoo.envID %>",
         region: "<%- theme.twikoo.region %>",
         path: <%- theme.twikoo.path %>,
         lang: "<%- theme.twikoo.lang %>",

@@ -8,17 +8,17 @@
         type = "categories";
     else if (is_tag() || page.type == "tags")
         type = "tags";
-    else if (is_archive() || is_year() || is_month())
+    else if (is_archive())
         type = "archives";
     let title = "";
     if (page.title)
         title = page.title + " | ";
     else if (is_category())
-        title = "Categories: " + page.category + " | ";
+        title = "categories: " + page.category + " | ";
     else if (is_tag())
-        title = "Tags: " + page.tag + " | ";
-    else if (is_archive() || is_year() || is_month())
-        title = "Archives | ";
+        title = "tags: " + page.tag + " | ";
+    else if (is_archive())
+        title = "archives | ";
     title += config.title;
 %>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
         <meta charset="UTF-8">
         <meta name="referrer" content="no-referrer">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,minimum-scale=1.0" />
-        <title><%= titlecase(title) %></title>
+        <title><%= title %></title>
         <meta name="author" content="<%- config.author %>">
         <meta name="description" content="<%- config.description %>">
         <meta name="keywords" content="<%- config.keywords %>">
@@ -40,17 +40,13 @@
         <script src="<%- url_for("/js/warn.js") %>"></script>
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <link rel="icon" href="<%- url_for(theme.avatar) %>">
-        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.7.0/styles/<%- theme.highlightStyle %>.min.css">
+        <link rel="stylesheet" href="<%- url_for("/css/particlex.css") %>">
         <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.7.0/styles/<%- theme.highlightStyle %>.min.css">
         <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css">
         <link rel="stylesheet" href="<%- url_for("/css/fonts.css") %>">
-        <% if (theme.dark.enable) { %>
-        <link rel="stylesheet" href="<%- url_for("/css/particlex_dark.css") %>">
-        <% } else { %>
-        <link rel="stylesheet" href="<%- url_for("/css/particlex_light.css") %>">
-        <% } %>
         <% if (theme.polyfill.enable) { %>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=<% theme.polyfill.features.join(",") %>"></script>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=<%- theme.polyfill.features.join(",") %>"></script>
         <% } %>
         <% if (theme.dengbox.enable) { %>
         <link rel="stylesheet" href="<%- url_for("/css/dengbox.css") %>">
