@@ -4,9 +4,9 @@
         type = "index";
     else if (is_post())
         type = "post";
-    else if (is_category() || page.type == "categories")
+    else if (is_category() || page.type === "categories")
         type = "categories";
-    else if (is_tag() || page.type == "tags")
+    else if (is_tag() || page.type === "tags")
         type = "tags";
     else if (is_archive())
         type = "archives";
