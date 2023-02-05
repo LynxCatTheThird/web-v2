@@ -211,12 +211,45 @@ swpp:
     custom: false
     # 当更新成功（更新完毕自动刷新页面）后触发，包含多个指令不需要用花括号包裹
     onsuccess: "console.log('更新成功')"
+  json:
+    # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
+    maxHtml: 15
+    # update.json 的最大字符数量
+    # 超过后会移除旧的版本号，直到满足要求，如果只有全部清空才能满足就会直接刷新所有缓存
+    charLimit: 1024
+    # 文件缓存匹配采取精确模式
+    # 关闭时更新缓存时仅匹配文件名称，如 https://kmar.top/simple/a/index.html 仅匹配 /a/index.html
+    # 开启后更新缓存时将会匹配完整名称，如 https://kmar.top/simple/a/index.html 将匹配 /simple/a/index.html
+    # 两种方式各有优劣，开启后会增加 update.json 的空间占用，但会提升精确度
+    # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
+    # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
+    precisionMode:
+      default: true
+    # 是否合并指定项目
+    # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
+    # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件
+    # 推荐将此项开启
+    merge:
+      tags: true
+      archives: true
+      categories: true
+      index: true
+      # 自定义
+      custom:
+        # 这里填写目录名称列表（不带两边的斜杠）
+        # 如果按下面这样写，当 `//[domain]/bilibili/` 下的任意文件更新，都会合并为同一个更新项目
+        - 'mascot'
+    # 忽略哪些文件，正则表达式，不写两边的斜杠，不区分大小写
+    # 注：匹配的时候不附带域名，只有 pathname
+    exclude:
+      # 这里写正则表达式，格式如下：
+      - sw\.js$
   # 外部文件更新监听
   # 开启后会捕获外部文件的更新，具体原理见：https://kmar.top/posts/73014407/
   external:
-    enable: true
+    enable: false
     # 自定义拉取网络文件时的超时时间，缺省 1500
-    timeout: 3000
+    timeout: 1500
     # 见 https://kmar.top/posts/73014407/
     js:
       - head: '这里写 head 内容'
@@ -240,33 +273,21 @@ swpp:
           - 'rules0'
           - 'rules1'
         dist: 'url'
-  # 最大 HTML 数量，超过这个数量后会直接清除所有 HTML 缓存
-  maxHtml: 30
-  # update.json 的最大字符数量
-  # 超过后会移除旧的版本号，直到满足要求，如果只有全部清空才能满足就会直接刷新所有缓存
-  charLimit: 512
-  # 文件缓存匹配采取精确模式
-  # 关闭时更新缓存时仅匹配文件名称，如 https://kmar.top/simple/a/index.html 仅匹配 /a/index.html
-  # 开启后更新缓存时将会匹配完整名称，如 https://kmar.top/simple/a/index.html 将匹配 /simple/a/index.html
-  # 两种方式各有优劣，开启后会增加 update.json 的空间占用，但会提升精确度
-  # 如果网站内没有多级目录结构，就可以放心大胆的关闭了
-  # key 值为文件拓展名，default 用于指代所有未列出的拓展名以及没有拓展名的文件
-  precisionMode:
-    default: true
-  # 是否合并指定项目
-  # 例如当 tags 为 true 时（假设标签目录为 https://kmar.top/tags/...）
-  # 如果标签页存在更新，则直接匹配 https://kmar.top/tags/ 目录下的所有文件
-  # 推荐将此项开启
-  merge:
-    tags: true
-    archives: true
-    categories: true
-    index: true
-  # 忽略哪些文件，正则表达式，不写两边的斜杠，不区分大小写
-  # 注：匹配的时候不附带域名，只有 pathname
-  exclude:
-    # 这里写正则表达式，格式如下：
-    - sw\.js$
+  # 对 Hexo 中的变量进行排序
+  # 默认插件对 posts、tags、categories、pages 四个变量进行排序
+  # 排序规则为优先按照字符串长度排序，若长度一致按照字典序排序
+  sort:
+    # 格式为 `name: value`
+    # value 的可能值为：字符串、非负整数、false
+    # 假定 Array<obj> 为要被排序的数据
+    # 当 value 为字符串和非负整数时，插件会以 `obj[value]` 的格式读取关键字
+    # 当 value 为 false 时，插件会直接以 `obj` 为关键字
+    # 注意：关键字必须为含有 length 属性且支持 < 操作符的类型
+    # 插件内置的 posts 规则如果用上面的格式写应该为：
+    # posts: 'title'
+    # 插件支持使用配置项覆盖插件内置规则
+    # 下面是一个示例
+    keywords: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
