@@ -1,12 +1,10 @@
 {
   "name": "hexo-site",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "deploy": "hexo deploy",
-    "server": "hexo server"
+    "d": "hexo cl&&hexo g&&hexo swpp&&hexo d&&hexo cl&&pause",
+    "se": "hexo cl&&hexo se"
   },
   "hexo": {
     "version": "6.3.0"
@@ -15,7 +13,7 @@
     "hexo": "^6.3.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-clean-css": "^2.0.0",
-    "hexo-deployer-git": "^3.0.0",
+    "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-index": "^3.0.0",
@@ -23,10 +21,10 @@
     "hexo-helper-crypto": "^1.0.6",
     "hexo-html-minifier": "^1.0.0",
     "hexo-renderer-ejs": "^2.0.0",
-    "hexo-renderer-markdown-it": "^6.1.0",
+    "hexo-renderer-markdown-it": "^7.0.0",
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-swpp": "^2.3.7",
+    "hexo-swpp": "^2.4.3",
     "hexo-uglify": "^2.0.0",
     "markdown-it-container": "^3.0.0"
   }

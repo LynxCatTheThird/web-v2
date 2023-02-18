@@ -197,14 +197,16 @@ swpp:
     # 缓存库名称，缺省为 kmarBlogCache
     # 发布网站后请勿修改该配置项，无特殊需求建议保持缺省
     cacheName: 'LCTTBlogCache'
-    # 逃生门，详情见：https://kmar.top/posts/73014407/
+    # 逃生门，详情见：https://kmar.top/posts/73014407/#cdf686f0
     escape: 28
-    # 是否启用 CDN 竞速，详情见：https://kmar.top/posts/73014407/
+    # 是否启用 CDN 竞速，详情见：https://kmar.top/posts/73014407/#4acf3000
     # 该项与 spareUrl 冲突，若两项同时开启，则该项生效
     cdnRacing: false
-    # 是否启用备用 URL，详情见：https://kmar.top/posts/73014407/
+    # 是否启用备用 URL，详情见：https://kmar.top/posts/73014407/#62889c40
     # 该项与 cdnRacing 冲突，若两项同时开启，则 cdnRacing 生效
     spareUrl: false
+    # 是否启用调试，启用后会在 sw 中插入一些辅助调试的代码，不建议开启
+    debug: false
   dom:
     # 是否使用自定义的 DOM 端 JS，为 true 时不会自动生成 sw-dom.js，且不会插入引入 JS 的代码
     # 当值为 true 时本分类下其余设置项均无效
@@ -238,19 +240,19 @@ swpp:
       custom:
         # 这里填写目录名称列表（不带两边的斜杠）
         # 如果按下面这样写，当 `//[domain]/bilibili/` 下的任意文件更新，都会合并为同一个更新项目
-        - 'mascot'
+        - 'about'
     # 忽略哪些文件，正则表达式，不写两边的斜杠，不区分大小写
     # 注：匹配的时候不附带域名，只有 pathname
     exclude:
       # 这里写正则表达式，格式如下：
       - sw\.js$
   # 外部文件更新监听
-  # 开启后会捕获外部文件的更新，具体原理见：https://kmar.top/posts/73014407/
+  # 开启后会捕获外部文件的更新，具体原理见：https://kmar.top/posts/73014407/#771b3e00
   external:
     enable: false
     # 自定义拉取网络文件时的超时时间，缺省 1500
     timeout: 1500
-    # 见 https://kmar.top/posts/73014407/
+    # 见 https://kmar.top/posts/73014407/#771b3e00
     js:
       - head: '这里写 head 内容'
         tail: '这里写 tail 内容（必须有 tail）'
@@ -267,7 +269,7 @@ swpp:
       - ^(https?:\/\/|\/\/)cdn\.bootcdn\.net\/ajax\/libs\/.*\/\d+\.\d+\.\d+\/
     # 在构建过程中替换部分链接，该替换结果不会影响文件内容
     # 该设置项是为了应对构建服务器在国外，但是网站内部分缓存资源无法在国外访问导致拉取时 timeout 的问题
-    # 填写格式和替换规则见 https://kmar.top/posts/73014407/
+    # 填写格式和替换规则见 https://kmar.top/posts/73014407/#9dde3600
     replace:
       - source:
           - 'rules0'
