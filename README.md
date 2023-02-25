@@ -2,7 +2,7 @@
 
 ## Hexo
 
-### ```person``` 文件夹为 Hexo 源文件，敬请注意：
+### ```main``` 分支为 Hexo 源文件，敬请注意：
 
 1. 半自动部署脚本可能需要修改换行符。
 
@@ -15,10 +15,6 @@
 5. 本项目采用极为激进的 [AGPL](https://opensource.org/licenses/AGPL-3.0) 协议，不爽勿喷。
 
 6. ```_posts``` 中的文章的许可以博客页面底部 footer 所注为准。
-
-## Slidev
-
-### ```home``` 文件夹为 Slidev 源文件，改自官方示例文档
 
 ## 附录
 
