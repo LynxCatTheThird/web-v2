@@ -80,6 +80,15 @@ type: links
                <div class="info">人间值得，未来可期</div>
             </div>
          </div>
+         <div class="card">
+            <img class="ava" src="https://lanyou.me/image/2.jpg" />
+            <div class="card-header">
+               <div>
+                  <a href="https://lanyou.me/">蓝幽呀</a>
+               </div>
+               <div class="info">生活</div>
+            </div>
+         </div>
       </div>
    </div>
 </div>
