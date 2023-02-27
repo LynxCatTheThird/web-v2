@@ -30,7 +30,7 @@ int main(){
 |Github|[https://lynxcatthethird.github.io/](https://lynxcatthethird.github.io/)|重新部署会杀掉自定义域名，很麻烦|
 |Github 2|[https://ara1145.github.io/](https://ara1145.github.io/)|同上|
 |Netlify|[https://lynxcatthethird-person.netlify.app/](https://lynxcatthethird-person.netlify.app/)|[https://ml.lynxcatthethird.eu.org/](https://ml.lynxcatthethird.eu.org/)|
-|Vercel|[https://person-vercel-hg5ql74fw-lynxcatthethird.vercel.app/](https://person-vercel-hg5ql74fw-lynxcatthethird.vercel.app/)<br>[https://person-vercel.vercel.app/](https://person-vercel.vercel.app/)|[https://lynxcatthethird.xszcd.top/](https://lynxcatthethird.xszcd.top/)<br>[https://vc.lynxcatthethird.eu.org/](https://vc.lynxcatthethird.eu.org/)|
+|Vercel|[https://lynxcatthethird-person.vercel.app/](https://lynxcatthethird-person.vercel.app/)|[https://vc.lynxcatthethird.eu.org/](https://vc.lynxcatthethird.eu.org/)|
 |Cloudflare Pages|[https://lynxcatthethird-person.pages.dev/](https://lynxcatthethird-person.pages.dev/)|[https://cf.lynxcatthethird.eu.org/](https://cf.lynxcatthethird.eu.org/)|
 
 用作日常发文、技术发文、闲聊、随笔等日常用途
@@ -46,10 +46,10 @@ int main(){
 
 2023年1月1日2023年1月3日：启用新域名。
 
-2022年12月26日：启用 ServiceWorker。经测试，注册完成后，Vercel 最快，Netlify 次之，Github 又次之， Cloudflare 最差。具体速度因浏览器和设备而异，请自行测试。
+2022年12月26日：启用 ServiceWorker。具体速度因浏览器和设备而异，请自行测试。
 
 2022年12月22日：评论系统换为 Twikoo。
 
-2022年12月21日：不用 Jsdelivr 加载字体了，改用托管的服务器自己承担。经测试，在关闭缓存时，Netlify 最快，Vercel 次之，Cloudflare 又次之，Github 最差。具体速度因地因时因人而异，请自行测试。
+2022年12月21日：不用 Jsdelivr 加载字体了，改用托管的服务器自己承担。具体速度因地因时因人而异，请自行测试。
 
-2022年12月16日：评论系统换为 Waline 。尽管白嫖的域名只有 12 个月而且可能被封，但总比没有好多了。在此特别感谢 Yuzi0201。
+2022年12月16日：评论系统换为 Waline 。在此特别感谢 Yuzi0201。
