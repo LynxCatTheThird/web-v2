@@ -676,7 +676,7 @@ blockquote {
 body {
     background: #f6f8fa;
     color: #1e3e3f;
-    font: 500 14px Lexend, "Noto Sans SC", sans-serif;
+    font: 500 14px "LXGW WenKai", sans-serif;
     overflow-x: hidden;
     width: 100%;
 }
@@ -772,7 +772,7 @@ code,
 .commit-tease-sha,
 .input,
 .language {
-    font-family: "Fira Code", "Noto Sans SC", monospace;
+    font-family: "LXGW WenKai Mono", "LXGW WenKai", monospace;
 }
 table tbody tr td:nth-child(even) {
     background: #c7e0fb4d;
