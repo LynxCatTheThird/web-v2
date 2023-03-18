@@ -86,7 +86,8 @@
     width: 300px;
 }
 #home-card .card-style {
-    background: #fff;
+    background: #1b1d2077;
+    backdrop-filter: blur(2px);
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 20px #d9d9d980;
@@ -153,6 +154,7 @@
     display: flex;
     height: 100vh;
     width: 100vw;
+    background: linear-gradient(#00000000 95%, #1b1d20ee);
 }
 #home-head #home-background {
     background-position: center;
@@ -174,28 +176,28 @@
 }
 #home-head #home-info .loop:nth-child(1) {
     animation: loop1 10s linear infinite;
-    background: #fff;
+    background: #1b1d20;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.3;
     transform: rotate(30deg);
 }
 #home-head #home-info .loop:nth-child(2) {
     animation: loop2 15s linear infinite;
-    background: #fff;
+    background: #1b1d20;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.45;
     transform: rotate(60deg);
 }
 #home-head #home-info .loop:nth-child(3) {
     animation: loop3 10s linear infinite;
-    background: #fff;
+    background: #1b1d20;
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.3;
     transform: rotate(90deg);
 }
 #home-head #home-info .loop:nth-child(4) {
     animation: loop4 15s linear infinite;
-    background: #fff;
+    background: linear-gradient(#00000000 95%, #1b1d20ee);
     border-radius: 38% 62% 63% 37%/41% 44% 56% 59%;
     opacity: 0.45;
     transform: rotate(120deg);
@@ -245,7 +247,8 @@
     color: #999;
 }
 #home-posts .post {
-    background: #fff;
+    background: #1b1d2077;
+    backdrop-filter: blur(2px);
     border-radius: 20px;
     box-shadow: 0 0 20px #d9d9d980;
     transition: box-shadow 0.25s, transform 0.25s;
@@ -278,7 +281,7 @@
     margin-left: 25px;
 }
 #home-posts .post .go-post {
-    background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%);
+    background: linear-gradient(120deg, #95aeea 0%, #673568 100%);
     border: 0;
     border-radius: 20px 0;
     bottom: -5px;
@@ -331,7 +334,7 @@
 }
 #loading {
     align-items: center;
-    background: #fff;
+    background: #1b1d20;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -537,11 +540,11 @@ body::-webkit-scrollbar-track {
     margin-right: 5px;
 }
 .input {
-    background: #f6f8fa;
+    background: #16181a;
     border: 1px solid #d0d7de;
     border-radius: 50px;
     box-sizing: border-box;
-    color: #000;
+    color: #eee;
     display: block;
     font-size: 15px;
     height: 50px;
@@ -550,13 +553,13 @@ body::-webkit-scrollbar-track {
     width: 100%;
 }
 .input:focus {
-    background: #fff;
+    background: #1b1d20;
     border-color: #0969da;
     box-shadow: 0 0 0 3px #0969da4d;
     outline: none;
 }
 .input:hover {
-    background: #fff;
+    background: #1b1d20;
 }
 .into-enter-active,
 .into-leave-active {
@@ -608,7 +611,8 @@ body::-webkit-scrollbar-track {
     transition: margin-top 0.5s, opacity 0.3s, visibility 0.3s;
 }
 .timeline-content {
-    background: #fff;
+    background: #2b2d3088;
+    backdrop-filter: blur(3px);
     border: 1px solid #0002;
     border-radius: 3px;
     margin-left: 17.5px;
@@ -619,7 +623,7 @@ body::-webkit-scrollbar-track {
     box-shadow: 0 2px 8px #00000017;
 }
 .timeline-tail {
-    background: #fff;
+    background: #1b1d20;
     border: 2px solid #a5c2f5;
     border-radius: 50%;
     height: 7px;
@@ -668,7 +672,7 @@ strong {
 }
 blockquote {
     background: #d9e8ff6b;
-    border-left: 3px solid #1e3e3f;
+    border-left: 3px solid #bbdfe0;
     border-radius: 3px;
     display: flex;
     padding: 0 15px;
@@ -710,7 +714,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #1e3e3f;
+    color: #bbdfe0;
     font-weight: bold;
     margin: 15px 0;
 }
@@ -834,14 +838,17 @@ ol li {
         font-size: 52px;
         font-weight: bold;
         margin-bottom: 10px;
+        color: #fff;
     }
     #home-head #home-info .info .wrap h3 {
         font-size: 24px;
         margin: 10px 0;
+        color: #fff;
     }
     #home-head #home-info .info .wrap h5 {
         font-size: 16px;
         margin: 20px 0;
+        color: #fff;
     }
     #home-head #home-info .loop {
         display: inline-block;
