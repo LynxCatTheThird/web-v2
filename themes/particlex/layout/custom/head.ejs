@@ -1,0 +1,15 @@
+<script src="https://cdn.staticfile.org/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdn.staticfile.org/pjax/0.2.8/pjax.min.js"></script>
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+<script src="<%- url_for("/js/lib/custom/fun.js") %>"></script>
+<script src="<%- url_for("/js/lib/custom/warn.js") %>"></script>
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.2.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-webfont/1.7.0/style.min.css">
+<link rel="stylesheet" href="<%- url_for("/css/custom/fonts.css") %>">
+<% if (theme.dengbox.enable) { %>
+<link rel="stylesheet" href="<%- url_for("/css/custom/dengbox.css") %>">
+<% } %>
+<% if (theme.cursor.enable) { %>
+<link rel="stylesheet" href="<%- url_for("/css/custom/cursor.css") %>">
+<% } %>
