@@ -13,5 +13,7 @@
 <% if (theme.cursor.enable) { %>
 <link rel="stylesheet" href="<%- url_for("/css/custom/cursor.css") %>">
 <% } %>
-<link rel="stylesheet" href="<%- url_for("/css/twikoo.css") %>">
-<link rel="stylesheet" href="<%- url_for("/css/markdown-it-container.css") %>">
+<% if (theme.twikoo.enable) { %>
+<link rel="stylesheet" href="<%- url_for("/css/custom/twikoo.css") %>">
+<% } %>
+<link rel="stylesheet" href="<%- url_for("/css/custom/markdown-it-container.css") %>">
