@@ -61,7 +61,7 @@
     color: #34d058;
 }
 #footer {
-    font-size: 21px;
+    font-size: 14px;
     margin-top: 150px;
     padding-bottom: 20px;
     text-align: center;
@@ -70,7 +70,7 @@
 #footer #footer-icon {
     color: #66afef;
     display: inline-block;
-    font-size: 27px;
+    font-size: 18px;
     margin: 0 10px;
 }
 #footer #footer-wrap {
@@ -128,7 +128,7 @@
 #home-card .card-style .icon-links a {
     border-radius: 5px;
     color: #5c6b72;
-    font-size: 27px;
+    font-size: 18px;
     padding: 5px;
 }
 #home-card .card-style .icon-links a:hover,
@@ -145,7 +145,7 @@
     width: 85%;
 }
 #home-card .card-style .name {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     margin: 20px auto;
 }
@@ -301,7 +301,7 @@
     margin-right: 10px;
 }
 #home-posts .post .post-tags a {
-    font-size: 21px;
+    font-size: 14px;
 }
 #home-posts .post .post-tags,
 #archives .info,
@@ -463,13 +463,13 @@
     margin: 0;
     padding: 0;
     position: relative;
-    scrollbar-color: #8ab5ff #1b1d20;
+    scrollbar-color: #8ab5ff #e6efff;
     scrollbar-width: thin;
     word-break: keep-all;
     word-wrap: break-word;
 }
 .article {
-    font-size: 22.5px;
+    font-size: 15px;
     margin: auto;
     margin-top: 100px;
     padding: 20px;
@@ -484,7 +484,7 @@
 }
 .code-content {
     background: none;
-    font-size: 20px;
+    font-size: 13px;
     line-height: 2;
     overflow: auto;
     padding: 50px 30px 20px;
@@ -543,7 +543,7 @@ body::-webkit-scrollbar-track {
     box-sizing: border-box;
     color: #000;
     display: block;
-    font-size: 22.5px;
+    font-size: 15px;
     height: 50px;
     text-indent: 20px;
     transition: background 0.25s, border 0.25s, box-shadow 0.25s;
@@ -575,7 +575,7 @@ body::-webkit-scrollbar-track {
     border-radius: 0 0 10px 10px;
     box-shadow: 1px 1px 0.75rem #ed6ea14d;
     color: #fff;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     left: 30px;
     padding: 10px 15px;
@@ -700,7 +700,7 @@ iframe,
 code {
     background: #bddcf76b;
     border-radius: 4px;
-    font-size: 21px;
+    font-size: 14px;
     line-height: 2.5;
     padding: 4px 8px;
 }
@@ -710,27 +710,27 @@ h3,
 h4,
 h5,
 h6 {
-    color: #eee;
+    color: #1e3e3f;
     font-weight: bold;
     margin: 15px 0;
 }
 h1 {
-    font-size: 45px;
+    font-size: 30px;
 }
 h2 {
-    font-size: 40.5px;
-}
-h3 {
-    font-size: 36px;
-}
-h4 {
-    font-size: 31.5px;
-}
-h5 {
     font-size: 27px;
 }
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 21px;
+}
+h5 {
+    font-size: 18px;
+}
 h6 {
-    font-size: 22.5px;
+    font-size: 15px;
 }
 hr {
     border-style: dashed none none;
@@ -831,16 +831,16 @@ ol li {
         padding: 25px;
     }
     #home-head #home-info .info .wrap h1 {
-        font-size: 78px;
+        font-size: 52px;
         font-weight: bold;
         margin-bottom: 10px;
     }
     #home-head #home-info .info .wrap h3 {
-        font-size: 36px;
+        font-size: 24px;
         margin: 10px 0;
     }
     #home-head #home-info .info .wrap h5 {
-        font-size: 24px;
+        font-size: 16px;
         margin: 20px 0;
     }
     #home-head #home-info .loop {
@@ -920,15 +920,15 @@ ol li {
         padding: 50px;
     }
     #home-head #home-info .info .wrap h1 {
-        font-size: 69px;
+        font-size: 46px;
         margin-bottom: 10px;
     }
     #home-head #home-info .info .wrap h3 {
-        font-size: 30px;
+        font-size: 20px;
         margin: 10px 0;
     }
     #home-head #home-info .info .wrap h5 {
-        font-size: 21px;
+        font-size: 14px;
         margin: 20px 0;
     }
     #home-head #home-info .loop {
