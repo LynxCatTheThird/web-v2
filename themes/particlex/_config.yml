@@ -2,39 +2,47 @@
 # https://github.com/argvchs/hexo-theme-particlex
 
 # Avatar image
-avatar:
+avatar: https://img.picgo.net/2023/01/27/avatard3d5e890a0ef78a5.webp
 
 # Home page info block
 headBlockEnable: true
 
 # Home page background image
-background:
+background: https://img.picgo.net/2023/01/27/116952c2e4fd98609830e0b5cad327988.webp
 
 # ParticleX theme icon is adopts the Font Awesome 6
 # https://fontawesome.com/search
 
 # Main menu navigation
 menu:
-    Home:
+    首页:
         name: house
         theme: solid
         link: /
-    About:
-        name: id-card
-        theme: solid
-        link: /about
-    Archives:
+    时间线:
         name: box-archive
         theme: solid
         link: /archives
-    Categories:
+    分类:
         name: bookmark
         theme: solid
         link: /categories
-    Tags:
+    标签:
         name: tags
         theme: solid
         link: /tags
+    友链:
+        name: user-group
+        theme: solid
+        link: /links
+    宠物:
+        name: mask
+        theme: solid
+        link: /mascot
+    关于:
+        name: id-card
+        theme: solid
+        link: /about
     # <name>:
     #     name: <icon-name>
     #     theme: <icon-theme>
@@ -44,10 +52,28 @@ menu:
 card:
     enable: true
     description: |
-        Description
-        ...
+        我是山猫三号，一个来自一百零三世纪的强人工智能。
     iconLinks:
-        {}
+        Github:
+            name: github
+            theme: brands
+            link: https://github.com/lynxcatthethird
+        Twitter:
+            name: twitter
+            theme: brands
+            link: https://twitter.com/lynxcatthethird
+        # Bilibili:
+        #     name: bilibili
+        #     theme: brands
+        #     link: https://space.bilibili.com/xxxxxxxxxx
+        # Wechat:
+        #     name: weixin
+        #     theme: brands
+        #     link: weixin://contacts/profile/xxxxxxx
+        # QQ:
+        #     name: qq
+        #     theme: brands
+        #     link: http://wpa.qq.com/msgrd?v=3&uin=xxxxxxxx&site=qq&menu=true
         # <name>:
         #    name: <icon-name>
         #    theme: <icon-theme>
@@ -58,12 +84,12 @@ card:
 
 # Footer info
 footer:
-    since: 2022
+    since: 2021
     # Customize the server domain name ICP
     ICP:
-        enable: false
-        code:
-        link:
+        enable: true 
+        code: 萌 ICP 备 20231970 号
+        link: https://icp.gov.moe/?keyword=20231970
 
 # Polyfill
 # https://polyfill.io/v3/url-builder
@@ -76,7 +102,7 @@ polyfill:
 # https://highlightjs.org
 highlight:
     enable: true
-    style: github
+    style: github-dark
 
 # Rendering math with KaTeX
 math:
@@ -88,11 +114,27 @@ preview:
 
 # Article encryption
 crypto:
-    enable: false
+    enable: true
 
 # Search
 search:
-    enable: false
+    enable: true
+
+# # Lanterns
+# dengbox:
+#     enable: false
+
+# # Line following the mouse
+# line:
+#     enable: true
+
+# # Fireworks with mouse click
+# fireworks:
+#     enable: true
+
+# # Cursor with mouse
+# cursor:
+#     enable: true
 
 # Gitalk
 # https://github.com/gitalk/gitalk
@@ -161,7 +203,7 @@ waline:
 # https://github.com/imaegoo/twikoo
 twikoo:
     enable: false
-    envID:
+    envID: https://twikoo.lynxcatthethird.eu.org/
     region:
     path: location.pathname
     lang: zh-CN

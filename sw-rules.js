@@ -1,4 +1,4 @@
-// 这个文件中所有“module.exports.cacheList”都会被替换为“const cacheList”
+﻿// 这个文件中所有“module.exports.cacheList”都会被替换为“const cacheList”
 // 同理，“module.exports.modifyRequest”会被替换为“const modifyRequest”
 // 请勿在非声明的位置使用这两个字符串，否则会被替换掉
 
