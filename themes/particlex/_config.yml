@@ -120,21 +120,21 @@ crypto:
 search:
     enable: true
 
-# # Lanterns
-# dengbox:
-#     enable: false
+# Lanterns
+dengbox:
+    enable: false
 
-# # Line following the mouse
-# line:
-#     enable: true
+# Line following the mouse
+line:
+    enable: true
 
-# # Fireworks with mouse click
-# fireworks:
-#     enable: true
+# Fireworks with mouse click
+fireworks:
+    enable: true
 
-# # Cursor with mouse
-# cursor:
-#     enable: true
+# Cursor with mouse
+cursor:
+    enable: true
 
 # Gitalk
 # https://github.com/gitalk/gitalk
