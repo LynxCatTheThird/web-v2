@@ -36,16 +36,8 @@ theme: particlex
     ```yaml
     highlight:
         enable: false
-        line_number: true
-        auto_detect: false
-        tab_replace: ""
-        wrap: true
-        hljs: false
     prismjs:
         enable: false
-        preprocess: true
-        line_number: true
-        tab_replace: ""
     ```
 
     如果使用 Pandoc 还需要设置一下
@@ -53,7 +45,7 @@ theme: particlex
     ```yaml
     pandoc:
         extra:
-            - "no-highlight":
+            - no-highlight:
     ```
 
 -   禁用年度月度归档
@@ -74,11 +66,14 @@ theme: particlex
 ## 配置
 
 ```yaml
-avatar: # Avatar image
-headBlockEnable: true # Home page info block
-background: # Home page background image
-highlightStyle: github # Highlight style
+avatar:
+
+headBlockEnable: true
+
+background:
 ```
+
+其中 Background 可以是一个列表，打开时会随机加载一个背景
 
 -   导航栏
 
@@ -89,27 +84,27 @@ highlightStyle: github # Highlight style
         Home:
             name: house
             theme: solid
-            src: /
+            link: /
         About:
             name: id-card
             theme: solid
-            src: /about
+            link: /about
         Archives:
             name: box-archive
             theme: solid
-            src: /archives
+            link: /archives
         Categories:
             name: bookmark
             theme: solid
-            src: /categories
+            link: /categories
         Tags:
             name: tags
             theme: solid
-            src: /tags
+            link: /tags
         # <name>:
         #     name: <icon-name>
         #     theme: <icon-theme>
-        #     src: <link-url>
+        #     link: <link-url>
     ```
 
 -   主页信息卡片
@@ -178,18 +173,39 @@ highlightStyle: github # Highlight style
             - default
     ```
 
--   渲染数学公式
+-   代码高亮
 
-    使用 KaTeX 渲染数学公式，默认关闭
+    使用 Highlight.js 代码高亮
+
+    样式可以在[这里](https://highlightjs.org/static/demo)选择，默认为 GitHub
+
+    ```yaml
+    highlight:
+        enable: false
+        style: github
+    ```
+
+-   数学渲染
+
+    使用 KaTeX 渲染数学公式
 
     ```yaml
     math:
         enable: false
     ```
 
+-   图片预览
+
+    简单的点击图片放大缩小的预览
+
+    ```yaml
+    preview:
+        enable: true
+    ```
+
 -   文章置顶
 
-    在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `pin` 作为置顶参数，越大越靠前，默认为 0
+    在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `pinned` 作为置顶参数，越大越靠前，默认为 0
 
 -   文章加密
 
@@ -202,7 +218,7 @@ highlightStyle: github # Highlight style
 
 -   搜索
 
-    嵌入到 Archives 中的搜索，默认关闭
+    嵌入到 Archives 中的搜索
 
     目前只支持搜索文档标题（我太弱了）
 

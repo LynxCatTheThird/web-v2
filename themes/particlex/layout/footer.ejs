@@ -1,71 +1,22 @@
 <footer id="footer">
-    <div class="footer-wrap">
-        <%
-            var license = "CC BY-NC-SA License 4.0", link = "https://creativecommons.org/licenses/by-nc-sa/4.0/", icon = "🄯";
-            if (page.license == "cc-0" || page.license == "cc0" || page.license == "cc-pd" || page.license == "ccpd")
-                license = "CC Publib Domain";
-            else if (page.license == "cc-by")
-                license = "CC BY License 4.0";
-            else if (page.license == "cc-by-sa")
-                license = "CC BY-SA License 4.0";
-            else if (page.license == "cc-by-nc")
-                license = "CC BY-NC License 4.0";
-            else if (page.license == "cc-by-nd")
-                license = "CC BY-ND License 4.0";
-            else if (page.license == "cc-by-nc-sa")
-                license = "CC BY-NC-SA License 4.0";
-            else if (page.license == "cc-by-nc-nd")
-                license = "CC BY-NC-ND License 4.0";
-            else if (page.license == "gfdl")
-                license = "GNU Free Documentation License";
-            else if (page.license == "copyright")
-                license = "CopyRight";
-            
-            if (page.license == "cc-0" || page.license == "cc0" || page.license == "cc-pd" || page.license == "ccpd")
-                link = "https://creativecommons.org/publicdomain/zero/1.0/";
-            else if (page.license == "cc-by")
-                link = "https://creativecommons.org/licenses/by/4.0/";
-            else if (page.license == "cc-by-sa")
-                link = "https://creativecommons.org/licenses/by-sa/4.0/";
-            else if (page.license == "cc-by-nc")
-                link = "https://creativecommons.org/licenses/by-nc/4.0/";
-            else if (page.license == "cc-by-nd")
-                link = "https://creativecommons.org/licenses/by-nd/4.0/";
-            else if (page.license == "cc-by-nc-sa")
-                link = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
-            else if (page.license == "cc-by-nc-nd")
-                link = "https://creativecommons.org/licenses/by-nc-nd/4.0/";
-            else if (page.license == "gfdl")
-                link = "https://www.gnu.org/licenses/fdl-1.3.html";
-            else if (page.license == "copyright")
-                link = page.link;
-            
-            if (page.license == "copyright")
-                icon = "©";
-        %>
+    <div id="footer-wrap">
         <div>
-            <%= icon %> <%= theme.footer.since %> - <%= date(Date.now(), "YYYY") %> <%= config.title %><span class="footer-icon">
+            &copy;
+            <%= theme.footer.since %> - <%= date(Date.now(), "YYYY") %> <%= config.title %>
+            <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
-            @<%= config.author %>
+            &commat;<%= config.author %>
         </div>
-        <% if (is_post()) { %>
-            <div>Authorized with <a href=<%= link %>><%= license %></a></div>
-        <% } %>
-        <div>Based on the <a href="https://hexo.io/">Hexo Engine</a> & <a href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a> with <a href="https://www.unicode.org/emoji/charts/full-emoji-list.html#2764">❤</a></div>
-        <span id="busuanzi_container_site_pv">
-            本站访问量：<span id="busuanzi_value_site_pv"></span>次
-        </span>
-        &nbsp;
-        <span id="busuanzi_container_site_uv">
-            您是本站第 <span id="busuanzi_value_site_uv"></span> 位访问者
-        </span>
-        <div id="hitokoto"><a href="#">获取中...</a></div>
+        <div>
+            Based on the <a href="https://hexo.io">Hexo Engine</a> &amp;
+            <a href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
         <% if (theme.footer.ICP.enable) { %>
         <div>
-            萌备号：
+            备案号：
             <% if (theme.footer.ICP.link) { %>
-            <a href="<%- theme.footer.ICP.link %>"><%= theme.footer.ICP.code %></a>
+            <a href="<%- url_for(theme.footer.ICP.link) %>"><%= theme.footer.ICP.code %></a>
             <% } else { %>
             <%= theme.footer.ICP.code %>
             <% } %>
