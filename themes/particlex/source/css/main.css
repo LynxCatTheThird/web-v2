@@ -33,9 +33,9 @@
 }
 #archives .category,
 #archives .tags .tag,
-.article .info .category,
-.article .info .tags,
-.article .info .tags .tag {
+.article .subject .info .category,
+.article .subject .info .tags,
+.article .subject .info .tags .tag {
     display: inline-block;
     margin-right: 10px;
 }
@@ -268,7 +268,7 @@
 #archives .tag-icon,
 #archives .item-time,
 #archives .categories-tags span a:hover .icon,
-.article .info a {
+.article .subject .info a {
     color: #5c6b72;
 }
 #home-posts .post .category-and-date .date,
@@ -308,7 +308,7 @@
 }
 #home-posts .post .post-tags,
 #archives .info,
-.article .info {
+.article .subject .info {
     line-height: 1.7;
 }
 #home-posts .post-title {
@@ -438,7 +438,7 @@
 }
 #preview {
     align-items: center;
-    background-color: #fffc;
+    background-color: #1b1d20ee;
     display: flex;
     height: 100vh;
     justify-content: center;
@@ -477,10 +477,16 @@
     margin-top: 100px;
     padding: 20px;
 }
-.article .content {
+.article .subject{
+    border-radius: 20px;
+    box-shadow: 0 0 30px #d9d9d980;
+    padding: 35px 50px;
+    margin-bottom: 60px;
+}
+.article .subject .content {
     margin: 50px 0;
 }
-.article .info .date {
+.article .subject .info .date {
     color: #5c6b72;
     display: inline-block;
     margin-right: 10px;
