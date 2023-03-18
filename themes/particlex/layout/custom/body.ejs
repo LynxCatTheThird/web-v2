@@ -1,19 +1,19 @@
 <% if (theme.cursor.enable) { %>
-<script defer src="<%- url_for("/js/libs/custom/cursor.js") %>"></script>
+<script defer src="<%- url_for("/js/lib/custom/cursor.js") %>"></script>
 <% } %>
 <% if (theme.line.enable) { %>
 <canvas
     id="background"
     style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
 ></canvas>
-<script src="<%- url_for("/js/libs/custom/line.js") %>"></script>
+<script src="<%- url_for("/js/lib/custom/line.js") %>"></script>
 <% } %>
 <% if (theme.fireworks.enable) { %>
 <canvas
     id="fireworks"
     style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:1000"
 ></canvas>
-<script src="<%- url_for("/js/libs/custom/firework.js") %>"></script>
+<script src="<%- url_for("/js/lib/custom/firework.js") %>"></script>
 <% } %>
 <% if (theme.dengbox.enable) { %>
 <%- partial("custom/dengbox") %>
