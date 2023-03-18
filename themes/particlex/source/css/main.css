@@ -29,7 +29,7 @@
 #archives .categories-tags span a:hover {
     background: #fff !important;
     border: #a5c2f5 1px solid;
-    color: #5c6b72;
+    color: #ddd;
 }
 #archives .category,
 #archives .tags .tag,
@@ -75,7 +75,7 @@
 }
 #footer #footer-wrap {
     border-top: 1px solid #aaa;
-    color: #5c6b72;
+    color: #ddd;
     margin: auto;
     width: 900px;
 }
@@ -119,7 +119,7 @@
 }
 #home-card .card-style .friend-links a {
     border-radius: 5px;
-    color: #5c6b72;
+    color: #ddd;
     display: block;
     padding: 8px 0;
 }
@@ -128,7 +128,7 @@
 }
 #home-card .card-style .icon-links a {
     border-radius: 5px;
-    color: #5c6b72;
+    color: #ddd;
     font-size: 18px;
     padding: 5px;
 }
@@ -254,7 +254,7 @@
     transition: box-shadow 0.25s, transform 0.25s;
 }
 #home-posts .post .category-and-date {
-    color: #5c6b72;
+    color: #ddd;
     margin-top: 15px;
     text-align: center;
     width: 100%;
@@ -269,7 +269,7 @@
 #archives .item-time,
 #archives .categories-tags span a:hover .icon,
 .article .subject .info a {
-    color: #5c6b72;
+    color: #ddd;
 }
 #home-posts .post .category-and-date .date,
 #archives .tags,
@@ -487,7 +487,7 @@
     margin: 50px 0;
 }
 .article .subject .info .date {
-    color: #5c6b72;
+    color: #ddd;
     display: inline-block;
     margin-right: 10px;
 }
@@ -514,7 +514,7 @@ body::-webkit-scrollbar-track {
     max-width: 75%;
 }
 .code-copy {
-    color: #5c6b72;
+    color: #ddd;
     position: absolute;
     right: 0;
     top: 0;
@@ -542,7 +542,7 @@ body::-webkit-scrollbar-track {
     opacity: 0;
 }
 .icon {
-    color: #5c6b72;
+    color: #ddd;
     margin-right: 5px;
 }
 .input {
