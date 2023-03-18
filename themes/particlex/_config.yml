@@ -106,7 +106,7 @@ highlight:
 
 # Rendering math with KaTeX
 math:
-    enable: false
+    enable: true
 
 # Image Preview
 preview:
@@ -122,7 +122,7 @@ search:
 
 # Lanterns
 dengbox:
-    enable: false
+    enable: true
 
 # Line following the mouse
 line:
