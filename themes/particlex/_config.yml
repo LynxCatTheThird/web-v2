@@ -202,7 +202,7 @@ waline:
 # Twikoo
 # https://github.com/imaegoo/twikoo
 twikoo:
-    enable: false
+    enable: true
     envID: https://twikoo.lynxcatthethird.eu.org/
     region:
     path: location.pathname
