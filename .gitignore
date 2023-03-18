@@ -7,3 +7,5 @@ public/
 .deploy*/
 _multiconfig.yml
 themes/hexo-theme-particlex/
+themes/old/
+themes/new/
