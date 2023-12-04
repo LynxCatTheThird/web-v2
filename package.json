@@ -24,7 +24,7 @@
     "hexo-renderer-markdown-it": "^7.1.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
-    "hexo-swpp": "^2.4.4",
+    "hexo-swpp": "^3.3.2",
     "hexo-uglify": "^2.0.0",
     "markdown-it-container": "^3.0.0"
   }
