@@ -26,6 +26,6 @@
     "hexo-server": "^3.0.0",
     "hexo-swpp": "^2.4.4",
     "hexo-uglify": "^2.0.0",
-    "markdown-it-container": "^3.0.0"
+    "markdown-it-container": "^4.0.0"
   }
 }
