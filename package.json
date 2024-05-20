@@ -27,6 +27,6 @@
     "hexo-swpp": "^3.3.7",
     "hexo-uglify": "^2.0.0",
     "markdown-it-container": "^4.0.0",
-    "swpp-backends": "^2.3.8"
+    "swpp-backends": "^2.3.12"
   }
 }
