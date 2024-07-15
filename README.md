@@ -1,20 +1,12 @@
-# 这是我的新 Hexo 框架
+## 这是 LynxCatTheThird 第三个 Hexo 站点的源代码。
 
-### 由于个人原因，停止魔改工作，并换用 ParticleX 为 Butterfly。
+预览: <https://web-v2-tester.vercel.app/>
 
-### 敬请注意：
+1. 提供了一些拓展语法，效果请见[此处](https://web-v2-tester.vercel.app/2022/12/92a4a045.html)，语法请见附录。
 
-1. 半自动部署脚本可能需要修改换行符。
+2. 本项目致力于快速、简洁、兼容和零报错，故而很少进行美观与娱乐方面的更新。即使有，也多为清新派而非华丽派。如果不能满足您的需求，请点击浏览器标签上的那个叉叉。
 
-2. 提供了一些拓展语法，效果请见[此处](https://vc.lynxcatthethird.eu.org/2022/12/92a4a045.html)，语法请见附录。
-
-3. 本项目致力于快速、简洁、兼容和零报错，故而很少进行美观与娱乐方面的更新。即使有，也多为清新派而非华丽派。如果不能满足您的需求，请点击浏览器标签上的那个叉叉。
-
-4. 本项目基于 [ParticleX](https://github.com/argvchs/hexo-theme-particlex) 主题，较为冷门，请您做好创业未半而中道崩殂的准备。
-
-5. 本项目采用极为激进的 [AGPL](https://opensource.org/licenses/AGPL-3.0) 协议，不爽勿喷。
-
-6. ```_posts``` 中的文章的许可以博客页面底部 footer 所注为准。
+3. 本项目基于 [ParticleX](https://github.com/argvchs/hexo-theme-particlex) 主题，较为冷门，请您做好创业未半而中道崩殂的准备。
 
 ## 附录
 
