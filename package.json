@@ -3,30 +3,32 @@
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "d": "hexo cl&&hexo g&&hexo swpp&&hexo d&&hexo cl&&pause",
-    "se": "hexo cl&&hexo se"
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
   },
   "hexo": {
-    "version": "7.1.1"
+    "version": "6.3.0"
   },
   "dependencies": {
-    "hexo": "^7.1.1",
+    "hexo": "^6.3.0",
     "hexo-abbrlink": "^2.2.1",
-    "hexo-clean-css": "^2.0.0",
     "hexo-deployer-git": "^4.0.0",
+    "hexo-filter-nofollow": "^2.0.2",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
-    "hexo-generator-index": "^3.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-helper-crypto": "^1.1.5",
-    "hexo-html-minifier": "^1.0.0",
+    "hexo-helper-crypto": "^1.1.6",
+    "hexo-pangu": "^0.2.2",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-swpp": "^3.3.7",
-    "hexo-uglify": "^2.0.0",
     "markdown-it-container": "^4.0.0",
-    "swpp-backends": "^2.3.8"
+    "swpp-backends": "^2.3.12"
   }
 }

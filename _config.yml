@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://vc.lynxcatthethird.eu.org/
+url: https://www.lynx3.top/
 permalink: :year/:month/:abbrlink.html
 permalink_defaults:
 pretty_urls:
@@ -96,26 +96,21 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: particlex
+### Markdown
 markdown:
   preset: 'default'
   render:
     html: true
-    xhtmlOut: false
+    xhtmlOut: true
     langPrefix: ''
-    breaks: true
+    breaks: false
     linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  enable_rules:
-  disable_rules:
+    typographer: false
   plugins:
-    - markdown-it-abbr
-    - markdown-it-sub
-    - markdown-it-sup
-    - markdown-it-footnote
-    - name: markdown-it-container
+    - markdown-it-abbr # 注释
+    # - markdown-it-attrs # 附加属性
+    # - markdown-it-cjk-breaks # 抑制东亚字符之间的换行
+    - name: markdown-it-container # 自定义块
       options: 
         danger
     - name: markdown-it-container
@@ -127,48 +122,17 @@ markdown:
     - name: markdown-it-container
       options: 
         warning
+    - markdown-it-deflist # 定义列表
+    - markdown-it-emoji # 表情
+    - markdown-it-footnote # 脚注
+    - markdown-it-ins # 插入（下划线）
+    - markdown-it-mark # 标记（高亮）
+    - markdown-it-sup # 上标
+    - markdown-it-sub # 下标
   anchors:
-    level: 2
-    collisionSuffix: ''
-    permalink: false
-    permalinkClass: 'header-anchor'
-    permalinkSide: 'left'
-    permalinkSymbol: '¶'
-    case: 0
-    separator: '-'
-  images:
-    lazyload: false
-    prepend_root: false
-    post_asset: false
-uglify:
-  mangle: true
-  exclude:
-    - "*.min.js"
-    - "**/*.min.js"
-  es6: false
-clean_css:
-  exclude:
-    - "*.min.css"
-    - "**/*.min.css"
-archive_generator:
-    enabled: true
-    per_page: 0
-    yearly: false
-    monthly: false
-    daily: false
-html_minifier:
-  collapseBooleanAttributes: true
-  collapseWhitespace: true
-  ignoreCustomComments: [!!js/regexp /^\s*more/]
-  removeComments: true
-  removeEmptyAttributes: true
-  removeScriptTypeAttributes: true
-  removeStyleLinkTypeAttributes: true
-  minifyJS: true
-  minifyCSS: true
-search:
-  path: /search.json
-  optimize: true
+    level: 1
+  inline: false  # https://markdown-it.github.io/markdown-it/#MarkdownIt.renderInline
+### Links
 abbrlink:
   alg: crc32      #support crc16(default) and crc32
   rep: hex        #support dec(default) and hex
@@ -182,6 +146,27 @@ abbrlink:
   auto_title: false #enable auto title, it can auto fill the title by path
   auto_date: false #enable auto date, it can auto fill the date by time today
   force: false #enable force mode,in this mode, the plugin will ignore the cache, and calc the abbrlink for every post even it already had abbrlink. This only updates abbrlink rather than other front variables.
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'exclude1.com'
+    - 'exclude2.com'
+### Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+### Sitemap
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  rel: true
+  tags: true
+  categories: true
+### Swpp
 swpp:
   # 是否启用插件
   enable: true
@@ -189,9 +174,31 @@ swpp:
   # auto_exec: true
   # 构建时拉取版本文件的警告等级，缺省为 1（该功能仅在 swpp-backends 版本号 >= 2.1.2 时可用）
   # 0 - 表示不允许出现 404 情况；1 - 表示允许服务器返回 404 状态码；2 - 表示允许任何 404（包括 DNS 解析失败等）
-  # warn_level: 1
+  warn_level: 1
   # 检查版本的 URL，不能以 '/' 结尾
   # npm_url: 'https://registry.npmmirror.com'
+### Minify
+uglify:
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - "*.min.js"
+clean_css:
+  exclude:
+    - "*.min.css"
+html_minifier:
+  collapseBooleanAttributes: true
+  collapseWhitespace: true
+  ignoreCustomComments: [!!js/regexp /^\s*more/]
+  removeComments: true
+  removeEmptyAttributes: true
+  removeScriptTypeAttributes: true
+  removeStyleLinkTypeAttributes: true
+  minifyJS: true
+  minifyCSS: true
+## Themes: https://hexo.io/themes/
+theme: particlex
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
