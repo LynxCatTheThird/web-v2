@@ -1,7 +1,8 @@
 {
-  "name": "hexo-site",
+  "name": "web-v3",
   "version": "1.0.0",
-  "private": false,
+  "license": "PolyForm Noncommercial License",
+  "private": true,
   "scripts": {
     "build": "hexo generate",
     "clean": "hexo clean",
@@ -22,7 +23,7 @@
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-helper-crypto": "^1.1.6",
-    "hexo-pangu": "^0.2.2",
+    "hexo-pangu": "^0.4.1",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-stylus": "^3.0.1",
