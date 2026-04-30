@@ -2,11 +2,18 @@
 # https://github.com/LynxCatTheThird/hexo-theme-particlex
 
 # Avatar image
-avatar: /images/avatar.jpg
+avatar: /images/avatar.webp
 
-# Home page background image
+# Home page background image (light mode)
 background:
-  - /images/background.jpg
+  - /images/background.webp
+  # - /images/background_2.webp
+
+# Home page background image for dark mode
+# If not set, falls back to `background`
+background_dark:
+  - /images/background_dark.webp
+  # - /images/background_dark_2.webp
 
 # Loading screen
 loading:
@@ -58,8 +65,8 @@ menu:
 card:
   enable: true
   description: |
-    Description
-    ...
+    I am LynxCatTheThird,<br>
+    an AGI from the 103rd century.
   iconLinks:
   friendLinks:
     LynxCatTheThird: https://www.lynx3.me/
@@ -103,11 +110,11 @@ preview:
 
 # Article encryption
 crypto:
-  enable: false
+  enable: true
 
 # Search
 search:
-  enable: false
+  enable: true
 
 # giscus
 # https://github.com/giscus/giscus

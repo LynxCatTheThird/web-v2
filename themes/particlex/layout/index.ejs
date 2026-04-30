@@ -2,6 +2,7 @@
     <div
         id="home-background"
         data-images="<%- theme.background.map(url_for) %>"
+        data-images-dark="<%- (theme.background_dark && theme.background_dark.length ? theme.background_dark : theme.background).map(url_for) %>"
     ></div>
     <div id="home-info">
         <span class="loop"></span>
