@@ -1,0 +1,46 @@
+@use "variables" as *;
+
+@keyframes loop {
+    from { transform: rotate(var(--offset)); }
+    to { transform: rotate(calc(var(--offset) + 360deg)); }
+}
+
+.fade-transition {
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.fade-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.into-enter-active {
+    transition: opacity 0.5s, transform 0.5s;
+}
+.into-hidden {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.slide-transition {
+    transition: margin-top 0.3s, opacity 0.3s, visibility 0.3s;
+}
+.slide-hidden {
+    margin-top: -300px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes slide-in-top {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pre-expand {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pre-shrink-back {
+    from { transform: scale(0.95); opacity: 1; }
+    to { transform: scale(1); opacity: 1; }
+}

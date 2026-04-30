@@ -1,5 +1,5 @@
 {
-  "name": "web-v3",
+  "name": "web-v2",
   "version": "1.0.0",
   "license": "PolyForm Noncommercial License",
   "private": true,
@@ -22,12 +22,14 @@
     "hexo-generator-index": "^4.0.0",
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
-    "hexo-helper-crypto": "^1.1.6",
+    "hexo-helper-crypto": "^1.2.1",
     "hexo-pangu": "^0.4.1",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
+    "hexo-renderer-sass": "^0.5.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
+    "hexo-yam": "^9.0.0",
     "markdown-it-container": "^4.0.0"
   }
 }

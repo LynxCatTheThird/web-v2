@@ -1,316 +1,58 @@
 # Hexo-Theme-ParticleX
 
-[ParticleX](https://github.com/argvchs/hexo-theme-particlex) 主题，诞生原因是因为原来的 [Particle](https://github.com/korilin/hexo-theme-particle) 主题不维护了，但是我觉得还是很好的
-
-原来用的是 Vue 2 + Ant Design Vue 1，现更新到 Vue 3，去除 Ant Design Vue 采用自定义样式，图标更改为 Font Awesome 6，CDN 改为 Staticfile
-
-原项目 `README.md` 里说：
-
-> 目前有 Full、Night 和 Maiden **两个**主题样式
-
-虽然更改后只有一种了，如果你想改颜色就在 `particlex.css` 里 `Ctrl+F` 替换吧
-
-## 演示
-
--   [GitHub Pages](https://argvchs.github.io)
--   [Netlify](https://argvchs.netlify.app)
--   [Vercel](https://argvchs.vercel.app)
-
-## 安装
-
-```bash
-cd themes
-git clone https://github.com/argvchs/hexo-theme-particlex.git particlex --depth=1
-```
-
-然后在根目录 `_config.yml` 设置主题为 ParticleX 即可
-
-```yaml
-theme: particlex
-```
-
--   关闭自带 Highlight
-
-    Hexo 有自带的 Highlight，但是和 ParticleX 的 Highlight 不兼容
-
-    ```yaml
-    highlight:
-        enable: false
-        line_number: true
-        auto_detect: false
-        tab_replace: ""
-        wrap: true
-        hljs: false
-    prismjs:
-        enable: false
-        preprocess: true
-        line_number: true
-        tab_replace: ""
-    ```
-
-    如果使用 Pandoc 还需要设置一下
-
-    ```yaml
-    pandoc:
-        extra:
-            - "no-highlight":
-    ```
-
--   禁用年度月度归档
-
-    Hexo 会自动生成年度月度归档，可是 ParticleX 主题没有这个功能 ~~我太懒了~~
-
-    ```yaml
-    archive_generator:
-        enabled: true
-        per_page: 0
-        yearly: false
-        monthly: false
-        daily: false
-    ```
-
-修改完请 `hexo cl` 清除缓存
-
-## 配置
-
-```yaml
-avatar: # Avatar image
-headBlockEnable: true # Home page info block
-background: # Home page background image
-highlightStyle: github # Highlight style
-```
-
--   导航栏
-
-    为了方便，主题使用的图标是 Font Awesome 6 图标
-
-    ```yaml
-    menu:
-        Home:
-            name: house
-            theme: solid
-            src: /
-        About:
-            name: id-card
-            theme: solid
-            src: /about
-        Archives:
-            name: box-archive
-            theme: solid
-            src: /archives
-        Categories:
-            name: bookmark
-            theme: solid
-            src: /categories
-        Tags:
-            name: tags
-            theme: solid
-            src: /tags
-        # <name>:
-        #     name: <icon-name>
-        #     theme: <icon-theme>
-        #     src: <link-url>
-    ```
+本项目 fork 自 [ParticleX](https://github.com/theme-particlex/hexo-theme-particlex)，并在前两代作者（[korilin](https://github.com/korilin/hexo-theme-particle) 与 [argvchs](https://github.com/argvchs)）的心血基础上，进行了底层的性能重构与细节优化。
 
--   主页信息卡片
+## 主题特色
 
-    和导航栏差不多
+本主题不仅继承了前代作品的优雅设计与丰富功能，更在此基础上进行了现代化与性能级的提升：
 
-    `description` 支持 Markdown 格式
+- **优雅的视觉设计**：延续了 Particle 系列标志性的极简风格与流畅动画，提供干净纯粹的阅读体验。
+- **开箱即用的组件**：内置多种评论系统支持（Giscus, Gitalk, Waline 等），集成全局搜索、文章加密、代码预览等实用功能。
+- **移除前端框架依赖**：使用 Vanilla JS 替代了原版的 Vue 3，显著降低了打包体积与首屏渲染时间。
+- **深色模式支持**：新增完整的深色模式，支持跟随系统设置自动切换或通过前端按钮手动切换。
+- **加载与性能优化**：优化了第三方资源的异步加载逻辑，不再强制引入外部中文字体，改用零延迟的原生系统字体栈。
+- **无障碍与 SEO**：严格规范了 HTML 语义化标签与标题层级，补齐了相关的无障碍访问（A11y）属性。
+- **极致的排版细节**：优化了代码块交互（支持折叠与全屏预览），并且支持选用 KaTeX 或 MathJax 渲染复杂的数学公式。
 
-    **如果图标链接或友链为空，请在 `iconLinks:` 或 `friendLinks:` 后添加一个 `{}`**
+## 1. 文档指南（尚未完工）
 
-    ```yaml
-    card:
-        enable: true
-        description: |
-            Description
-            ...
-        iconLinks:
-            {}
-            # <name>:
-            #    name: <icon-name>
-            #    theme: <icon-theme>
-            #    link: <link-url>
-        friendLinks:
-            {}
-            # <name>: <link-url>
-    ```
+- [安装与初始化指南 (docs/install.md)](docs/install.md)
+- [详细主题配置文档 (docs/config.md)](docs/config.md)
 
--   文档缩略
+## 2. 更新与开发计划 (TODO)
 
-    一般来说，缩略展示文档只需要在文档中添加 `<!-- more -->` 即可，缩略内容在显示全文中也会出现
+- [x] 彻底移除 Vue.js 依赖，全站重构为 Vanilla JS 轻量级渲染队列。
+- [x] 新增全局暗色模式，支持跟随系统偏好与前台按钮无缝切换。
+- [x] 优化前端资源加载策略，改用原生字体栈并异步加载样式。
+- [x] 优化代码块阅读体验，新增全屏沉浸查看与代码自动折叠。
+- [x] 重构数学公式渲染机制，新增 MathJax 引擎支持及 PJAX 兼容。
+- [x] 修复全站 HTML 标签语义，完善无障碍访问（A11y）与 SEO。
+- [ ] 适配并测试新版 Hexo 引擎的各项核心特性与系统兼容性。
+- [ ] 为较长的文章页面提供自动生成的侧边栏目录（TOC）支持。
+- [ ] 拆解并重构主题配置文件，提供更灵活的高阶模块化选项。
+- [ ] 为用户开放更多自定义接口，满足多样化的个性排版需求。
+- [ ] 补充更多恰到好处的微交互动画，进一步提升全局视觉表现。
+- [ ] 撰写结构更清晰、图文并茂的进阶自定义配置指南与文档。
+- [ ] 探索并引入现代化的构建工具，进一步精简主题的体积开销。
 
-    但考虑到不想把缩略内容放在正文里，就添加了此参数，在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置
+## 3. 鸣谢与声明
 
-    支持 Markdown 格式
+我自 2022 年初涉前端开发时，便与 ParticleX 结缘并将其作为我的博客主题。在得知原作者停止维护后，我深感遗憾，并决定以自己的方式延续它的生命。本项目是站在巨人的肩膀上完成的，特此向前代作品的作者们致以最诚挚的感谢：
 
-    ```yaml
-    description: |
-        Normal _Italic_ **Strong**
-    ```
+- 感谢 [korilin](https://github.com/korilin) 创造了初代轻盈优雅的 [Particle](https://github.com/korilin/hexo-theme-particle) 主题。
+- 感谢 [argvchs](https://github.com/argvchs) 长期维护的 [ParticleX](https://github.com/theme-particlex/hexo-theme-particlex)，为主题引入了现代化的特性与极其丰富的生态插件。
+- 感谢参与过前代项目的所有贡献者们，是你们的每一次提交与反馈，为这个项目打下了最坚实的基础。
 
--   页脚
+**免责声明**：本项目为个人的底层重构分支（移除了 Vue 依赖），因此不保证与原版 ParticleX 配置的完全向后兼容。在从原版迁移时，请务必参考本文档并备份您的自定义文件。
 
-    考虑到博客部署在服务器并使用自己域名的情况，按规定需要在网站下边添加备案消息
+## 4. 参与共建
 
-    如没有需要显示备案消息的可以关闭
+开源的生命力在于社区的协作。由于个人的精力与测试设备有限，在使用过程中可能仍会存在遗漏的 Bug 或特定浏览器的兼容性问题。
 
-    ```yaml
-    footer:
-        since: 2022
-        ICP:
-            enable: false
-            code:
-            link:
-    ```
+本项目采用 MIT 许可证，诚恳邀请您的参与：
 
--   Polyfill
+- 提出您的建议：通过提交 Issue 报告遇到的错误或分享您的功能构想。
+- 贡献您的代码：Fork 本仓库，帮助修复问题或增加新特性，并提交 Pull Request。
+- 完善使用文档：协助补充和翻译使用文档，让更多人能够轻松上手。
 
-    使用 [Polyfill.io](https://polyfill.io/v3/url-builder) 自动根据 UA 处理新的 JS API 兼容
-
-    可以配合 [Hexo-Babel](https://github.com/argvchs/hexo-babel) 插件处理 JS 语法兼容
-
-    ```yaml
-    polyfill:
-        enable: true
-        features:
-            - default
-    ```
-
--   渲染数学公式
-
-    使用 KaTeX 渲染数学公式，默认关闭
-
-    ```yaml
-    math:
-        enable: false
-    ```
-
--   文章置顶
-
-    在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `pin` 作为置顶参数，越大越靠前，默认为 0
-
--   文章加密
-
-    使用 AES 加密算法，在 [Front-Matter](https://hexo.io/zh-cn/docs/front-matter) 里设置 `secret` 作为密码，**使用请安装插件 [Hexo-Helper-Crypto](https://github.com/argvchs/hexo-helper-crypto)**
-
-    ```yaml
-    crypto:
-        enable: false
-    ```
-
--   搜索
-
-    嵌入到 Archives 中的搜索，默认关闭
-
-    目前只支持搜索文档标题（我太弱了）
-
-    ```yaml
-    search:
-        enable: false
-    ```
-
--   Gitalk
-
-    Gitalk 是一个基于 GitHub Issue 和 Preact 的评论系统
-
-    考虑到博客可能部署到多个网站同步评论，但 OAuth APP 只能有一个回调 URL，所以添加了 `sites` 参数用于其他网站的评论，请注册多个 Oauth APP
-
-    **同样如果没有其他网站，请在 `sites:` 后添加一个 `{}`**
-
-    由于 Gitalk 官方 CORS 代理用的是 Cloudflare，速度过慢，添加了 `proxy` 参数，搭建 CORS 代理可以看[这篇文章](https://argvchs.github.io/2022/07/04/build-cors-anywhere)
-
-    ```yaml
-    gitalk:
-        enable: false
-        clientID: # Default ClientID
-        clientSecret: # Default ClientSecret
-        repo: # The name of repository of store comments
-        owner: # GitHub repo owner
-        admin: # GitHub repo owner and collaborators, only these guys can initialize github issues
-        language: zh-CN # en, zh-CN, zh-TW, es-ES, fr, ru, de, pl and ko are currently available
-        proxy: # CORS proxy
-        sites: # Sites
-            {}
-            # <www.example.com>:
-            #    clientID: <client-id>
-            #    clientSecret: <client-secret>
-    ```
-
--   Giscus
-
-    Giscus 是一个由 GitHub Discussions 支持的评论系统
-
-    在 [Giscus.app](https://giscus.app) 设置好各项后，会在下面生成一个 `<script>` 标签，在主题内填入即可
-
-    ```yaml
-    giscus:
-        enable: false
-        src: https://giscus.app/client.js
-        repo:
-        repoID:
-        category:
-        categoryID:
-        mapping: pathname
-        strict: 0
-        reactionsEnabled: 1
-        emitMetadata: 0
-        inputPosition: bottom
-        theme: preferred_color_scheme
-        lang: zh-CN
-    ```
-
--   Waline
-
-    Waline 是一个简单、安全的评论系统
-
-    详见：[在 ParticleX 上使用 Waline | Yuzi's Blog](https://blog.yuzi.dev/posts/bcb4ff00.html)
-
-    **注意如果不需要 `locale` 参数，请在 `locale:` 后添加一个 `{}`**
-
-    ```yaml
-    waline:
-        enable: false
-        serverURL: # Waline server address url, you should set this to your own link
-        locale: # Locale: https://waline.js.org/guide/client/i18n.html#locale-option
-            {}
-            # e.g.:
-            # placeholder: Leave a comment
-        commentCount: true # If false, comment count will only be displayed in post page, not in home page
-        pageview: false # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
-        emoji: # Custom emoji
-            - https://unpkg.com/@waline/emojis@1.2.0/weibo
-            - https://unpkg.com/@waline/emojis@1.2.0/alus
-            - https://unpkg.com/@waline/emojis@1.2.0/bilibili
-            - https://unpkg.com/@waline/emojis@1.2.0/qq
-            - https://unpkg.com/@waline/emojis@1.2.0/tieba
-            - https://unpkg.com/@waline/emojis@1.2.0/tw-emoji
-        meta: # Comment information, valid meta are nick, mail and link
-            - nick
-            - mail
-            - link
-        requiredMeta: # Set required meta field, e.g.: [nick] | [nick, mail]
-            - nick
-        lang: zh-CN # Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP
-        wordLimit: 0 # Word limit, no limit when setting to 0
-        login: enable # Whether enable login, can choose from 'enable', 'disable' and 'force'
-        pageSize: 10 # Comment per page
-    ```
-
--   Twikoo
-
-    Twikoo 是一个一个简洁、安全、免费的静态网站评论系统
-
-    ```yaml
-    twikoo:
-        enable: false
-        envID:
-        region:
-        path: location.pathname
-        lang: zh-CN
-    ```
-
-## 写在最后
-
-本项目采用 MIT 开源许可证，欢迎大家贡献，你可以随意打开一个 Issue 来进行提问，有任何改进想法都可以进行 Fork，期待您的 Pull Request
+期待与社区开发者们一起，将这个主题打磨得更加纯粹、高效、出色！

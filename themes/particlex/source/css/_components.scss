@@ -1,0 +1,153 @@
+@use "variables" as *;
+
+.icon {
+    color: $color-text-secondary;
+    margin-right: 5px;
+}
+
+.input {
+    background: $color-background;
+    border: 1px solid $border-input;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: $color-black;
+    display: block;
+    font-size: 15px;
+    height: 50px;
+    text-indent: 20px;
+    transition: background $transition-duration, border $transition-duration, box-shadow $transition-duration;
+    width: 100%;
+
+    &:focus {
+        background: $color-white;
+        border-color: $border-input-focus;
+        box-shadow: $shadow-input-focus;
+        outline: none;
+    }
+
+    &:hover {
+        background: $color-white;
+    }
+}
+
+#crypto {
+    margin: 50px 0;
+
+    &.failure {
+        border-color: $color-danger;
+        color: $color-danger;
+        &:focus { box-shadow: 0 0 0 3px rgba(234, 74, 90, 0.3); }
+    }
+
+    &.success {
+        border-color: $color-success;
+        color: $color-success;
+    }
+}
+
+#loading, #preview {
+    align-items: center; display: flex; flex-direction: column; height: 100vh; justify-content: center;
+    left: 0; position: fixed; top: 0; width: 100vw; z-index: 2147483647;
+}
+#loading {
+    background: $color-white; word-break: keep-all;
+    h2, p, img { margin: 10px; }
+    img { border-radius: 0; height: 50px; }
+}
+#preview { background-color: $bg-preview; z-index: 1005; }
+
+#loading-circle {
+    align-items: center;
+    border: 10px solid $bg-table-th;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    height: 50vmin;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+    width: 50vmin;
+}
+
+#preview-content { box-shadow: $shadow-light; margin: auto; max-height: 95%; max-width: 95%; }
+
+#timeline-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.timeline { margin-bottom: 30px; position: relative; transition: margin-top 0.5s, opacity 0.3s, visibility 0.3s; }
+.timeline-content {
+    background: $color-white; border: 1px solid $border-timeline; border-radius: 3px;
+    margin-left: 17.5px; padding: 24px; transition: box-shadow 0.5s;
+    &:hover { box-shadow: $shadow-timeline; }
+}
+.timeline-tail { background: $color-white; border: 2px solid $color-primary; border-radius: 50%; height: 7px; position: absolute; width: 7px; }
+
+.code-content {
+    display: block;
+    font-size: 13px;
+    line-height: 2;
+    max-height: 60vh;
+    max-width: 100%;
+    overflow: auto;
+    padding: 50px 30px 20px;
+    white-space: pre;
+    transition: opacity $transition-duration, visibility $transition-duration;
+}
+
+.copycode {
+    display: flex;
+    color: $color-text-secondary;
+    position: absolute;
+    right: 0;
+    top: 0;
+    user-select: none;
+    z-index: 10;
+
+    i {
+        cursor: pointer;
+        padding: 15px 10px;
+        transition: transform $transition-duration, opacity $transition-duration;
+        &:last-child { padding-right: 15px; }
+    }
+
+    &.copied .copy-btn { opacity: 0; display: none; }
+    &:not(.copied) .check-btn { opacity: 0; display: none; }
+}
+
+.content .copycode i:hover { color: $color-primary; opacity: 0.8; }
+
+.language {
+    background: $bg-language;
+    border-radius: 0 0 10px 10px;
+    box-shadow: $shadow-language;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    left: 30px;
+    padding: 10px 15px;
+    position: absolute;
+    top: 0;
+    user-select: none;
+}
+
+table.hljs-ln { width: auto !important; min-width: 100%; border-collapse: collapse; }
+.hljs-ln-code { padding-left: 20px !important; padding-right: 20px !important; }
+.hljs-ln-code, .hljs-ln-code * { white-space: pre !important; }
+.hljs-ln-numbers {
+    border-right: 1px solid $color-border; color: $color-border;
+    padding-right: 10px !important; text-align: right; vertical-align: top; user-select: none; white-space: nowrap;
+}
+
+.comment iframe { border-radius: 0; }
+
+.content {
+    transition: opacity $transition-duration;
+
+    img, video, audio, iframe {
+        display: block;
+        margin: 15px auto;
+        max-width: 75%;
+    }
+}

@@ -1,0 +1,79 @@
+@use "variables" as *;
+
+#main {
+    margin-right: calc(100% - 100vw);
+}
+
+#menu {
+    background: $bg-menu;
+    box-shadow: $shadow-menu;
+    font-weight: bold;
+    line-height: 50px;
+    position: fixed;
+    top: 0;
+    transition: background $transition-duration ease-out, top $transition-duration ease-out;
+    width: 100vw;
+    z-index: 1004;
+    user-select: none;
+
+    &.hidden {
+        top: -50px;
+    }
+
+    &.menu-color {
+        background: $bg-menu-color;
+
+        #desktop-menu a, #mobile-menu a, #mobile-menu .title {
+            color: #fff;
+        }
+    }
+
+    #desktop-menu {
+        height: 50px;
+        @include mobile { display: none; }
+        @include desktop { display: block; }
+        .title, a { color: $color-text-dark; display: inline-block; }
+        .title { margin-left: 60px; margin-right: 5px; }
+        a { margin-left: 30px; span { display: inline-block; } }
+    }
+
+    #mobile-menu {
+        min-height: 50px; text-align: center;
+        @include desktop { display: none; }
+        @include mobile { display: block; }
+        .items {
+            padding: 10px 0 20px; z-index: 1002;
+            .item { display: flex; justify-content: center; margin: auto; min-width: 200px; width: 80%; }
+            .item-icon { min-width: 20px; max-width: 50px; width: 10%; }
+            .item-label { min-width: 100px; max-width: 150%; width: 20%; }
+            a { color: $color-text-dark; }
+        }
+        .title { background: none; border: none; color: $color-text-dark; cursor: pointer; font: inherit; outline: none; z-index: 1003; }
+    }
+}
+
+#menu-curtain {
+    background: $bg-menu-color;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+#footer {
+    font-size: 14px; margin-top: 150px; padding-bottom: 20px; text-align: center; width: 100%;
+    #footer-icon { color: $color-primary; display: inline-block; font-size: 18px; margin: 0 10px; }
+    #footer-wrap {
+        border-top: 1px solid $color-border; color: $color-text-secondary; margin: auto; box-sizing: border-box;
+        @include desktop { width: 900px; }
+        @include mobile { width: 100%; }
+        div { margin: 15px; }
+    }
+}
+
+#search-bar {
+    margin-bottom: 50px;
+    z-index: 1000;
+}

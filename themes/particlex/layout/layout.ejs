@@ -1,104 +1,76 @@
 <%
     let type = "post";
-    if (is_home())
-        type = "index";
-    else if (is_post())
-        type = "post";
-    else if (is_category() || page.type === "categories")
-        type = "categories";
-    else if (is_tag() || page.type === "tags")
-        type = "tags";
-    else if (is_archive())
-        type = "archives";
-    let title = "";
-    if (page.title)
-        title = page.title + " | ";
-    else if (is_category())
-        title = "categories: " + page.category + " | ";
-    else if (is_tag())
-        title = "tags: " + page.tag + " | ";
-    else if (is_archive())
-        title = "archives | ";
-    title += config.title;
+    if (is_home()) type = "index";
+    if (is_post() || is_page()) type = "post";
+    if (is_category() || page.type === "categories") type = "categories";
+    if (is_tag() || page.type === "tags") type = "tags";
+    if (is_archive()) type = "archives";
+    let title = page.title + " | " + config.title;
+    if (is_home()) title = config.title;
+    if (is_post() || is_page()) title = page.title + " | " + config.title;
+    if (is_category()) title = "Categories: " + page.category + " | " + config.title;
+    if (is_tag()) title = "Tags: " + page.tag + " | " + config.title;
+    if (is_archive()) title = "Archives | " + config.title;
 %>
 <!DOCTYPE html>
 <html lang="<%- config.language %>">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="referrer" content="no-referrer">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5,minimum-scale=1.0" />
-        <title><%= title %></title>
-        <meta name="author" content="<%- config.author %>">
-        <meta name="description" content="<%- config.description %>">
-        <meta name="keywords" content="<%- config.keywords %>">
-        <script src="https://s4.zstatic.net/ajax/libs/vue/3.2.45/vue.global.prod.min.js"></script>
-        <script src="https://s4.zstatic.net/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-        <script src="https://s4.zstatic.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
-        <script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-        <script async src="https://cn.vercount.one/js"></script>
-        <link rel="icon" href="<%- url_for(theme.avatar) %>">
-        <link rel="stylesheet" href="<%- url_for("/css/particlex.css") %>">
-        <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/highlight.js/11.7.0/styles/<%- theme.highlightStyle %>.min.css">
-        <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/lxgw-wenkai-webfont/1.7.0/style.min.css">
-        <link rel="stylesheet" href="<%- url_for("/css/fonts.css") %>">
-        <% if (theme.polyfill.enable) { %>
-            <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=<%- theme.polyfill.features.join(",") %>"></script>
-        <% } %>
-        <% if (theme.dengbox.enable) { %>
-        <link rel="stylesheet" href="<%- url_for("/css/dengbox.css") %>">
-        <% } %>
-        <% if (theme.cursor.enable) { %>
-        <link rel="stylesheet" href="<%- url_for("/css/cursor.css") %>">
-        <% } %>
-    </head>
-    <body>
-        <% if (theme.cursor.enable) { %>
-        <script defer src="<%- url_for("/js/cursor.js") %>"></script>
-        <% } %>
-        <% if (theme.line.enable) { %>
-        <canvas
-            id="background"
-            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:-1"
-        ></canvas>
-        <script src="<%- url_for("/js/background.js") %>"></script>
-        <% } %>
-        <% if (theme.fireworks.enable) { %>
-        <canvas
-            id="fireworks"
-            style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:1000"
-        ></canvas>
-        <script src="<%- url_for("/js/firework.js") %>"></script>
-        <% } %>
-        <% if (theme.math.enable) { %>
-        <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.4/katex.min.js"></script>
-        <script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
-        <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.4/katex.min.css">
-        <% } %>
-        <% if (theme.crypto.enable && typeof page.secret !== "undefined") { %>
-        <script src="https://s4.zstatic.net/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-        <% } %>
-        <%- partial("loading") %>
-        <div id="layout">
-            <transition name="into">
-            <div v-show="showpage" style="display: -not-none">
-                <div id="menushow">
-                    <%- partial("menu") %>
-                </div>
-                <div id="main">
-                    <%- partial(type) %>
-                    <%- partial("footer") %>
-                    <% if (theme.dengbox.enable) { %>
-                    <%- partial("dengbox") %>
-                    <% } %>
-                </div>
-            </div>
-            </transition>
-            <div id="showimg">
-                <img id="showimg-content" alt="showimg">
+<head>
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+        function updateHighlightStyle() {
+            let currentTheme = document.documentElement.getAttribute("data-theme");
+            if (!currentTheme) return;
+            let lightStyle = document.getElementById("highlight-style-light");
+            let darkStyle = document.getElementById("highlight-style-dark");
+            if (lightStyle && darkStyle) {
+                if (currentTheme === "dark") {
+                    lightStyle.media = "none";
+                    darkStyle.media = "all";
+                } else {
+                    lightStyle.media = "all";
+                    darkStyle.media = "none";
+                }
+            }
+        }
+        window.addEventListener("DOMContentLoaded", updateHighlightStyle);
+    </script>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    <meta name="author" content="<%- config.author %>" />
+    <meta name="description" content="<%- config.description %>" />
+    <meta name="keywords" content="<%- config.keywords %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="<%- url_for(theme.avatar) %>" />
+    <%- partial("import", { type }) %>
+</head>
+<body>
+    <div id="layout">
+        <% if (theme.loading && theme.loading.enable) { %>
+        <div id="loading" class="fade-transition" role="status" aria-label="页面加载中">
+            <div id="loading-circle">
+                <h2>LOADING</h2>
+                <p>加载过慢请开启缓存 浏览器默认开启</p>
+                <img src="<%- url_for(theme.loading.gif) %>" alt="loading" />
             </div>
         </div>
-        <%- partial("script", { type }) %>
-    </body>
-</html> 
+        <% } %>
+        <%- partial("menu") %>
+        <main id="main" class="<%- (theme.loading && theme.loading.enable) ? 'into-enter-active into-hidden' : 'into-enter-active' %>">
+            <%- partial(type) %>
+            <%- partial("footer") %>
+        </main>
+        <% if (theme.preview.enable) { %>
+        <div id="preview" class="fade-transition fade-hidden">
+            <img id="preview-content" alt="preview" />
+        </div>
+        <% } %>
+    </div>
+    <script src="<%- url_for("/js/main.js") %>"></script>
+    <% if (type === "post" && page.comments) { %>
+    <%- partial("comment") %>
+    <% } %>
+</body>
+</html>
