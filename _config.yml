@@ -196,7 +196,7 @@ minify:
     enable: false
 
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme-particlex
+theme: particlex
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
