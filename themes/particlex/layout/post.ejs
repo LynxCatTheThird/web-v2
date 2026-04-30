@@ -46,8 +46,8 @@
         id="crypto"
         class="input"
         placeholder="文章被加密，请输入密码"
-        data-encrypted="<%- CryptoJS.AES.encrypt(page.content, page.secret).toString() %>"
-        data-shasum="<%- CryptoJS.SHA256(page.content).toString() %>"
+        data-encrypted="<%- CryptoJS.AES.encrypt(String(page.content || ''), String(page.secret)).toString() %>"
+        data-shasum="<%- CryptoJS.SHA256(String(page.content || '')).toString() %>"
     />
     <div class="content fade-transition fade-hidden" id="crypto-content"></div>
     <% } else { %>

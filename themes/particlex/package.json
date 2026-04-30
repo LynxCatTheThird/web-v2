@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theme-particlex/hexo-theme-particlex.git"
+    "url": "git+https://github.com/LynxCatTheThird/hexo-theme-particlex.git"
   },
   "keywords": [
     "hexo",
@@ -17,12 +17,12 @@
     "waline",
     "giscus"
   ],
-  "author": "Argvchs",
+  "author": "LynxCatTheThird",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/theme-particlex/hexo-theme-particlex/issues"
+    "url": "https://github.com/LynxCatTheThird/hexo-LynxCatTheThird/issues"
   },
-  "homepage": "https://github.com/theme-particlex/hexo-theme-particlex#readme",
+  "homepage": "https://github.com/LynxCatTheThird/hexo-theme-particlex#readme",
   "dependencies": {
     "hexo-helper-crypto": "^1.2.1",
     "hexo-renderer-ejs": "^2.0.0",

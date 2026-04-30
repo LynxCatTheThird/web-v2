@@ -1,6 +1,8 @@
 # Hexo-Theme-ParticleX
 
-本项目 fork 自 [ParticleX](https://github.com/theme-particlex/hexo-theme-particlex)，并在前两代作者（[korilin](https://github.com/korilin/hexo-theme-particle) 与 [argvchs](https://github.com/argvchs)）的心血基础上，进行了底层的性能重构与细节优化。
+本项目 fork 自 [ParticleX](https://github.com/LynxCatTheThird/hexo-theme-particlex)，并在前两代作者（[korilin](https://github.com/korilin/hexo-theme-particle) 与 [Argvchs](https://github.com/argvchs)）的心血基础上，进行了底层的性能重构与细节优化。
+
+**预览：** [https://particlex.lynx3.me/](https://particlex.lynx3.me/)
 
 ## 主题特色
 
@@ -34,13 +36,15 @@
 - [ ] 补充更多恰到好处的微交互动画，进一步提升全局视觉表现。
 - [ ] 撰写结构更清晰、图文并茂的进阶自定义配置指南与文档。
 - [ ] 探索并引入现代化的构建工具，进一步精简主题的体积开销。
+- [ ] 读背景图自动采色调整该页面主题色，甚至仿 YouTube 影院模式的沉浸。
+- [ ] 添加 Mermaid、ECharts、Containers 等优秀的前端工具。
 
 ## 3. 鸣谢与声明
 
 我自 2022 年初涉前端开发时，便与 ParticleX 结缘并将其作为我的博客主题。在得知原作者停止维护后，我深感遗憾，并决定以自己的方式延续它的生命。本项目是站在巨人的肩膀上完成的，特此向前代作品的作者们致以最诚挚的感谢：
 
 - 感谢 [korilin](https://github.com/korilin) 创造了初代轻盈优雅的 [Particle](https://github.com/korilin/hexo-theme-particle) 主题。
-- 感谢 [argvchs](https://github.com/argvchs) 长期维护的 [ParticleX](https://github.com/theme-particlex/hexo-theme-particlex)，为主题引入了现代化的特性与极其丰富的生态插件。
+- 感谢 [Argvchs](https://github.com/argvchs) 长期维护的 [ParticleX](https://github.com/LynxCatTheThird/hexo-theme-particlex)，为主题引入了现代化的特性与极其丰富的生态插件。
 - 感谢参与过前代项目的所有贡献者们，是你们的每一次提交与反馈，为这个项目打下了最坚实的基础。
 
 **免责声明**：本项目为个人的底层重构分支（移除了 Vue 依赖），因此不保证与原版 ParticleX 配置的完全向后兼容。在从原版迁移时，请务必参考本文档并备份您的自定义文件。
