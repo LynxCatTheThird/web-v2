@@ -1,8 +1,8 @@
 :root {
     --color-primary: #66afef;
     --color-text-main: #1e3e3f;
-    --color-text-secondary: #5c6b72;
-    --color-text-muted: #999;
+    --color-text-secondary: #46545f;
+    --color-text-muted: #7d8893;
     --color-text-dark: #555;
 
     --color-background: #f6f8fa;
@@ -13,11 +13,11 @@
     --color-danger: #ea4a5a;
 
     --color-border: #aaa;
-    --color-border-light: #f1f1f1;
+    --color-border-light: #dfe6ee;
     --color-border-dark: #cdcdcd;
 
-    --shadow-light: 0 0 20px rgba(217, 217, 217, 0.5);
-    --shadow-hover: 0 0 5px #d9d9d9;
+    --shadow-light: 0 0 20px rgba(201, 209, 217, 0.55);
+    --shadow-hover: 0 0 5px rgba(185, 195, 204, 0.75);
 
     --bg-table-even: rgba(199, 224, 251, 0.3);
     --bg-table-odd: rgba(217, 232, 255, 0.3);
@@ -45,6 +45,7 @@
     --bg-go-post: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%);
     --shadow-go-post: 2px 2px 10px 0 rgba(255, 187, 244, 0.48);
     --shadow-go-post-hover: -2px -2px 10px 0 rgba(154, 187, 247, 0.48);
+
 }
 
 @mixin dark-theme-vars {
@@ -94,6 +95,7 @@
         --bg-go-post: linear-gradient(120deg, #4b6a9e 0%, #a66a9c 100%);
         --shadow-go-post: 2px 2px 10px 0 rgba(0, 0, 0, 0.5);
         --shadow-go-post-hover: -2px -2px 10px 0 rgba(0, 0, 0, 0.5);
+
 }
 
 html[data-theme="dark"] {

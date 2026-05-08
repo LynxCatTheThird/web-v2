@@ -68,7 +68,7 @@
         </div>
         <% } %>
     </div>
-    <script src="<%- url_for("/js/main.js") %>"></script>
+    <script src="<%- url_for("/js/main.js") %>" defer></script>
     <% if (type === "post" && page.comments) { %>
     <%- partial("comment") %>
     <% } %>

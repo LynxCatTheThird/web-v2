@@ -12,10 +12,3 @@ public/
 .deploy*/
 _multiconfig.yml
 node_modules/
-
-# Tools
-t
-t.exe
-
-# Debug & Develop
-themes/redefine_dev/

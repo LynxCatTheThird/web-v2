@@ -2,33 +2,66 @@
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   window.renderers.push(() => {
-    if (typeof hljs === "undefined") return;
-    hljs.configure({ ignoreUnescapedHTML: true });
+    const codes = document.querySelectorAll("pre code.hljs");
+    const root = document.documentElement;
+    let activeExpandedPre = null;
 
-    let codes = document.querySelectorAll("pre");
-    for (let i of codes) {
-      if (i.querySelector(".code-content")) continue;
+    const collapseExpandedCode = (immediate = false) => {
+      if (!activeExpandedPre) return;
 
-      let code = i.textContent;
-      let language =
-        [
-          ...i.classList,
-          ...(i.firstChild && i.firstChild.classList
-            ? i.firstChild.classList
-            : []),
-        ][0] || "plaintext";
-      let highlighted;
-      try {
-        if (language !== "plaintext" && hljs.getLanguage(language)) {
-          highlighted = hljs.highlight(code, { language }).value;
-        } else {
-          highlighted = code;
-        }
-      } catch {
-        highlighted = code;
+      const pre = activeExpandedPre;
+      activeExpandedPre = null;
+      root.classList.remove("code-fullscreen");
+
+      const placeholder = pre._placeholder;
+      const overlay = pre._overlay;
+      const expandBtn = pre.querySelector(".expand-btn");
+
+      if (immediate) {
+        if (placeholder) placeholder.remove();
+        if (overlay) overlay.remove();
+        pre._placeholder = null;
+        pre._overlay = null;
+        pre.classList.remove("expanded", "shrinking");
+        if (expandBtn) expandBtn.classList.replace("fa-compress", "fa-expand");
+        return;
       }
-      i.innerHTML = `
-            <div class="code-content hljs">${highlighted}</div>
+
+      pre.classList.add("shrinking");
+      pre.addEventListener(
+        "animationend",
+        () => {
+          if (placeholder) placeholder.remove();
+          if (overlay) overlay.remove();
+          pre._placeholder = null;
+          pre._overlay = null;
+          pre.classList.remove("expanded", "shrinking");
+          if (expandBtn) expandBtn.classList.replace("fa-compress", "fa-expand");
+        },
+        { once: true },
+      );
+    };
+
+    window.closeExpandedCodeBlock = () => collapseExpandedCode(true);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && activeExpandedPre) {
+        collapseExpandedCode();
+      }
+    });
+
+    codes.forEach((el) => {
+      const pre = el.parentElement;
+      if (pre.querySelector(".copycode")) return; // 防止重复处理
+
+      const langClass = Array.from(el.classList).find((className) =>
+        className.startsWith("language-"),
+      );
+      const language =
+        pre.dataset.language ||
+        (langClass ? langClass.replace("language-", "") : "code");
+
+      const controlsHTML = `
+        <div class="code-toolbar">
             <div class="language">${language}</div>
             <div class="copycode">
                 <i class="fa-solid fa-chevron-down fold-btn fa-fw" aria-hidden="true"></i>
@@ -36,59 +69,43 @@
                 <i class="fa-solid fa-copy copy-btn fa-fw" aria-hidden="true"></i>
                 <i class="fa-solid fa-check check-btn fa-fw" aria-hidden="true"></i>
             </div>
-            `;
-      let content = i.querySelector(".code-content");
-      hljs.lineNumbersBlock(content, { singleLine: true });
-      let copycode = i.querySelector(".copycode");
+        </div>`;
+      pre.insertAdjacentHTML("afterbegin", controlsHTML);
 
-      let foldBtn = i.querySelector(".fold-btn");
-      let expandBtn = i.querySelector(".expand-btn");
-      let copyBtn = i.querySelector(".copy-btn");
-      let placeholder = null;
+      const codeText = el.textContent;
+      const copycode = pre.querySelector(".copycode");
+      const foldBtn = pre.querySelector(".fold-btn");
+      const expandBtn = pre.querySelector(".expand-btn");
+      const copyBtn = pre.querySelector(".copy-btn");
       let copying = false;
 
-      // Auto-folding removed, using height limitation instead
-
       foldBtn.addEventListener("click", () => {
-        if (i.classList.contains("folded")) {
-          foldBtn.classList.remove("fa-chevron-right");
-          foldBtn.classList.add("fa-chevron-down");
-          i.classList.remove("folded");
-        } else {
-          foldBtn.classList.remove("fa-chevron-down");
-          foldBtn.classList.add("fa-chevron-right");
-          i.classList.add("folded");
-        }
+        const isFolded = pre.classList.contains("folded");
+        foldBtn.classList.toggle("fa-chevron-right", !isFolded);
+        foldBtn.classList.toggle("fa-chevron-down", isFolded);
+        pre.classList.toggle("folded");
       });
 
       expandBtn.addEventListener("click", () => {
-        if (i.classList.contains("expanded")) {
-          i.classList.add("shrinking");
-          // Fix #6: use animationend instead of hardcoded setTimeout
-          i.addEventListener(
-            "animationend",
-            () => {
-              if (placeholder) {
-                placeholder.remove();
-                placeholder = null;
-              }
-              i.classList.remove("expanded", "shrinking");
-              expandBtn.classList.remove("fa-compress");
-              expandBtn.classList.add("fa-expand");
-            },
-            { once: true },
-          );
+        if (pre.classList.contains("expanded")) {
+          collapseExpandedCode();
         } else {
-          placeholder = document.createElement("div");
-          placeholder.className = "pre-placeholder";
-          placeholder.style.height = i.offsetHeight + "px";
-          placeholder.style.width = i.offsetWidth + "px";
-          placeholder.style.margin = getComputedStyle(i).margin;
-          i.parentNode.insertBefore(placeholder, i);
+          if (activeExpandedPre) collapseExpandedCode(true);
 
-          expandBtn.classList.remove("fa-expand");
-          expandBtn.classList.add("fa-compress");
-          i.classList.add("expanded");
+          const placeholder = document.createElement("div");
+          placeholder.className = "pre-placeholder";
+          placeholder.style.height = pre.offsetHeight + "px";
+          pre.parentNode.insertBefore(placeholder, pre);
+          const overlay = document.createElement("div");
+          overlay.className = "pre-overlay";
+          document.body.appendChild(overlay);
+          overlay.appendChild(pre);
+          expandBtn.classList.replace("fa-expand", "fa-compress");
+          pre.classList.add("expanded");
+          pre._placeholder = placeholder;
+          pre._overlay = overlay;
+          activeExpandedPre = pre;
+          root.classList.add("code-fullscreen");
         }
       });
 
@@ -97,7 +114,7 @@
         copying = true;
         copycode.classList.add("copied");
         try {
-          await navigator.clipboard.writeText(code);
+          await navigator.clipboard.writeText(codeText);
         } catch {
           /* clipboard API unavailable in non-secure context */
         }
@@ -105,6 +122,6 @@
         copycode.classList.remove("copied");
         copying = false;
       });
-    }
+    });
   });
 })();

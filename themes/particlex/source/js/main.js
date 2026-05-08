@@ -1,4 +1,4 @@
-window.renderers = [];
+window.renderers = window.renderers || [];
 
 document.addEventListener("DOMContentLoaded", () => {
   // Handle Loading

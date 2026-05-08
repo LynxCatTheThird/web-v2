@@ -8,6 +8,13 @@
     @include mobile { width: 100%; }
 }
 
+.article.has-toc {
+    @media (min-width: 1400px) {
+        margin-left: calc((100vw - 900px - var(--toc-width, 260px) - 40px) / 2);
+        margin-right: auto;
+    }
+}
+
 .article {
     font-size: 15px;
 

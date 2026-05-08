@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<%- url_for("/css/main.css") %>" />
-<link rel="preconnect" href="https://s4.zstatic.net" />
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" media="print" onload="this.media='all'" />
+<link rel="preconnect" href="https://registry.npmmirror.com" />
+<link rel="stylesheet" href="https://registry.npmmirror.com/@fortawesome/fontawesome-free/6.6.0/files/css/all.min.css" media="print" onload="this.media='all'" />
 <% if (theme.fonts && theme.fonts.enable) { %>
 <link rel="preconnect" href="https://fonts.googleapis.cn" />
 <link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
@@ -14,6 +14,7 @@
 </style>
 <% } %>
 <script>
+    window.renderers = window.renderers || [];
     const theme_config = {
         loading_screen: <%- JSON.stringify(!!(theme.loading && theme.loading.enable)) %>,
         codeFoldThreshold: <%- JSON.stringify(theme.highlight && theme.highlight.foldThreshold !== undefined ? theme.highlight.foldThreshold : 40) %>
@@ -23,8 +24,6 @@
 <script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=<%- theme.polyfill.features %>" defer></script>
 <% } %>
 <% if (theme.highlight.enable) { %>
-<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
-<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js" defer></script>
 <%
     let light_style = theme.highlight.style || "github";
     let dark_style = theme.highlight.dark_style || light_style + "-dark";
@@ -33,59 +32,33 @@
 <link
     id="highlight-style-light"
     rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/<%- light_style %>.min.css"
+    href="https://registry.npmmirror.com/@highlightjs/cdn-assets/11.11.1/files/styles/<%- light_style %>.min.css"
     media="print" onload="this.media='(prefers-color-scheme: light)'"
 />
 <link
     id="highlight-style-dark"
     rel="stylesheet"
-    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/<%- dark_style %>.min.css"
+    href="https://registry.npmmirror.com/@highlightjs/cdn-assets/11.11.1/files/styles/<%- dark_style %>.min.css"
     media="print" onload="this.media='(prefers-color-scheme: dark)'"
 />
 <script src="<%- url_for("/js/lib/highlight.js") %>" defer></script>
 <% } %>
 <%
-    let mathType = typeof theme.math === "string" ? theme.math : (theme.math && theme.math.type) ? theme.math.type : (theme.math && theme.math.enable) ? "katex" : false;
+    let mathType = typeof theme.math === "string"
+        ? (theme.math === "katex" ? "katex" : false)
+        : (theme.math && theme.math.type === "katex") ? "katex" : false;
 %>
 <% if (mathType === "katex") { %>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.45/katex.min.js" defer></script>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.45/contrib/auto-render.min.js" defer></script>
-<% if (theme.math && theme.math.katex && theme.math.katex.copy_tex) { %>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.45/contrib/copy-tex.min.js" defer></script>
+<link rel="stylesheet" href="https://registry.npmmirror.com/katex/0.16.45/files/dist/katex.min.css" media="print" onload="this.media='all'" />
+<% if (theme.math && theme.math.katex && theme.math.katex.copy_tex !== false) { %>
+<script src="https://registry.npmmirror.com/katex/0.16.45/files/dist/contrib/copy-tex.min.js" defer></script>
 <% } %>
-<% if (theme.math && theme.math.katex && theme.math.katex.mhchem) { %>
-<script src="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.45/contrib/mhchem.min.js" defer></script>
-<% } %>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/KaTeX/0.16.45/katex.min.css" media="print" onload="this.media='all'" />
-<script src="<%- url_for("/js/lib/math.js") %>" defer></script>
-<% } else if (mathType === "mathjax") { %>
-<script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            packages: {'[+]': [
-                <%- (theme.math && theme.math.mathjax && theme.math.mathjax.mhchem) ? "'mhchem'" : "" %>
-            ]}
-        },
-        <% if (theme.math && theme.math.mathjax && theme.math.mathjax.mhchem) { %>
-        loader: {
-            load: ['[tex]/mhchem']
-        },
-        <% } %>
-        svg: {
-            fontCache: 'global'
-        }
-    };
-</script>
-<script src="https://s4.zstatic.net/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js" defer></script>
-<script src="<%- url_for("/js/lib/math.js") %>" defer></script>
 <% } %>
 <% if (theme.preview.enable) { %>
 <script src="<%- url_for("/js/lib/preview.js") %>" defer></script>
 <% } %>
 <% if (theme.crypto.enable && typeof page.secret !== "undefined") { %>
-<script src="https://s4.zstatic.net/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" defer></script>
+<script src="https://registry.npmmirror.com/crypto-js/4.2.0/files/crypto-js.js" defer></script>
 <script src="<%- url_for("/js/lib/crypto.js") %>" defer></script>
 <% } %>
 <% if (type === "archives" && theme.search.enable) { %>
@@ -93,17 +66,28 @@
 <% } %>
 <% if (type === "post" && page.comments) { %>
 <% if (theme.gitalk.enable) { %>
-<script src="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.js" defer></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" media="print" onload="this.media='all'" />
+<script src="https://registry.npmmirror.com/gitalk/1.8.0/files/dist/gitalk.min.js" defer></script>
+<link rel="stylesheet" href="https://registry.npmmirror.com/gitalk/1.8.0/files/dist/gitalk.css" media="print" onload="this.media='all'" />
 <% } %>
 <% if (theme.waline.enable) { %>
-<script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js" defer></script>
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" media="print" onload="this.media='all'" />
-<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline-meta.min.css" media="print" onload="this.media='all'" />
+<script src="https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.js" defer></script>
+<link rel="stylesheet" href="https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline.css" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="https://registry.npmmirror.com/@waline/client/2.15.8/files/dist/waline-meta.css" media="print" onload="this.media='all'" />
 <% } %>
 <% if (theme.twikoo.enable) { %>
-<script src="https://s4.zstatic.net/ajax/libs/twikoo/1.7.7/twikoo.all.min.js" defer></script>
+<script src="https://registry.npmmirror.com/twikoo/1.7.7/files/dist/twikoo.all.min.js" defer></script>
 <% } %>
+<% } %>
+<% if (type === "post" && theme.toc && theme.toc.enable) { %>
+<script>
+    window.toc_config = {
+        number: <%- JSON.stringify(theme.toc.number !== false) %>,
+        min_depth: <%- JSON.stringify(theme.toc.min_depth || 1) %>,
+        max_depth: <%- JSON.stringify(theme.toc.max_depth || 4) %>,
+        width: <%- JSON.stringify(theme.toc.width || 260) %>
+    };
+</script>
+<script src="<%- url_for("/js/lib/toc.js") %>" defer></script>
 <% } %>
 <% if (type === "index") { %>
 <script src="<%- url_for("/js/lib/home.js") %>" defer></script>

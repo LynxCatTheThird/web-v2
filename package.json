@@ -13,6 +13,15 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "@mdit/plugin-abbr": "^0.23.2",
+    "@mdit/plugin-dl": "^0.23.2",
+    "@mdit/plugin-footnote": "^0.23.2",
+    "@mdit/plugin-ins": "^0.23.2",
+    "@mdit/plugin-mark": "^0.23.2",
+    "@mdit/plugin-spoiler": "^0.23.2",
+    "@mdit/plugin-sub": "^0.24.2",
+    "@mdit/plugin-sup": "^0.24.2",
+    "@mdit/plugin-tasklist": "^0.23.2",
     "hexo": "^6.3.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-deployer-git": "^4.0.0",
@@ -30,6 +39,8 @@
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-yam": "^9.0.0",
-    "markdown-it-container": "^4.0.0"
+    "highlight.js": "^11.11.1",
+    "katex": "^0.16.45",
+    "markdown-it": "^14.1.1"
   }
 }

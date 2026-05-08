@@ -1,4 +1,4 @@
-<div class="article">
+<div class="article<%= (theme.toc && theme.toc.enable) ? ' has-toc' : '' %>">
     <div>
         <h1><%= page.title %></h1>
     </div>
@@ -72,3 +72,39 @@
     </div>
     <% } %>
 </div>
+<% if (theme.toc && theme.toc.enable) { %>
+<nav id="toc" aria-label="目录">
+    <div id="toc-inner">
+        <div id="toc-resize"></div>
+        <div id="toc-header">
+            <span><i class="fa-solid fa-list-ul"></i>目录</span>
+            <span id="toc-close"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div id="toc-scroll">
+            <ul id="toc-list"></ul>
+        </div>
+        <div id="toc-footer">
+            <% if (theme.toc.back_to_top !== false) { %>
+            <button class="toc-footer-btn" id="toc-btn-top">
+                <i class="fa-solid fa-arrow-up"></i>回到顶部
+            </button>
+            <% } %>
+            <% if (theme.toc.go_to_comment !== false && page.comments) { %>
+            <button class="toc-footer-btn" id="toc-btn-comment">
+                <i class="fa-solid fa-comment"></i>前往评论
+            </button>
+            <% } %>
+            <button class="toc-footer-btn" id="toc-btn-reading">
+                <i class="fa-solid fa-book-open"></i>阅读模式
+            </button>
+        </div>
+    </div>
+</nav>
+<button id="toc-toggle" aria-label="显示目录">
+    <i class="fa-solid fa-list-ul"></i>
+</button>
+<button id="reading-mode-exit">
+    <i class="fa-solid fa-xmark"></i>退出阅读模式
+</button>
+<% } %>
+

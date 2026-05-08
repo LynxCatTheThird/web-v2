@@ -84,30 +84,37 @@
 }
 .timeline-tail { background: $color-white; border: 2px solid $color-primary; border-radius: 50%; height: 7px; position: absolute; width: 7px; }
 
-.code-content {
+pre code.hljs {
     display: block;
     font-size: 13px;
     line-height: 2;
     max-height: 60vh;
     max-width: 100%;
     overflow: auto;
-    padding: 50px 30px 20px;
+    padding: 20px 30px;
     white-space: pre;
     transition: opacity $transition-duration, visibility $transition-duration;
+}
+
+.code-toolbar {
+    align-items: stretch;
+    display: flex;
+    justify-content: space-between;
+    min-width: 0;
+    position: relative;
 }
 
 .copycode {
     display: flex;
     color: $color-text-secondary;
-    position: absolute;
-    right: 0;
-    top: 0;
+    flex: none;
     user-select: none;
-    z-index: 10;
 
     i {
+        align-items: center;
         cursor: pointer;
-        padding: 15px 10px;
+        display: flex;
+        padding: 0 10px;
         transition: transform $transition-duration, opacity $transition-duration;
         &:last-child { padding-right: 15px; }
     }
@@ -123,21 +130,12 @@
     border-radius: 0 0 10px 10px;
     box-shadow: $shadow-language;
     color: #fff;
+    flex: none;
     font-size: 12px;
     font-weight: bold;
-    left: 30px;
+    margin-left: 30px;
     padding: 10px 15px;
-    position: absolute;
-    top: 0;
     user-select: none;
-}
-
-table.hljs-ln { width: auto !important; min-width: 100%; border-collapse: collapse; }
-.hljs-ln-code { padding-left: 20px !important; padding-right: 40px !important; }
-.hljs-ln-code, .hljs-ln-code * { white-space: pre !important; }
-.hljs-ln-numbers {
-    border-right: 1px solid $color-border; color: $color-border;
-    padding-right: 10px !important; text-align: right; vertical-align: top; user-select: none; white-space: nowrap;
 }
 
 .comment iframe { border-radius: 0; }

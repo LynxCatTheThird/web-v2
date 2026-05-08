@@ -95,18 +95,25 @@ highlight:
   foldThreshold: 40
 
 # Math rendering
-# type: katex | mathjax | false
+# type: katex | false
 math:
   type: katex
   katex:
     copy_tex: true
-    mhchem: false
-  mathjax:
-    mhchem: false
 
 # Image preview
 preview:
   enable: true
+
+# Table of Contents
+toc:
+  enable: true
+  number: true # Show hierarchical numbering (1, 1.1, 1.2, ...)
+  min_depth: 1 # Minimum heading level (1 = h1, 2 = h2, ...)
+  max_depth: 4 # Maximum heading level
+  width: 260 # Default width in px (desktop, drag-resizable)
+  back_to_top: true # Show back-to-top button in TOC footer
+  go_to_comment: true # Show go-to-comment button in TOC footer
 
 # Article encryption
 crypto:
@@ -154,12 +161,12 @@ waline:
   commentCount: true # If false, comment count will only be displayed in post page, not in home page
   pageview: false # Pageviews count, Note: You should not enable both `waline.pageview` and `leancloud_visitors`
   emoji: # Custom emoji
-    - https://unpkg.com/@waline/emojis@1.2.0/weibo
-    - https://unpkg.com/@waline/emojis@1.2.0/alus
-    - https://unpkg.com/@waline/emojis@1.2.0/bilibili
-    - https://unpkg.com/@waline/emojis@1.2.0/qq
-    - https://unpkg.com/@waline/emojis@1.2.0/tieba
-    - https://unpkg.com/@waline/emojis@1.2.0/tw-emoji
+    - https://registry.npmmirror.com/@waline/emojis/1.2.0/files/weibo
+    - https://registry.npmmirror.com/@waline/emojis/1.2.0/files/alus
+    - https://registry.npmmirror.com/@waline/emojis/1.2.0/files/bilibili
+    - https://registry.npmmirror.com/@waline/emojis/1.2.0/files/qq
+    - https://registry.npmmirror.com/@waline/emojis/1.2.0/files/tieba
+    - https://registry.npmmirror.com/@waline/emojis/1.2.0/files/tw-emoji
   meta: # Comment information, valid meta are nick, mail and link
     - nick
     - mail

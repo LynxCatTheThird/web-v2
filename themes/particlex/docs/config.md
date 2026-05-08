@@ -131,18 +131,15 @@ highlight:
 
 ### 3.3. 数学渲染
 
-支持 KaTeX 或 MathJax 渲染数学公式。
+支持 KaTeX 渲染数学公式。
 
 ```yaml
 # Math rendering
-# type: katex | mathjax | false
+# type: katex | false
 math:
   type: katex
   katex:
     copy_tex: true
-    mhchem: false
-  mathjax:
-    mhchem: false
 ```
 
 ### 3.4. 图片预览
