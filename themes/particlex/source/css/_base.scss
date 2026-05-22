@@ -46,8 +46,16 @@ a {
 
     &:hover {
         opacity: 1;
-        color: #4b9be6;
+        color: color-mix(in srgb, $color-primary 84%, $color-text-main 16%);
     }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible {
+    outline: 3px solid var(--border-input-focus);
+    outline-offset: 3px;
 }
 
 audio, button, iframe, img, video, .copycode, .go-post, .page-current, .language, .hljs-ln-numbers { user-select: none; }
@@ -102,7 +110,7 @@ table:not(.hljs-ln) {
 
 blockquote {
     background: $bg-blockquote;
-    border-left: 3px solid $color-text-main;
+    border-left: 4px solid $color-primary;
     border-radius: 3px;
     margin: 15px 0;
     overflow: hidden;
@@ -127,14 +135,16 @@ mark {
 }
 
 pre {
-    border: 1px solid $color-border-light;
-    border-radius: 15px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $code-border;
+    border-radius: 8px;
+    box-shadow: none;
     margin: 25px 0;
     overflow: hidden;
     position: relative;
     white-space: normal;
-    background: $color-background;
+    background: $code-bg;
     transition: max-height $transition-duration, border-radius $transition-duration, box-shadow $transition-duration, margin $transition-duration;
     max-height: 2000px;
 

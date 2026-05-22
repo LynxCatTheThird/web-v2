@@ -1,3 +1,8 @@
+<style>
+    :root {
+        --primary-hue: <%- theme.hue !== undefined ? theme.hue : 210 %>;
+    }
+</style>
 <link rel="stylesheet" href="<%- url_for("/css/main.css") %>" />
 <link rel="preconnect" href="https://registry.npmmirror.com" />
 <link rel="stylesheet" href="https://registry.npmmirror.com/@fortawesome/fontawesome-free/6.6.0/files/css/all.min.css" media="print" onload="this.media='all'" />
@@ -43,25 +48,20 @@
 />
 <script src="<%- url_for("/js/lib/highlight.js") %>" defer></script>
 <% } %>
-<%
-    let mathType = typeof theme.math === "string"
-        ? (theme.math === "katex" ? "katex" : false)
-        : (theme.math && theme.math.type === "katex") ? "katex" : false;
-%>
-<% if (mathType === "katex") { %>
+<% if (theme.math.enable) { %>
 <link rel="stylesheet" href="https://registry.npmmirror.com/katex/0.16.45/files/dist/katex.min.css" media="print" onload="this.media='all'" />
-<% if (theme.math && theme.math.katex && theme.math.katex.copy_tex !== false) { %>
+<% if (theme.math.enable && theme.math.copy_tex) { %>
 <script src="https://registry.npmmirror.com/katex/0.16.45/files/dist/contrib/copy-tex.min.js" defer></script>
 <% } %>
 <% } %>
-<% if (theme.preview.enable) { %>
+<% if (theme.preview) { %>
 <script src="<%- url_for("/js/lib/preview.js") %>" defer></script>
 <% } %>
-<% if (theme.crypto.enable && typeof page.secret !== "undefined") { %>
+<% if (theme.crypto && typeof page.secret !== "undefined") { %>
 <script src="https://registry.npmmirror.com/crypto-js/4.2.0/files/crypto-js.js" defer></script>
 <script src="<%- url_for("/js/lib/crypto.js") %>" defer></script>
 <% } %>
-<% if (type === "archives" && theme.search.enable) { %>
+<% if (type === "archives" && theme.search) { %>
 <script src="<%- url_for("/js/lib/search.js") %>" defer></script>
 <% } %>
 <% if (type === "post" && page.comments) { %>
@@ -78,7 +78,7 @@
 <script src="https://registry.npmmirror.com/twikoo/1.7.7/files/dist/twikoo.all.min.js" defer></script>
 <% } %>
 <% } %>
-<% if (type === "post" && theme.toc && theme.toc.enable) { %>
+<% if (type === "post" && theme.toc) { %>
 <script>
     window.toc_config = {
         number: <%- JSON.stringify(theme.toc.number !== false) %>,
@@ -91,4 +91,7 @@
 <% } %>
 <% if (type === "index") { %>
 <script src="<%- url_for("/js/lib/home.js") %>" defer></script>
+<% } %>
+<% if (theme.a11y) { %>
+<script src="<%- url_for("/js/lib/a11y.js") %>" defer></script>
 <% } %>

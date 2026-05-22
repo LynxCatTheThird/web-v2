@@ -19,7 +19,8 @@
     if (attr === "dark") return true;
     if (attr === "light") return false;
     return (
-      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
     );
   }
 
@@ -38,9 +39,16 @@
     const background = document.getElementById("home-background");
     if (!background) return;
 
-    const lightImages = background.dataset.images.split(",").map((s) => s.trim()).filter(Boolean);
-    const darkImages = (background.dataset.imagesDark || background.dataset.images)
-      .split(",").map((s) => s.trim()).filter(Boolean);
+    const lightImages = background.dataset.images
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const darkImages = (
+      background.dataset.imagesDark || background.dataset.images
+    )
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
 
     // Set initial background
     applyBackground(background, lightImages, darkImages);
@@ -56,9 +64,11 @@
 
     // Also respond to OS-level color scheme changes (when no explicit theme is set)
     if (window.matchMedia) {
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-        applyBackground(background, lightImages, darkImages);
-      });
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", () => {
+          applyBackground(background, lightImages, darkImages);
+        });
     }
 
     const menu = document.getElementById("menu");
@@ -72,4 +82,3 @@
     }
   });
 })();
-

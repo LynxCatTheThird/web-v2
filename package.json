@@ -10,7 +10,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "6.3.0"
+    "version": "8.1.2"
   },
   "dependencies": {
     "@mdit/plugin-abbr": "^0.23.2",
@@ -22,7 +22,7 @@
     "@mdit/plugin-sub": "^0.24.2",
     "@mdit/plugin-sup": "^0.24.2",
     "@mdit/plugin-tasklist": "^0.23.2",
-    "hexo": "^6.3.0",
+    "hexo": "^8.1.2",
     "hexo-abbrlink": "^2.2.1",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-nofollow": "^2.0.2",
@@ -40,7 +40,7 @@
     "hexo-server": "^3.0.0",
     "hexo-yam": "^9.0.0",
     "highlight.js": "^11.11.1",
-    "katex": "^0.16.45",
+    "katex": "^0.17.0",
     "markdown-it": "^14.1.1"
   }
 }

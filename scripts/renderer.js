@@ -54,10 +54,6 @@ md.use(abbr)
   .use(tasklist)
   .use(spoiler);
 
-// ---------------------------------------------------------------------------
-// KaTeX 服务端渲染
-// ---------------------------------------------------------------------------
-
 /**
  * 从 Markdown 源文本中提取数学公式，替换为 HTML 注释占位符，
  * 使其安全地通过 markdown-it 处理而不被破坏（如 _ 被解释为斜体）。
@@ -74,12 +70,12 @@ function extractMath(text) {
   let counter = 0;
   const marker = (id) => `<!--KTX:${id}-->`;
 
-  // ---- 第一步：保护代码块 ----
+  // 第一步：保护代码块
   const codeSlots = [];
   let codeId = 0;
   const codeMark = (id) => `\x00C${id}\x00`;
 
-  // 围栏代码块（```/~~~）
+  // 围栏代码块
   text = text.replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?\n\1\s*$/gm, (m) => {
     codeSlots[codeId] = m;
     return codeMark(codeId++);
@@ -90,7 +86,7 @@ function extractMath(text) {
     return codeMark(codeId++);
   });
 
-  // ---- 第二步：提取并渲染数学公式 ----
+  // 第二步：提取并渲染数学公式
   const render = (math, display) => {
     const id = counter++;
     try {
@@ -99,7 +95,8 @@ function extractMath(text) {
         throwOnError: false,
       });
     } catch (_) {
-      rendered[id] = `<span class="katex-error">${md.utils.escapeHtml(math)}</span>`;
+      rendered[id] =
+        `<span class="katex-error">${md.utils.escapeHtml(math)}</span>`;
     }
     return marker(id);
   };
@@ -109,11 +106,13 @@ function extractMath(text) {
   // Display math: \[...\]
   text = text.replace(/\\\[([\s\S]*?)\\\]/g, (_, m) => render(m, true));
   // Inline math: $...$（不匹配 $$，不跨行）
-  text = text.replace(/(?<!\$)\$(?!\$)([^\$\n]+?)\$(?!\$)/g, (_, m) => render(m, false));
+  text = text.replace(/(?<!\$)\$(?!\$)([^\$\n]+?)\$(?!\$)/g, (_, m) =>
+    render(m, false),
+  );
   // Inline math: \(...\)
   text = text.replace(/\\\(([\s\S]*?)\\\)/g, (_, m) => render(m, false));
 
-  // ---- 第三步：恢复代码块 ----
+  // 第三步：恢复代码块
   for (let i = 0; i < codeSlots.length; i++) {
     text = text.replace(codeMark(i), codeSlots[i]);
   }

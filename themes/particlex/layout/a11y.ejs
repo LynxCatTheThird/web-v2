@@ -1,0 +1,285 @@
+<!-- 键盘导航跳过链接 -->
+<a href="#main-content-anchor" id="a11y-skip-link" class="a11y-skip-link"
+  >跳过导航，直接阅读内容</a
+>
+
+<!-- 专注遮罩掩膜 -->
+<div id="a11y-ruler-top" class="a11y-ruler-mask" aria-hidden="true"></div>
+<div id="a11y-ruler-bottom" class="a11y-ruler-mask" aria-hidden="true"></div>
+
+<!-- 无障碍设置面板 -->
+<div
+  id="a11y-panel"
+  class="a11y-panel"
+  role="dialog"
+  aria-modal="false"
+  aria-label="无障碍与阅读设置"
+  hidden
+>
+  <div class="a11y-panel-header">
+    <h3>
+      <span class="icon"><i class="fa-solid fa-universal-access"></i></span>
+      无障碍与阅读设置
+    </h3>
+    <button
+      id="a11y-panel-close"
+      class="a11y-close-btn"
+      aria-label="关闭设置面板"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <div class="a11y-panel-body">
+    <!-- 色彩与对比度 -->
+    <div class="a11y-setting-group">
+      <h4 class="a11y-group-title">
+        <i class="fa-solid fa-palette"></i> 色彩与对比度
+      </h4>
+      <div class="a11y-theme-options">
+        <button
+          class="a11y-theme-btn active"
+          data-a11y-theme="standard"
+          aria-pressed="true"
+        >
+          <span class="theme-preview standard"></span>
+          <span class="theme-label">默认</span>
+        </button>
+        <button
+          class="a11y-theme-btn"
+          data-a11y-theme="grayscale"
+          aria-pressed="false"
+        >
+          <span class="theme-preview grayscale"></span>
+          <span class="theme-label">灰度</span>
+        </button>
+      </div>
+
+      <!-- 色盲空间模拟 -->
+      <div
+        class="a11y-colorblind-section"
+        style="
+          margin-top: 14px;
+          border-top: 1px dashed var(--color-border-light);
+          padding-top: 12px;
+        "
+      >
+        <div class="a11y-switch-item" style="margin-bottom: 8px">
+          <div class="a11y-switch-info">
+            <span class="switch-title">色盲空间模拟</span>
+            <span class="switch-desc">为色觉障碍者模拟不同色盲视觉</span>
+          </div>
+          <label class="a11y-switch-container">
+            <input
+              type="checkbox"
+              id="a11y-toggle-colorblind"
+              aria-label="开启色盲空间模拟"
+            />
+            <span class="a11y-switch-track"></span>
+          </label>
+        </div>
+
+        <div
+          class="a11y-select-item"
+          id="a11y-colorblind-select-container"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 8px;
+            opacity: 0.5;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+          "
+        >
+          <span
+            class="select-label"
+            style="
+              font-size: 12px;
+              font-weight: 500;
+              color: var(--color-text-secondary);
+            "
+            >色盲模式选择</span
+          >
+          <select id="a11y-colorblind-select" aria-label="选择色盲模式">
+            <option value="protanopia">红色盲</option>
+            <option value="deuteranopia" selected>绿色盲</option>
+            <option value="tritanopia">蓝色盲</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 字体与排版 -->
+    <div class="a11y-setting-group">
+      <h4 class="a11y-group-title">
+        <i class="fa-solid fa-text-height"></i> 字体与排版
+      </h4>
+
+      <div class="a11y-slider-item">
+        <div class="a11y-slider-header">
+          <span class="slider-label">字号大小</span>
+          <span id="a11y-font-val" class="slider-value">100%</span>
+        </div>
+        <div class="a11y-slider-control">
+          <button
+            class="a11y-step-btn"
+            id="a11y-font-dec"
+            aria-label="减小字号"
+          >
+            -
+          </button>
+          <input
+            type="range"
+            id="a11y-font-slider"
+            min="80"
+            max="180"
+            step="10"
+            value="100"
+            aria-valuemin="80"
+            aria-valuemax="180"
+            aria-valuenow="100"
+            aria-valuetext="100%"
+          />
+          <button
+            class="a11y-step-btn"
+            id="a11y-font-inc"
+            aria-label="增大字号"
+          >
+            +
+          </button>
+        </div>
+      </div>
+
+      <div class="a11y-slider-item">
+        <div class="a11y-slider-header">
+          <span class="slider-label">正文行高</span>
+          <span id="a11y-line-height-val" class="slider-value">1.8x</span>
+        </div>
+        <div class="a11y-slider-control">
+          <button class="a11y-step-btn" id="a11y-lh-dec" aria-label="减小行高">
+            -
+          </button>
+          <input
+            type="range"
+            id="a11y-line-height-slider"
+            min="15"
+            max="30"
+            step="1"
+            value="18"
+            aria-valuemin="1.5"
+            aria-valuemax="3.0"
+            aria-valuenow="1.8"
+          />
+          <button class="a11y-step-btn" id="a11y-lh-inc" aria-label="增大行高">
+            +
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 辅助开关 -->
+    <div class="a11y-setting-group">
+      <h4 class="a11y-group-title">
+        <i class="fa-solid fa-sliders"></i> 辅助阅读功能
+      </h4>
+
+      <!-- 护眼衬线字体 -->
+      <div class="a11y-switch-item">
+        <div class="a11y-switch-info">
+          <span class="switch-title">护眼衬线字体</span>
+          <span class="switch-desc"
+            >使用高可读性衬线字体，并适当调整字符间距以缓解疲劳</span
+          >
+        </div>
+        <label class="a11y-switch-container">
+          <input
+            type="checkbox"
+            id="a11y-toggle-dyslexic"
+            aria-label="开启护眼衬线字体"
+          />
+          <span class="a11y-switch-track"></span>
+        </label>
+      </div>
+
+      <!-- ADHD 专注遮罩尺 -->
+      <div class="a11y-switch-item">
+        <div class="a11y-switch-info">
+          <span class="switch-title">ADHD 专注遮罩尺</span>
+          <span class="switch-desc"
+            >移动鼠标或触碰屏幕时遮罩半透明背景，帮助集中注意力</span
+          >
+        </div>
+        <label class="a11y-switch-container">
+          <input
+            type="checkbox"
+            id="a11y-toggle-ruler"
+            aria-label="开启专注遮罩尺"
+          />
+          <span class="a11y-switch-track"></span>
+        </label>
+      </div>
+
+      <!-- 左手模式 -->
+      <div class="a11y-switch-item">
+        <div class="a11y-switch-info">
+          <span class="switch-title">左手模式</span>
+          <span class="switch-desc">将右侧悬浮控制栏及设置面板调整至左侧</span>
+        </div>
+        <label class="a11y-switch-container">
+          <input
+            type="checkbox"
+            id="a11y-toggle-left-handed"
+            aria-label="开启左手模式"
+          />
+          <span class="a11y-switch-track"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="a11y-panel-footer">
+    <button
+      id="a11y-panel-reset"
+      class="a11y-reset-btn"
+      aria-label="重置无障碍设置"
+    >
+      <i class="fa-solid fa-rotate-left"></i> 重置设置
+    </button>
+    <span id="a11y-live-announcer" class="sr-only" aria-live="polite"></span>
+  </div>
+</div>
+
+<!-- 色盲模拟 SVG 滤镜定义 -->
+<svg
+  style="
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+  "
+  aria-hidden="true"
+>
+  <defs>
+    <filter id="a11y-protanopia">
+      <feColorMatrix
+        type="matrix"
+        values="0.567 0.433 0 0 0  0.558 0.442 0 0 0  0 0.242 0.758 0 0  0 0 0 1 0"
+      />
+    </filter>
+    <filter id="a11y-deuteranopia">
+      <feColorMatrix
+        type="matrix"
+        values="0.625 0.375 0 0 0  0.7 0.3 0 0 0  0 0.3 0.7 0 0  0 0 0 1 0"
+      />
+    </filter>
+    <filter id="a11y-tritanopia">
+      <feColorMatrix
+        type="matrix"
+        values="0.95 0.05 0 0 0  0 0.433 0.567 0 0  0 0.475 0.525 0 0  0 0 0 1 0"
+      />
+    </filter>
+  </defs>
+</svg>

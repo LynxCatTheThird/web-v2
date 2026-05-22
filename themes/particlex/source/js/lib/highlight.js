@@ -36,7 +36,8 @@
           pre._placeholder = null;
           pre._overlay = null;
           pre.classList.remove("expanded", "shrinking");
-          if (expandBtn) expandBtn.classList.replace("fa-compress", "fa-expand");
+          if (expandBtn)
+            expandBtn.classList.replace("fa-compress", "fa-expand");
         },
         { once: true },
       );

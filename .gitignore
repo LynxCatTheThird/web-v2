@@ -12,3 +12,5 @@ public/
 .deploy*/
 _multiconfig.yml
 node_modules/
+pnpm-workspace.yaml
+work.md

@@ -4,14 +4,23 @@
     box-sizing: border-box;
     margin: 100px auto 0;
     padding: 20px;
-    @include desktop { width: 900px; }
-    @include mobile { width: 100%; }
+    width: 100%;
+    @include desktop { max-width: 900px; }
+    @include mobile { max-width: 100%; }
 }
 
 .article.has-toc {
     @media (min-width: 1400px) {
         margin-left: calc((100vw - 900px - var(--toc-width, 260px) - 40px) / 2);
         margin-right: auto;
+    }
+}
+
+// 左撇子模式：TOC 在左侧，文章对称向右偏移
+html.a11y-left-handed .article.has-toc {
+    @media (min-width: 1400px) {
+        margin-left: auto;
+        margin-right: calc((100vw - 900px - var(--toc-width, 260px) - 40px) / 2);
     }
 }
 
@@ -37,6 +46,22 @@
             margin-right: 10px;
         }
         .date, a { color: $color-text-secondary; }
+
+        .tags .tag a,
+        .category a {
+            align-items: center;
+            border: 1px solid currentColor;
+            border-radius: 999px;
+            display: inline-flex;
+            min-height: 30px;
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
+        .tags .tag a:hover,
+        .category a:hover {
+            background: color-mix(in srgb, $color-primary 10%, transparent);
+        }
     }
 }
 

@@ -3,7 +3,7 @@
     posts.data.sort((a, b) => a.date - b.date);
 %>
 <div id="archives">
-    <% if (theme.search.enable) { %>
+    <% if (theme.search) { %>
     <input id="search-bar" class="input" placeholder="搜索" />
     <% } %>
     <div id="timeline-wrap">

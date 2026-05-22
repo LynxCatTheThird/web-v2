@@ -91,50 +91,62 @@ pre code.hljs {
     max-height: 60vh;
     max-width: 100%;
     overflow: auto;
-    padding: 20px 30px;
+    padding: 16px 20px;
     white-space: pre;
+    background: transparent !important;
+    color: var(--code-text);
     transition: opacity $transition-duration, visibility $transition-duration;
 }
 
 .code-toolbar {
-    align-items: stretch;
+    align-items: center;
     display: flex;
     justify-content: space-between;
     min-width: 0;
     position: relative;
+    padding: 8px 16px;
+    background: var(--code-toolbar-bg);
+    border-bottom: 1px solid var(--code-toolbar-border);
 }
 
 .copycode {
     display: flex;
-    color: $color-text-secondary;
+    color: var(--code-btn-color);
     flex: none;
     user-select: none;
 
     i {
         align-items: center;
+        justify-content: center;
         cursor: pointer;
         display: flex;
-        padding: 0 10px;
-        transition: transform $transition-duration, opacity $transition-duration;
-        &:last-child { padding-right: 15px; }
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.2s, opacity 0.2s;
+        font-size: 13px;
+        margin-left: 6px;
+
+        &:hover {
+            background-color: color-mix(in srgb, var(--code-btn-hover-color) 12%, transparent);
+            border-color: color-mix(in srgb, var(--code-btn-hover-color) 20%, transparent);
+            color: var(--code-btn-hover-color);
+        }
     }
 
     &.copied .copy-btn { opacity: 0; display: none; }
-    &:not(.copied) .check-btn { opacity: 0; display: none; }
+    &:not(.copied) .check-btn { opacity: 0; display: none; color: var(--color-success) !important; }
 }
 
-.content .copycode i:hover { color: $color-primary; opacity: 0.8; }
-
 .language {
-    background: $bg-language;
-    border-radius: 0 0 10px 10px;
-    box-shadow: $shadow-language;
-    color: #fff;
+    color: var(--code-text);
+    opacity: 0.75;
     flex: none;
     font-size: 12px;
-    font-weight: bold;
-    margin-left: 30px;
-    padding: 10px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     user-select: none;
 }
 

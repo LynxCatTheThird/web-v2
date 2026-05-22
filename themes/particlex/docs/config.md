@@ -135,11 +135,9 @@ highlight:
 
 ```yaml
 # Math rendering
-# type: katex | false
 math:
-  type: katex
-  katex:
-    copy_tex: true
+  enable: true
+  copy_tex: true
 ```
 
 ### 3.4. 图片预览
@@ -148,8 +146,7 @@ math:
 
 ```yaml
 # Image preview
-preview:
-  enable: true
+preview: true
 ```
 
 ### 3.5. 文章缩略
@@ -175,8 +172,7 @@ description: |
 
 ```yaml
 # Article encryption
-crypto:
-  enable: false
+crypto: false
 ```
 
 ### 3.8. 搜索
@@ -187,8 +183,7 @@ crypto:
 
 ```yaml
 # Search
-search:
-  enable: false
+search: false
 ```
 
 ### 3.9. 字体配置

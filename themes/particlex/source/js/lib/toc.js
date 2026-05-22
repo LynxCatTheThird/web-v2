@@ -20,14 +20,17 @@ window.renderers.push(() => {
   if (!tocContainer) return;
 
   const tocList = document.getElementById("toc-list");
-  const tocToggle = document.getElementById("toc-toggle");
+  const tocToggle = document.getElementById("fab-toc-toggle");
   const tocClose = document.getElementById("toc-close");
-  const btnTop = document.getElementById("toc-btn-top");
-  const btnComment = document.getElementById("toc-btn-comment");
-  const btnReading = document.getElementById("toc-btn-reading");
-  const exitReading = document.getElementById("reading-mode-exit");
   const resizeHandle = document.getElementById("toc-resize");
   const root = document.documentElement;
+
+  function syncToggleState() {
+    if (!tocToggle) return;
+    const collapsed = root.classList.contains("toc-collapsed");
+    tocToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    tocToggle.setAttribute("aria-label", collapsed ? "显示目录" : "收起目录");
+  }
 
   const minDepth = cfg.min_depth || 1;
   const maxDepth = cfg.max_depth || 4;
@@ -62,12 +65,18 @@ window.renderers.push(() => {
     const headings = content.querySelectorAll(headingSelector);
     if (headings.length === 0) {
       tocContainer.style.display = "none";
-      if (tocToggle) tocToggle.style.display = "none";
+      if (tocToggle) {
+        tocToggle.style.display = "none";
+        tocToggle.classList.add("fab-hidden");
+      }
       return;
     }
 
     tocContainer.style.display = "";
-    if (tocToggle) tocToggle.style.display = "";
+    if (tocToggle) {
+      tocToggle.style.display = "";
+      tocToggle.classList.remove("fab-hidden");
+    }
 
     // Ensure each heading has an id
     headings.forEach((h, i) => {
@@ -83,7 +92,7 @@ window.renderers.push(() => {
 
     // Calculate hierarchical numbers
     const minLevel = Math.min(
-      ...Array.from(headings).map((h) => parseInt(h.tagName[1]))
+      ...Array.from(headings).map((h) => parseInt(h.tagName[1])),
     );
     const counters = [0, 0, 0, 0, 0, 0];
 
@@ -152,7 +161,6 @@ window.renderers.push(() => {
       tocList.appendChild(li);
     });
 
-    // ── Scroll spy ────────────────────────────────────────────────
     if (scrollHandler) window.removeEventListener("scroll", scrollHandler);
 
     let ticking = false;
@@ -185,11 +193,6 @@ window.renderers.push(() => {
           link.classList.remove("toc-active");
         }
       });
-
-      if (btnTop) {
-        const scrollY = window.scrollY || root.scrollTop;
-        btnTop.classList.toggle("visible", scrollY > 300);
-      }
     }
 
     scrollHandler = () => {
@@ -210,11 +213,13 @@ window.renderers.push(() => {
     root.classList.add("toc-collapsed");
     tocContainer.classList.remove("toc-visible");
     sessionStorage.setItem("toc-collapsed", "true");
+    syncToggleState();
   }
 
   function expandTOC() {
     root.classList.remove("toc-collapsed");
     sessionStorage.setItem("toc-collapsed", "false");
+    syncToggleState();
   }
 
   if (tocClose) {
@@ -248,51 +253,7 @@ window.renderers.push(() => {
     }
   });
 
-  // ── Reading mode ──────────────────────────────────────────────────
-  function setReadingMode(enable) {
-    if (enable) {
-      root.classList.add("reading-mode");
-      root.classList.add("toc-collapsed");
-      sessionStorage.setItem("reading-mode", "true");
-      sessionStorage.setItem("toc-collapsed", "true");
-    } else {
-      if (typeof window.closeExpandedCodeBlock === "function") {
-        window.closeExpandedCodeBlock();
-      }
-      root.classList.remove("reading-mode");
-      root.classList.remove("toc-collapsed");
-      sessionStorage.setItem("reading-mode", "false");
-      sessionStorage.setItem("toc-collapsed", "false");
-    }
-  }
-
-  if (btnReading) {
-    btnReading.addEventListener("click", () => setReadingMode(true));
-  }
-  if (exitReading) {
-    exitReading.addEventListener("click", () => setReadingMode(false));
-  }
-
-  // ── Back to top ─────────────────────────────────────────────────
-  if (btnTop) {
-    btnTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  // ── Go to comment ───────────────────────────────────────────────
-  if (btnComment) {
-    btnComment.addEventListener("click", () => {
-      const comment = document.getElementById("comment");
-      if (comment) {
-        const top =
-          comment.getBoundingClientRect().top + window.pageYOffset - 60;
-        window.scrollTo({ top, behavior: "smooth" });
-      }
-    });
-  }
-
-  // ── Desktop drag-resize ─────────────────────────────────────────
+  // Desktop drag-resize
   if (resizeHandle) {
     let startX, startW;
     const onMouseMove = (e) => {
@@ -317,7 +278,8 @@ window.renderers.push(() => {
     });
   }
 
-  // ── Init ────────────────────────────────────────────────────────
+  // Init
+  syncToggleState();
   buildTOC();
 
   // Observe for crypto decryption

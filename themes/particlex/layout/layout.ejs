@@ -16,10 +16,11 @@
 <html lang="<%- config.language %>">
 <head>
     <script>
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            document.documentElement.setAttribute("data-theme", savedTheme);
+        let savedTheme = localStorage.getItem("theme");
+        if (!savedTheme) {
+            savedTheme = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
         }
+        document.documentElement.setAttribute("data-theme", savedTheme);
         function updateHighlightStyle() {
             let currentTheme = document.documentElement.getAttribute("data-theme");
             if (!currentTheme) return;
@@ -47,6 +48,10 @@
     <%- partial("import", { type }) %>
 </head>
 <body>
+    <% if (theme.a11y) { %>
+    <%- partial("a11y") %>
+    <% } %>
+    <%- partial("fab") %>
     <div id="layout">
         <% if (theme.loading && theme.loading.enable) { %>
         <div id="loading" class="fade-transition" role="status" aria-label="页面加载中">
@@ -59,6 +64,7 @@
         <% } %>
         <%- partial("menu") %>
         <main id="main" class="<%- (theme.loading && theme.loading.enable) ? 'into-enter-active into-hidden' : 'into-enter-active' %>">
+            <span id="main-content-anchor" tabindex="-1"></span>
             <%- partial(type) %>
             <%- partial("footer") %>
         </main>

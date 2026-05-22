@@ -1,0 +1,39 @@
+<div class="fab-group" id="fab-group">
+    <!-- 目录切换按钮 -->
+    <% if (theme.toc && theme.toc.enable && (is_post() || is_page())) { %>
+    <button class="fab-btn fab-hidden" id="fab-toc-toggle" aria-label="切换目录" title="切换目录">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    <% } %>
+
+    <!-- 主题配色切换 -->
+    <button class="fab-btn theme-button" id="fab-theme" aria-label="切换深浅主题" title="切换深浅主题">
+        <i class="fa-solid fa-adjust"></i>
+    </button>
+
+    <!-- 无障碍面板开关 -->
+    <% if (theme.a11y) { %>
+    <button class="fab-btn" id="fab-a11y" aria-label="无障碍设置" title="无障碍设置">
+        <i class="fa-solid fa-universal-access"></i>
+    </button>
+    <% } %>
+
+    <!-- 阅读模式开关 -->
+    <% if (theme.reading_mode && (is_post() || is_page())) { %>
+    <button class="fab-btn" id="fab-reading" aria-label="切换阅读模式" title="切换阅读模式">
+        <i class="fa-solid fa-book-open"></i>
+    </button>
+    <% } %>
+
+    <!-- 评论区直达 -->
+    <% if ((is_post() || is_page()) && page.comments) { %>
+    <button class="fab-btn" id="fab-comment" aria-label="直达评论" title="直达评论">
+        <i class="fa-solid fa-comment"></i>
+    </button>
+    <% } %>
+
+    <!-- 回到顶部 -->
+    <button class="fab-btn fab-hidden" id="fab-top" aria-label="回到顶部" title="回到顶部">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+</div>
