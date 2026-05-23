@@ -4,7 +4,16 @@
 %>
 <div id="archives">
     <% if (theme.search) { %>
-    <input id="search-bar" class="input" placeholder="搜索" />
+    <input id="search-bar" class="input" placeholder="搜索" aria-label="搜索全站文章" />
+    <div id="search-results-wrap" class="search-results-hidden" style="display: none;">
+        <div class="search-results-header">
+            <h3><i class="fa-solid fa-magnifying-glass"></i> 全文检索结果</h3>
+            <button id="search-results-clear" class="search-clear-btn" aria-label="清除搜索结果">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </button>
+        </div>
+        <div id="search-results-list"></div>
+    </div>
     <% } %>
     <div id="timeline-wrap">
         <% posts.forEach((post, id) => { %>

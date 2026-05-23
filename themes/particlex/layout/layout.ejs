@@ -15,6 +15,7 @@
 <!DOCTYPE html>
 <html lang="<%- config.language %>">
 <head>
+    <meta charset="utf-8" />
     <script>
         let savedTheme = localStorage.getItem("theme");
         if (!savedTheme) {
@@ -38,7 +39,6 @@
         }
         window.addEventListener("DOMContentLoaded", updateHighlightStyle);
     </script>
-    <meta charset="utf-8" />
     <title><%= title %></title>
     <meta name="author" content="<%- config.author %>" />
     <meta name="description" content="<%- config.description %>" />
@@ -48,7 +48,7 @@
     <%- partial("import", { type }) %>
 </head>
 <body>
-    <% if (theme.a11y) { %>
+    <% if (theme.a11y && theme.a11y.enable) { %>
     <%- partial("a11y") %>
     <% } %>
     <%- partial("fab") %>
@@ -68,11 +68,6 @@
             <%- partial(type) %>
             <%- partial("footer") %>
         </main>
-        <% if (theme.preview.enable) { %>
-        <div id="preview" class="fade-transition fade-hidden">
-            <img id="preview-content" alt="preview" />
-        </div>
-        <% } %>
     </div>
     <script src="<%- url_for("/js/main.js") %>" defer></script>
     <% if (type === "post" && page.comments) { %>

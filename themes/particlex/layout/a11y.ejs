@@ -32,10 +32,12 @@
 
   <div class="a11y-panel-body">
     <!-- 色彩与对比度 -->
+    <% if (theme.a11y.grayscale || theme.a11y.colorblind) { %>
     <div class="a11y-setting-group">
       <h4 class="a11y-group-title">
         <i class="fa-solid fa-palette"></i> 色彩与对比度
       </h4>
+      <% if (theme.a11y.grayscale) { %>
       <div class="a11y-theme-options">
         <button
           class="a11y-theme-btn active"
@@ -54,8 +56,10 @@
           <span class="theme-label">灰度</span>
         </button>
       </div>
+      <% } %>
 
       <!-- 色盲空间模拟 -->
+      <% if (theme.a11y.colorblind) { %>
       <div
         class="a11y-colorblind-section"
         style="
@@ -109,18 +113,34 @@
           </select>
         </div>
       </div>
+      <% } %>
     </div>
+    <% } %>
 
     <!-- 字体与排版 -->
+    <% if (theme.a11y.font_scale || theme.a11y.line_height) { %>
     <div class="a11y-setting-group">
       <h4 class="a11y-group-title">
         <i class="fa-solid fa-text-height"></i> 字体与排版
       </h4>
 
+      <% if (theme.a11y.font_scale) { %>
       <div class="a11y-slider-item">
         <div class="a11y-slider-header">
-          <span class="slider-label">字号大小</span>
-          <span id="a11y-font-val" class="slider-value">100%</span>
+          <label for="a11y-font-slider" class="slider-label">字号大小</label>
+          <div class="slider-value-input-wrap">
+            <input
+              type="number"
+              id="a11y-font-input"
+              class="a11y-number-input"
+              min="80"
+              max="180"
+              step="1"
+              value="100"
+              aria-label="手动输入字号大小"
+            />
+            <span class="unit">%</span>
+          </div>
         </div>
         <div class="a11y-slider-control">
           <button
@@ -151,11 +171,25 @@
           </button>
         </div>
       </div>
+      <% } %>
 
+      <% if (theme.a11y.line_height) { %>
       <div class="a11y-slider-item">
         <div class="a11y-slider-header">
-          <span class="slider-label">正文行高</span>
-          <span id="a11y-line-height-val" class="slider-value">1.8x</span>
+          <label for="a11y-line-height-slider" class="slider-label">正文行高</label>
+          <div class="slider-value-input-wrap">
+            <input
+              type="number"
+              id="a11y-line-height-input"
+              class="a11y-number-input"
+              min="1.5"
+              max="3.0"
+              step="0.1"
+              value="1.8"
+              aria-label="手动输入正文行高"
+            />
+            <span class="unit">x</span>
+          </div>
         </div>
         <div class="a11y-slider-control">
           <button class="a11y-step-btn" id="a11y-lh-dec" aria-label="减小行高">
@@ -177,15 +211,19 @@
           </button>
         </div>
       </div>
+      <% } %>
     </div>
+    <% } %>
 
     <!-- 辅助开关 -->
+    <% if (theme.a11y.eyecare_serif || theme.a11y.focus_ruler || theme.a11y.left_handed) { %>
     <div class="a11y-setting-group">
       <h4 class="a11y-group-title">
         <i class="fa-solid fa-sliders"></i> 辅助阅读功能
       </h4>
 
       <!-- 护眼衬线字体 -->
+      <% if (theme.a11y.eyecare_serif) { %>
       <div class="a11y-switch-item">
         <div class="a11y-switch-info">
           <span class="switch-title">护眼衬线字体</span>
@@ -202,8 +240,10 @@
           <span class="a11y-switch-track"></span>
         </label>
       </div>
+      <% } %>
 
       <!-- ADHD 专注遮罩尺 -->
+      <% if (theme.a11y.focus_ruler) { %>
       <div class="a11y-switch-item">
         <div class="a11y-switch-info">
           <span class="switch-title">ADHD 专注遮罩尺</span>
@@ -220,8 +260,10 @@
           <span class="a11y-switch-track"></span>
         </label>
       </div>
+      <% } %>
 
       <!-- 左手模式 -->
+      <% if (theme.a11y.left_handed) { %>
       <div class="a11y-switch-item">
         <div class="a11y-switch-info">
           <span class="switch-title">左手模式</span>
@@ -236,7 +278,76 @@
           <span class="a11y-switch-track"></span>
         </label>
       </div>
+      <% } %>
     </div>
+    <% } %>
+
+    <!-- 开发者色彩预览 -->
+    <% if (theme.a11y.developer_hue) { %>
+    <div class="a11y-setting-group">
+      <h4 class="a11y-group-title">
+        <i class="fa-solid fa-code"></i> 开发者色彩预览
+      </h4>
+
+      <div class="a11y-switch-item">
+        <div class="a11y-switch-info">
+          <span class="switch-title">实时色彩微调</span>
+          <span class="switch-desc">在页面直接预览并微调主题色彩 Hue 值</span>
+        </div>
+        <label class="a11y-switch-container">
+          <input
+            type="checkbox"
+            id="a11y-toggle-developer"
+            aria-label="开启开发者调色预览"
+          />
+          <span class="a11y-switch-track"></span>
+        </label>
+      </div>
+
+      <div
+        class="a11y-slider-item"
+        id="a11y-developer-slider-container"
+        style="
+          margin-top: 10px;
+          opacity: 0.5;
+          pointer-events: none;
+          transition: opacity 0.2s ease;
+        "
+      >
+        <div class="a11y-slider-header">
+          <label for="a11y-hue-slider" class="slider-label">Hue 色相角度</label>
+          <div class="slider-value-input-wrap">
+            <input
+              type="number"
+              id="a11y-hue-input"
+              class="a11y-number-input"
+              min="0"
+              max="360"
+              step="1"
+              value="210"
+              aria-label="手动输入Hue色相角度"
+            />
+            <span class="unit">°</span>
+          </div>
+        </div>
+        <div class="a11y-slider-control">
+          <input
+            type="range"
+            id="a11y-hue-slider"
+            min="0"
+            max="360"
+            step="1"
+            value="210"
+            aria-valuemin="0"
+            aria-valuemax="360"
+            aria-valuenow="210"
+            aria-valuetext="210°"
+            style="width: 100%;"
+          />
+        </div>
+      </div>
+    </div>
+    <% } %>
   </div>
 
   <div class="a11y-panel-footer">
@@ -252,6 +363,7 @@
 </div>
 
 <!-- 色盲模拟 SVG 滤镜定义 -->
+<% if (theme.a11y.colorblind) { %>
 <svg
   style="
     position: absolute;
@@ -283,3 +395,4 @@
     </filter>
   </defs>
 </svg>
+<% } %>

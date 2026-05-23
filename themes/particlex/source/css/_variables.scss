@@ -5,7 +5,7 @@
     --color-text-muted: #5a6b7d;
     --color-text-dark: #23384d;
 
-    --color-background: #f4f7fb;
+    --color-background: hsl(var(--primary-hue, 210), 25%, 97%);
     --color-white: #fff;
     --color-black: #000;
 
@@ -16,41 +16,42 @@
     --color-border-light: #cdd7e3;
     --color-border-dark: #b7c3d0;
 
-    --shadow-light: 0 8px 24px rgba(21, 45, 74, 0.12);
-    --shadow-hover: 0 4px 12px rgba(21, 45, 74, 0.18);
+    --shadow-light: 0 8px 24px hsla(var(--primary-hue, 210), 55%, 19%, 0.12);
+    --shadow-hover: 0 4px 12px hsla(var(--primary-hue, 210), 55%, 19%, 0.18);
 
-    --bg-table-even: #eef4fb;
-    --bg-table-odd: #e6eff9;
-    --bg-table-th: #cfe0f5;
-    --bg-blockquote: #edf4fb;
-    --bg-code: #e9f1fa;
+    --bg-table-even: hsl(var(--primary-hue, 210), 40%, 96%);
+    --bg-table-odd: hsl(var(--primary-hue, 210), 45%, 94%);
+    --bg-table-th: hsl(var(--primary-hue, 210), 50%, 89%);
+    --bg-blockquote: hsl(var(--primary-hue, 210), 40%, 96%);
+    --bg-code: hsl(var(--primary-hue, 210), 45%, 95%);
     --bg-mark: #fff1a8;
     --bg-selection: hsla(var(--primary-hue, 210), 90%, 43%, 0.22);
 
-    --bg-menu: #dbe8f5;
-    --bg-menu-color: rgba(22, 50, 74, 0.16);
-    --shadow-menu: 0 -1px 10px 0 rgba(21, 45, 74, 0.16);
+    --bg-menu: hsl(var(--primary-hue, 210), 45%, 91%);
+    --bg-menu-color: hsla(var(--primary-hue, 210), 54%, 19%, 0.16);
+    --shadow-menu: 0 -1px 10px 0 hsla(var(--primary-hue, 210), 55%, 19%, 0.16);
 
     --border-input: #94a6ba;
     --border-input-focus: hsl(var(--primary-hue, 210), 92%, 44%);
     --shadow-input-focus: 0 0 0 3px hsla(var(--primary-hue, 210), 92%, 44%, 0.3);
 
     --bg-preview: rgba(255, 255, 255, 0.8);
-    --border-timeline: rgba(22, 50, 74, 0.16);
-    --shadow-timeline: 0 2px 10px rgba(21, 45, 74, 0.12);
+    --border-timeline: hsla(var(--primary-hue, 210), 54%, 19%, 0.16);
+    --shadow-timeline: 0 2px 10px hsla(var(--primary-hue, 210), 55%, 19%, 0.12);
 
-    --bg-language: #39536d;
-    --shadow-language: 1px 1px 0.75rem rgba(57, 83, 109, 0.22);
+    --bg-language: hsl(var(--primary-hue, 210), 31%, 33%);
+    --shadow-language: 1px 1px 0.75rem hsla(var(--primary-hue, 210), 31%, 33%, 0.22);
 
     --bg-go-post: hsl(var(--primary-hue, 210), 90%, 43%);
+    --color-go-post-text: #ffffff;
     --shadow-go-post: 0 8px 18px hsla(var(--primary-hue, 210), 90%, 43%, 0.26);
     --shadow-go-post-hover: 0 10px 22px hsla(var(--primary-hue, 210), 90%, 43%, 0.34);
 
     /* GitHub-style light code block tokens */
-    --code-border: #d0d7de;
-    --code-bg: #f6f8fa;
-    --code-toolbar-bg: #f6f8fa;
-    --code-toolbar-border: #d0d7de;
+    --code-border: hsl(var(--primary-hue, 210), 16%, 89%);
+    --code-bg: hsl(var(--primary-hue, 210), 20%, 97.5%);
+    --code-toolbar-bg: hsl(var(--primary-hue, 210), 20%, 96.5%);
+    --code-toolbar-border: hsl(var(--primary-hue, 210), 16%, 89%);
     --code-text: #24292f;
     --code-btn-color: #57606a;
     --code-btn-hover-color: var(--color-primary);
@@ -63,8 +64,8 @@
         --color-text-muted: #9eb0c2;
         --color-text-dark: #edf3fa;
 
-        --color-background: #0f1722;
-        --color-white: #172230;
+        --color-background: hsl(var(--primary-hue, 210), 37%, 10%);
+        --color-white: hsl(var(--primary-hue, 210), 35%, 14%);
         --color-black: #fff;
 
         --color-success: #59d38a;
@@ -77,15 +78,15 @@
         --shadow-light: 0 10px 28px rgba(0, 0, 0, 0.4);
         --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.5);
 
-        --bg-table-even: #182535;
-        --bg-table-odd: #132130;
-        --bg-table-th: #203247;
-        --bg-blockquote: #18283a;
-        --bg-code: #1b2b3d;
+        --bg-table-even: hsl(var(--primary-hue, 210), 37%, 15%);
+        --bg-table-odd: hsl(var(--primary-hue, 210), 40%, 13%);
+        --bg-table-th: hsl(var(--primary-hue, 210), 38%, 20%);
+        --bg-blockquote: hsl(var(--primary-hue, 210), 40%, 16%);
+        --bg-code: hsl(var(--primary-hue, 210), 38%, 18%);
         --bg-mark: rgba(255, 214, 10, 0.34);
         --bg-selection: hsla(var(--primary-hue, 210), 100%, 74%, 0.3);
 
-        --bg-menu: #1c2c3f;
+        --bg-menu: hsl(var(--primary-hue, 210), 35%, 18%);
         --bg-menu-color: rgba(0, 0, 0, 0.5);
         --shadow-menu: 0 -1px 10px 0 rgba(0, 0, 0, 0.5);
 
@@ -97,18 +98,19 @@
         --border-timeline: rgba(255, 255, 255, 0.18);
         --shadow-timeline: 0 2px 8px rgba(0, 0, 0, 0.5);
 
-        --bg-language: #2e435c;
+        --bg-language: hsl(var(--primary-hue, 210), 33%, 27%);
         --shadow-language: 1px 1px 0.75rem rgba(0, 0, 0, 0.34);
 
         --bg-go-post: hsl(var(--primary-hue, 210), 100%, 74%);
+        --color-go-post-text: hsl(var(--primary-hue, 210), 45%, 6%);
         --shadow-go-post: 0 8px 18px rgba(0, 0, 0, 0.32);
         --shadow-go-post-hover: 0 10px 24px rgba(0, 0, 0, 0.38);
 
         /* GitHub-style dark code block tokens */
-        --code-border: #30363d;
-        --code-bg: #161b22;
-        --code-toolbar-bg: #161b22;
-        --code-toolbar-border: #30363d;
+        --code-border: hsl(var(--primary-hue, 210), 16%, 22%);
+        --code-bg: hsl(var(--primary-hue, 210), 22%, 11%);
+        --code-toolbar-bg: hsl(var(--primary-hue, 210), 20%, 12%);
+        --code-toolbar-border: hsl(var(--primary-hue, 210), 16%, 22%);
         --code-text: #c9d1d9;
         --code-btn-color: #8b949e;
         --code-btn-hover-color: var(--color-primary);
@@ -166,6 +168,7 @@ $bg-language: var(--bg-language);
 $shadow-language: var(--shadow-language);
 
 $bg-go-post: var(--bg-go-post);
+$color-go-post-text: var(--color-go-post-text);
 $shadow-go-post: var(--shadow-go-post);
 $shadow-go-post-hover: var(--shadow-go-post-hover);
 

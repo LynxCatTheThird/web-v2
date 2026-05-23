@@ -164,6 +164,7 @@ window.renderers.push(() => {
     if (scrollHandler) window.removeEventListener("scroll", scrollHandler);
 
     let ticking = false;
+    let currentActiveIndex = -2;
     const tocLinks = tocList.querySelectorAll(".toc-link");
     const headingArr = Array.from(headings);
 
@@ -175,6 +176,9 @@ window.renderers.push(() => {
           break;
         }
       }
+
+      if (activeIndex === currentActiveIndex) return;
+      currentActiveIndex = activeIndex;
 
       tocLinks.forEach((link, i) => {
         if (i === activeIndex) {

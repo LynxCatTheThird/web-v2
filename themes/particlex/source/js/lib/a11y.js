@@ -10,14 +10,14 @@ window.renderers.push(() => {
   const a11yResetBtn = document.getElementById("a11y-panel-reset");
   const liveAnnouncer = document.getElementById("a11y-live-announcer");
 
-  // 滑块控件
+  // 滑块与微调输入控件
   const fontSlider = document.getElementById("a11y-font-slider");
-  const fontValText = document.getElementById("a11y-font-val");
+  const fontInput = document.getElementById("a11y-font-input");
   const fontDecBtn = document.getElementById("a11y-font-dec");
   const fontIncBtn = document.getElementById("a11y-font-inc");
 
   const lhSlider = document.getElementById("a11y-line-height-slider");
-  const lhValText = document.getElementById("a11y-line-height-val");
+  const lhInput = document.getElementById("a11y-line-height-input");
   const lhDecBtn = document.getElementById("a11y-lh-dec");
   const lhIncBtn = document.getElementById("a11y-lh-inc");
 
@@ -31,6 +31,12 @@ window.renderers.push(() => {
     "a11y-colorblind-select-container",
   );
 
+  // 开发者模式控件
+  const toggleDeveloper = document.getElementById("a11y-toggle-developer");
+  const developerSlider = document.getElementById("a11y-hue-slider");
+  const developerSliderContainer = document.getElementById("a11y-developer-slider-container");
+  const developerInput = document.getElementById("a11y-hue-input");
+
   // 主题切换按钮
   const themeBtns = document.querySelectorAll(".a11y-theme-btn");
 
@@ -38,16 +44,24 @@ window.renderers.push(() => {
   const rulerTop = document.getElementById("a11y-ruler-top");
   const rulerBottom = document.getElementById("a11y-ruler-bottom");
 
+  // 缓存初始加载的色彩 HUE 角度作为还原基准
+  const initialHue = parseInt(root.style.getPropertyValue("--primary-hue") || getComputedStyle(root).getPropertyValue("--primary-hue").trim()) || 210;
+  if (!root.hasAttribute("data-initial-hue")) {
+    root.setAttribute("data-initial-hue", initialHue);
+  }
+
   // 默认配置
   const DEFAULTS = {
     theme: "standard",
     fontSize: 100,
-    lineHeight: 18, // 默认为 1.8x
+    lineHeight: 18,
     dyslexic: false,
     ruler: false,
     leftHanded: false,
     colorblindEnabled: false,
     colorblindMode: "deuteranopia",
+    developerEnabled: false,
+    customHue: initialHue,
   };
 
   // 屏幕阅读器辅助广播
@@ -75,35 +89,60 @@ window.renderers.push(() => {
       btn.setAttribute("aria-pressed", isMatch ? "true" : "false");
     });
 
-    // 色盲空间模拟
+    // 灰度配色覆盖色盲空间模拟
+    const isGrayscale = settings.theme === "grayscale";
+    
     root.classList.remove(
       "a11y-protanopia",
       "a11y-deuteranopia",
       "a11y-tritanopia",
     );
+
     if (toggleColorblind) {
       toggleColorblind.checked = settings.colorblindEnabled;
+      if (isGrayscale) {
+        toggleColorblind.setAttribute("disabled", "true");
+      } else {
+        toggleColorblind.removeAttribute("disabled");
+      }
     }
     if (colorblindSelect) {
       colorblindSelect.value = settings.colorblindMode;
     }
 
-    if (settings.colorblindEnabled) {
-      root.classList.add(`a11y-${settings.colorblindMode}`);
-      if (colorblindSelect) {
-        colorblindSelect.removeAttribute("disabled");
-      }
-      if (colorblindSelectContainer) {
-        colorblindSelectContainer.style.opacity = "1";
-        colorblindSelectContainer.style.pointerEvents = "auto";
-      }
-    } else {
+    const colorblindSection = document.querySelector(".a11y-colorblind-section");
+    if (isGrayscale) {
       if (colorblindSelect) {
         colorblindSelect.setAttribute("disabled", "true");
       }
       if (colorblindSelectContainer) {
-        colorblindSelectContainer.style.opacity = "0.5";
+        colorblindSelectContainer.style.opacity = "0.3";
         colorblindSelectContainer.style.pointerEvents = "none";
+      }
+      if (colorblindSection) {
+        colorblindSection.style.opacity = "0.5";
+      }
+    } else {
+      if (colorblindSection) {
+        colorblindSection.style.opacity = "1";
+      }
+      if (settings.colorblindEnabled) {
+        root.classList.add(`a11y-${settings.colorblindMode}`);
+        if (colorblindSelect) {
+          colorblindSelect.removeAttribute("disabled");
+        }
+        if (colorblindSelectContainer) {
+          colorblindSelectContainer.style.opacity = "1";
+          colorblindSelectContainer.style.pointerEvents = "auto";
+        }
+      } else {
+        if (colorblindSelect) {
+          colorblindSelect.setAttribute("disabled", "true");
+        }
+        if (colorblindSelectContainer) {
+          colorblindSelectContainer.style.opacity = "0.5";
+          colorblindSelectContainer.style.pointerEvents = "none";
+        }
       }
     }
 
@@ -117,7 +156,9 @@ window.renderers.push(() => {
       fontSlider.setAttribute("aria-valuenow", settings.fontSize);
       fontSlider.setAttribute("aria-valuetext", `${settings.fontSize}%`);
     }
-    if (fontValText) fontValText.textContent = `${settings.fontSize}%`;
+    if (fontInput) {
+      fontInput.value = settings.fontSize;
+    }
 
     // 行高缩放
     root.style.setProperty(
@@ -128,8 +169,9 @@ window.renderers.push(() => {
       lhSlider.value = settings.lineHeight;
       lhSlider.setAttribute("aria-valuenow", settings.lineHeight / 10);
     }
-    if (lhValText)
-      lhValText.textContent = `${(settings.lineHeight / 10).toFixed(1)}x`;
+    if (lhInput) {
+      lhInput.value = (settings.lineHeight / 10).toFixed(1);
+    }
 
     // 护眼衬线字体
     root.classList.toggle("a11y-dyslexic", settings.dyslexic);
@@ -138,11 +180,51 @@ window.renderers.push(() => {
     // 专注遮罩尺
     root.classList.toggle("a11y-ruler-enabled", settings.ruler);
     if (toggleRuler) toggleRuler.checked = settings.ruler;
-    updateRulerPosition(window.innerHeight / 2);
+    if (settings.ruler) {
+      updateRulerPosition(window.innerHeight / 2);
+    }
 
     // 左手模式
     root.classList.toggle("a11y-left-handed", settings.leftHanded);
     if (toggleLeftHanded) toggleLeftHanded.checked = settings.leftHanded;
+
+    // 开发者模式 HUE 调色配置
+    if (toggleDeveloper) {
+      toggleDeveloper.checked = settings.developerEnabled;
+    }
+    if (developerSlider) {
+      developerSlider.value = settings.customHue;
+    }
+    if (developerInput) {
+      developerInput.value = settings.customHue;
+    }
+
+    if (settings.developerEnabled) {
+      root.style.setProperty("--primary-hue", settings.customHue);
+      if (developerSlider) {
+        developerSlider.removeAttribute("disabled");
+      }
+      if (developerInput) {
+        developerInput.removeAttribute("disabled");
+      }
+      if (developerSliderContainer) {
+        developerSliderContainer.style.opacity = "1";
+        developerSliderContainer.style.pointerEvents = "auto";
+      }
+    } else {
+      const initHue = parseInt(root.getAttribute("data-initial-hue")) || 210;
+      root.style.setProperty("--primary-hue", initHue);
+      if (developerSlider) {
+        developerSlider.setAttribute("disabled", "true");
+      }
+      if (developerInput) {
+        developerInput.setAttribute("disabled", "true");
+      }
+      if (developerSliderContainer) {
+        developerSliderContainer.style.opacity = "0.5";
+        developerSliderContainer.style.pointerEvents = "none";
+      }
+    }
   }
 
   // 从本地存储加载配置
@@ -169,6 +251,10 @@ window.renderers.push(() => {
         colorblindMode:
           localStorage.getItem("a11y-colorblind-mode") ||
           DEFAULTS.colorblindMode,
+        developerEnabled:
+          localStorage.getItem("a11y-developer-enabled") === "true",
+        customHue:
+          parseInt(localStorage.getItem("a11y-custom-hue")) || DEFAULTS.customHue,
       };
     } catch (e) {
       return { ...DEFAULTS };
@@ -256,6 +342,18 @@ window.renderers.push(() => {
     });
   }
 
+  if (fontInput) {
+    fontInput.addEventListener("change", (e) => {
+      let val = parseInt(e.target.value);
+      if (isNaN(val)) val = DEFAULTS.fontSize;
+      val = Math.max(80, Math.min(180, val));
+      activeSettings.fontSize = val;
+      saveSetting("font-size", val);
+      applySettings(activeSettings);
+      announce(`字号已手动微调为 ${val}%`);
+    });
+  }
+
   if (fontDecBtn && fontSlider) {
     fontDecBtn.addEventListener("click", () => {
       const val = Math.max(80, activeSettings.fontSize - 10);
@@ -283,6 +381,19 @@ window.renderers.push(() => {
       activeSettings.lineHeight = val;
       saveSetting("line-height", val);
       applySettings(activeSettings);
+    });
+  }
+
+  if (lhInput) {
+    lhInput.addEventListener("change", (e) => {
+      let val = parseFloat(e.target.value);
+      if (isNaN(val)) val = DEFAULTS.lineHeight / 10;
+      val = Math.max(1.5, Math.min(3.0, val));
+      const storageVal = Math.round(val * 10);
+      activeSettings.lineHeight = storageVal;
+      saveSetting("line-height", storageVal);
+      applySettings(activeSettings);
+      announce(`行高已手动微调为 ${val.toFixed(1)}倍`);
     });
   }
 
@@ -374,6 +485,37 @@ window.renderers.push(() => {
     });
   }
 
+  if (toggleDeveloper) {
+    toggleDeveloper.addEventListener("change", (e) => {
+      const isChecked = e.target.checked;
+      activeSettings.developerEnabled = isChecked;
+      saveSetting("developer-enabled", isChecked);
+      applySettings(activeSettings);
+      announce(isChecked ? "开发者色彩微调已开启" : "开发者色彩微调已关闭");
+    });
+  }
+
+  if (developerSlider) {
+    developerSlider.addEventListener("input", (e) => {
+      const val = parseInt(e.target.value);
+      activeSettings.customHue = val;
+      saveSetting("custom-hue", val);
+      applySettings(activeSettings);
+    });
+  }
+
+  if (developerInput) {
+    developerInput.addEventListener("change", (e) => {
+      let val = parseInt(e.target.value);
+      if (isNaN(val)) val = DEFAULTS.customHue;
+      val = Math.max(0, Math.min(360, val));
+      activeSettings.customHue = val;
+      saveSetting("custom-hue", val);
+      applySettings(activeSettings);
+      announce(`色相已手动微调为 ${val}°`);
+    });
+  }
+
   // 重置按钮绑定
   if (a11yResetBtn) {
     a11yResetBtn.addEventListener("click", () => {
@@ -387,6 +529,8 @@ window.renderers.push(() => {
         localStorage.removeItem("a11y-left-handed");
         localStorage.removeItem("a11y-colorblind-enabled");
         localStorage.removeItem("a11y-colorblind-mode");
+        localStorage.removeItem("a11y-developer-enabled");
+        localStorage.removeItem("a11y-custom-hue");
       } catch (e) {}
       applySettings(activeSettings);
       announce("设置已重置为默认值");
@@ -447,7 +591,9 @@ window.renderers.push(() => {
   window.addEventListener(
     "resize",
     () => {
-      updateRulerPosition(window.innerHeight / 2);
+      if (activeSettings.ruler) {
+        updateRulerPosition(window.innerHeight / 2);
+      }
     },
     { passive: true },
   );

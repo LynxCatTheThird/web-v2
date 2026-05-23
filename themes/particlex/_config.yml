@@ -109,20 +109,36 @@ toc:
   max_depth: 4 # Maximum heading level
   width: 260 # Default width in px (desktop, drag-resizable)
 
-# Image preview
+# Image preview (Fancybox
 preview: true
 
 # Article encryption
 crypto: true
 
-# Search
+# Full-text Search
 search: true
 
 # Reading Mode
 reading_mode: true
 
-# Accessibility
-a11y: true
+# Accessibility & Reading Enhancements Settings
+a11y:
+  enable: true
+  grayscale: true # Grayscale color scheme option
+  colorblind: true # Colorblindness space simulation modes & SVG filters
+  font_scale: true # Paragraph font size scaling slider & manual numeric inputs
+  line_height: true # Paragraph line height spacing slider & manual numeric inputs
+  eyecare_serif: true # Soothing Eye-care Serif Font stack toggle
+  focus_ruler: true # ADHD Focus Ruler toggle & screen masks
+  left_handed: true # Left-handed vertical FAB dock layout toggle
+  developer_hue: true # Developer primary hue live adjustment slider & numeric input (0°-360°)
+
+# Floating Action Buttons (FAB) Dock
+fab:
+  enable: true # Enable vertical action button dock
+  theme_toggle: true # Enable Light/Dark theme switch button
+  comment_nav: true # Enable post Comments fast scrolling button
+  back_to_top: true # Enable Back-to-top scrolling button
 
 # giscus
 # https://github.com/giscus/giscus

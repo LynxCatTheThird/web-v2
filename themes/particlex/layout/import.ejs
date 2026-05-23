@@ -55,6 +55,8 @@
 <% } %>
 <% } %>
 <% if (theme.preview) { %>
+<link rel="stylesheet" href="https://registry.npmmirror.com/@fancyapps/ui/5.0.36/files/dist/fancybox/fancybox.css" media="print" onload="this.media='all'" />
+<script src="https://registry.npmmirror.com/@fancyapps/ui/5.0.36/files/dist/fancybox/fancybox.umd.js" defer></script>
 <script src="<%- url_for("/js/lib/preview.js") %>" defer></script>
 <% } %>
 <% if (theme.crypto && typeof page.secret !== "undefined") { %>

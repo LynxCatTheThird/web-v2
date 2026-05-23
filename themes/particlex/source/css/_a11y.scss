@@ -495,14 +495,64 @@ html.reading-mode {
 .a11y-slider-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 6px;
     font-size: 12px;
     color: var(--color-text-secondary);
     font-weight: 500;
 
-    .slider-value {
+    .slider-label {
+        cursor: pointer;
+    }
+
+    .slider-value-input-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 1px;
+        background: var(--color-background);
+        border: 1px solid transparent;
+        border-radius: 6px;
+        padding: 1px 5px;
+        transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+        &:hover {
+            background: color-mix(in srgb, var(--color-primary) 8%, var(--color-background));
+        }
+
+        &:focus-within {
+            background: var(--color-background);
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px hsla(var(--primary-hue, 210), 90%, 43%, 0.12);
+        }
+    }
+
+    .a11y-number-input {
+        width: 32px;
+        border: none;
+        background: transparent;
         color: var(--color-primary);
-        font-weight: bold;
+        font-weight: 700;
+        font-size: 12px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        outline: none;
+        font-family: inherit;
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    .unit {
+        color: var(--color-text-muted);
+        font-size: 11px;
+        font-weight: 700;
+        user-select: none;
+        margin-left: 0.5px;
     }
 }
 
@@ -845,4 +895,22 @@ html.reading-mode-transitioning {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.3s;
+}
+
+// ── Fancybox 现代图片画廊 HSL 色彩温度与毛玻璃动态渐变 ──────────────
+.fancybox__backdrop {
+    background: hsla(var(--primary-hue, 210), 30%, 8%, 0.88) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    transition: opacity 0.25s ease, 
+                backdrop-filter 0.25s ease, 
+                -webkit-backdrop-filter 0.25s ease !important;
+}
+
+// ── Fancybox 图片放大和弹回过渡过程圆角适配 ────────────────────────
+.fancybox__content,
+.fancybox__content img,
+.fancybox__image {
+    border-radius: 8px !important;
+    overflow: hidden !important;
 }
