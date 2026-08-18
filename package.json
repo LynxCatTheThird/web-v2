@@ -7,21 +7,22 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "test": "hexo generate"
   },
   "hexo": {
     "version": "8.1.2"
   },
   "dependencies": {
-    "@mdit/plugin-abbr": "^0.23.2",
-    "@mdit/plugin-dl": "^0.23.2",
-    "@mdit/plugin-footnote": "^0.23.2",
-    "@mdit/plugin-ins": "^0.23.2",
-    "@mdit/plugin-mark": "^0.23.2",
-    "@mdit/plugin-spoiler": "^0.23.2",
-    "@mdit/plugin-sub": "^0.24.2",
-    "@mdit/plugin-sup": "^0.24.2",
-    "@mdit/plugin-tasklist": "^0.23.2",
+    "@mdit/plugin-abbr": "^1.1.0",
+    "@mdit/plugin-dl": "^1.1.0",
+    "@mdit/plugin-footnote": "^1.1.0",
+    "@mdit/plugin-ins": "^2.1.0",
+    "@mdit/plugin-mark": "^2.1.0",
+    "@mdit/plugin-spoiler": "^2.1.0",
+    "@mdit/plugin-sub": "^1.1.0",
+    "@mdit/plugin-sup": "^1.1.0",
+    "@mdit/plugin-tasklist": "^1.1.0",
     "hexo": "^8.1.2",
     "hexo-abbrlink": "^2.2.1",
     "hexo-deployer-git": "^4.0.0",
@@ -33,15 +34,15 @@
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
     "hexo-helper-crypto": "^1.2.1",
-    "hexo-pangu": "^0.4.1",
+    "hexo-pangu": "^0.6.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-sass": "^0.5.0",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0",
     "hexo-yam": "^9.0.0",
-    "highlight.js": "^11.11.1",
-    "katex": "^0.17.0",
-    "markdown-it": "^14.1.1"
+    "highlight.js": "^11.12.0",
+    "katex": "^0.18.4",
+    "markdown-it": "^15.0.0"
   }
 }

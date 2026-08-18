@@ -1,0 +1,25 @@
+diff --git a/lib/filter.js b/lib/filter.js
+index 17cb11eb2a40f4b5c1cb0e19fe20551bb8eaedef..a32e22a20dd377ee707351abb4700403eb023eaa 100644
+--- a/lib/filter.js
++++ b/lib/filter.js
+@@ -6,7 +6,10 @@ function loadPlugin(file, window) {
+   const scriptPath = require.resolve(file);
+ 
+   // Based on: https://github.com/joyent/node/blob/v0.10.33/src/node.js#L516
+-  const script = `(function(globalThis, { document, DocumentFragment, NodeFilter, Element, HTMLElement, Text, Node, getComputedStyle }, requestIdleCallback) {
++  // The browser bundle references the free `window` variable. Expose the
++  // supplied happy-dom window in the VM context instead of only passing it as
++  // the globalThis argument.
++  const script = `(function(globalThis, window, { document, DocumentFragment, NodeFilter, Element, HTMLElement, Text, Node, getComputedStyle }, requestIdleCallback) {
+     ${readFileSync(scriptPath)}
+   });`;
+ 
+@@ -15,7 +18,7 @@ function loadPlugin(file, window) {
+     didTimeout: false,
+     timeRemaining: () => 1e5
+   });
+-  fn(window, window, requestIdleCallback);
++  fn(window, window, window, requestIdleCallback);
+   window.pangu.visibilityDetector.isElementVisuallyHidden = () => false;
+   return window.pangu;
+ }
