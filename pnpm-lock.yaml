@@ -4,43 +4,40 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  hexo-pangu@0.6.0: c91fe36857a2019067b0f9640896f67d97f75a7b5030952eb1a5c365422c8ea2
-
 importers:
 
   .:
     dependencies:
       '@mdit/plugin-abbr':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       '@mdit/plugin-dl':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       '@mdit/plugin-footnote':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       '@mdit/plugin-ins':
         specifier: ^2.1.0
-        version: 2.1.0(markdown-it@15.0.0)
+        version: 2.1.0(markdown-it@15.0.1)
       '@mdit/plugin-katex':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       '@mdit/plugin-mark':
         specifier: ^2.1.0
-        version: 2.1.0(markdown-it@15.0.0)
+        version: 2.1.0(markdown-it@15.0.1)
       '@mdit/plugin-spoiler':
         specifier: ^2.1.0
-        version: 2.1.0(markdown-it@15.0.0)
+        version: 2.1.0(markdown-it@15.0.1)
       '@mdit/plugin-sub':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       '@mdit/plugin-sup':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       '@mdit/plugin-tasklist':
         specifier: ^1.1.0
-        version: 1.1.0(markdown-it@15.0.0)
+        version: 1.1.0(markdown-it@15.0.1)
       hexo:
         specifier: ^8.1.2
         version: 8.1.2(chokidar@3.6.0)
@@ -76,7 +73,7 @@ importers:
         version: 1.2.1
       hexo-pangu:
         specifier: ^0.6.0
-        version: 0.6.0(patch_hash=c91fe36857a2019067b0f9640896f67d97f75a7b5030952eb1a5c365422c8ea2)
+        version: 0.6.0
       hexo-renderer-ejs:
         specifier: ^2.0.0
         version: 2.0.0
@@ -96,11 +93,11 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       markdown-it:
-        specifier: ^15.0.0
-        version: 15.0.0
+        specifier: ^15.0.1
+        version: 15.0.1
       markdown-it-anchor:
         specifier: ^9.2.1
-        version: 9.2.1(@types/markdown-it@14.1.2)(markdown-it@15.0.0)
+        version: 9.2.1(@types/markdown-it@14.1.2)(markdown-it@15.0.1)
 
 packages:
 
@@ -437,8 +434,8 @@ packages:
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
-  argparse@3.0.0:
-    resolution: {integrity: sha512-BOp5NMrHqKxmq/OLr+clzzrRxgOKSLkcjmkWuChp7Irqwn4s74WjOBPIgWfA/HMcBnVkZ5XEuf9uUqzlpfCQ6A==}
+  argparse@3.0.1:
+    resolution: {integrity: sha512-nM4mHF/KM1v59ZNKX7zfusQz5wUAxR511YG8Vo6TyiV4aqhu++rbJW4v04xsWhpSsHFj66flT8P7znVpyO20xQ==}
 
   arrify@1.0.1:
     resolution: {integrity: sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==}
@@ -1109,8 +1106,8 @@ packages:
     resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
     hasBin: true
 
-  markdown-it@15.0.0:
-    resolution: {integrity: sha512-Lf8ajvVNdRpzSNB4VegxNy7gjs8gU35l4b4+ET49LrQC5PKYwLZ72u60LeJ9gv3qiaesuYjJWCyVeQmv/QWKQw==}
+  markdown-it@15.0.1:
+    resolution: {integrity: sha512-9/7gE95FNPkfUWrjJIoHZza2iLmuJlPD0UNMxPi7bxUrbCR525YZY0r+zyfes0dZI5ZZ/uNIXUJca0pJvtw41g==}
     hasBin: true
 
   mdn-data@2.0.28:
@@ -1649,87 +1646,87 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mdit/helper@1.1.0(markdown-it@15.0.0)':
+  '@mdit/helper@1.1.0(markdown-it@15.0.1)':
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-abbr@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-abbr@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-dl@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-dl@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-footnote@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-footnote@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      markdown-it: 15.0.0
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-inline-rule@2.2.0(markdown-it@15.0.0)':
+  '@mdit/plugin-inline-rule@2.2.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-ins@2.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-ins@2.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-katex@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-katex@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      '@mdit/plugin-tex': 1.1.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      '@mdit/plugin-tex': 1.1.0(markdown-it@15.0.1)
       katex: 0.18.4
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-mark@2.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-mark@2.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-spoiler@2.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-spoiler@2.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-sub@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-sub@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-sup@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-sup@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
-      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
+      '@mdit/plugin-inline-rule': 2.2.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-tasklist@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-tasklist@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
-  '@mdit/plugin-tex@1.1.0(markdown-it@15.0.0)':
+  '@mdit/plugin-tex@1.1.0(markdown-it@15.0.1)':
     dependencies:
-      '@mdit/helper': 1.1.0(markdown-it@15.0.0)
+      '@mdit/helper': 1.1.0(markdown-it@15.0.1)
     optionalDependencies:
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
   '@mongodb-js/zstd-darwin-arm64@1.2.2':
     optional: true
@@ -1863,7 +1860,7 @@ snapshots:
 
   argparse@2.0.1: {}
 
-  argparse@3.0.0: {}
+  argparse@3.0.1: {}
 
   arrify@1.0.1: {}
 
@@ -2306,7 +2303,7 @@ snapshots:
 
   hexo-pagination@3.0.0: {}
 
-  hexo-pangu@0.6.0(patch_hash=c91fe36857a2019067b0f9640896f67d97f75a7b5030952eb1a5c365422c8ea2):
+  hexo-pangu@0.6.0:
     dependencies:
       happy-dom: 20.11.2
       pangu: 9.1.0
@@ -2580,10 +2577,10 @@ snapshots:
 
   markdown-it-abbr@1.0.4: {}
 
-  markdown-it-anchor@9.2.1(@types/markdown-it@14.1.2)(markdown-it@15.0.0):
+  markdown-it-anchor@9.2.1(@types/markdown-it@14.1.2)(markdown-it@15.0.1):
     dependencies:
       '@types/markdown-it': 14.1.2
-      markdown-it: 15.0.0
+      markdown-it: 15.0.1
 
   markdown-it-attrs@4.5.0(markdown-it@13.0.2):
     dependencies:
@@ -2617,9 +2614,9 @@ snapshots:
       mdurl: 1.0.1
       uc.micro: 1.0.6
 
-  markdown-it@15.0.0:
+  markdown-it@15.0.1:
     dependencies:
-      argparse: 3.0.0
+      argparse: 3.0.1
       entities: 8.0.0
       linkify-it: 6.1.0
       mdurl: 2.1.0
