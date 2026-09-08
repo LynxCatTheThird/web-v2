@@ -43,6 +43,6 @@
     "hexo-server": "^3.0.0",
     "hexo-yam": "^9.0.0",
     "markdown-it": "^15.0.0",
-    "markdown-it-anchor": "^9.2.1"
+    "markdown-it-anchor": "^10.0.0"
   }
 }
