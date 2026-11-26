@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  hexo-pangu@0.6.0: c91fe36857a2019067b0f9640896f67d97f75a7b5030952eb1a5c365422c8ea2
-
 importers:
 
   .:
@@ -76,7 +73,7 @@ importers:
         version: 1.2.1
       hexo-pangu:
         specifier: ^0.6.0
-        version: 0.6.0(patch_hash=c91fe36857a2019067b0f9640896f67d97f75a7b5030952eb1a5c365422c8ea2)
+        version: 0.6.0
       hexo-renderer-ejs:
         specifier: ^2.0.0
         version: 2.0.0
@@ -84,8 +81,8 @@ importers:
         specifier: ^7.1.1
         version: 7.1.1
       hexo-renderer-sass:
-        specifier: ^0.5.0
-        version: 0.5.0(hexo@8.1.2(chokidar@3.6.0))
+        specifier: ^0.6.0
+        version: 0.6.0(hexo@8.1.2(chokidar@3.6.0))
       hexo-renderer-stylus:
         specifier: ^3.0.1
         version: 3.0.1
@@ -871,8 +868,8 @@ packages:
     resolution: {integrity: sha512-BxI2j2f/l7lOgb7DiT1M4GcP/QhR8/rjMlYx4MEPog/9NTpYhbaspiVsw3tGXOsZVmu+cVgBYoeyIQsFYvv3rw==}
     engines: {node: '>=14'}
 
-  hexo-renderer-sass@0.5.0:
-    resolution: {integrity: sha512-zNuXGOTZj/2tLFwnVuueqbzOS8yVFhdVYbei5wPPUoiompiyZjEkF+P9TCHEuFZl+foQictqxKY2ngiWiNYOBw==}
+  hexo-renderer-sass@0.6.0:
+    resolution: {integrity: sha512-bIR7xf/On6Ocgqrgbo3Bsa1Sp87CEFZhoSEJ1jMdwMxiRp5DSB+OYo+pDGGXnJX+w4VOvd5idqUaEjhLfty3xg==}
     engines: {node: '>= 14'}
     peerDependencies:
       hexo: '>= 3'
@@ -2306,7 +2303,7 @@ snapshots:
 
   hexo-pagination@3.0.0: {}
 
-  hexo-pangu@0.6.0(patch_hash=c91fe36857a2019067b0f9640896f67d97f75a7b5030952eb1a5c365422c8ea2):
+  hexo-pangu@0.6.0:
     dependencies:
       happy-dom: 20.11.2
       pangu: 9.1.0
@@ -2334,7 +2331,7 @@ snapshots:
       markdown-it-sub: 1.0.0
       markdown-it-sup: 1.0.0
 
-  hexo-renderer-sass@0.5.0(hexo@8.1.2(chokidar@3.6.0)):
+  hexo-renderer-sass@0.6.0(hexo@8.1.2(chokidar@3.6.0)):
     dependencies:
       hexo: 8.1.2(chokidar@3.6.0)
       sass: 1.102.0
